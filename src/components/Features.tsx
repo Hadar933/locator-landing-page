@@ -52,7 +52,7 @@ export const Features = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center text-center space-y-4"
             >
-              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <img
                   src={feature.image}
                   alt={feature.title}
