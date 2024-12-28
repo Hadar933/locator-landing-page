@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Map, Share2, Sparkles } from "lucide-react";
+import { Map, FileText, Sparkles } from "lucide-react";
 
 export const Benefits = () => {
   const benefits = [
@@ -9,9 +9,9 @@ export const Benefits = () => {
       description: "AI automatically detects and saves locations from any text or website"
     },
     {
-      icon: Share2,
-      title: "Easy Sharing",
-      description: "Share your favorite places with friends and family in one click"
+      icon: FileText,
+      title: "Import From Anywhere",
+      description: "Share articles, blog posts, or any content into the app to extract locations automatically"
     },
     {
       icon: Sparkles,
