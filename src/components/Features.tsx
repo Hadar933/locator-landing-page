@@ -49,7 +49,7 @@ export const Features = () => {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: 2000, stopOnInteraction: false }) // Reduced from 4000ms to 2000ms
   );
 
   return (
