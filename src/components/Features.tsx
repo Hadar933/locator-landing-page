@@ -1,4 +1,11 @@
 import { motion } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const Features = () => {
   const features = [
@@ -41,78 +48,40 @@ export const Features = () => {
 
   return (
     <section className="py-16 px-4">
-      <div className="max-w-7xl mx-auto space-y-12">
-        {/* First row - 2 images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {features.slice(0, 2).map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center text-center space-y-4"
-            >
-              <div className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Second row - 3 images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {features.slice(2, 5).map((feature, index) => (
-            <motion.div
-              key={index + 2}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: (index + 2) * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center text-center space-y-4"
-            >
-              <div className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Third row - 2 images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {features.slice(5, 7).map((feature, index) => (
-            <motion.div
-              key={index + 5}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: (index + 5) * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center text-center space-y-4"
-            >
-              <div className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl shadow-lg">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="max-w-7xl mx-auto">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {features.map((feature, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex flex-col items-center text-center space-y-4"
+                >
+                  <div className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl shadow-lg">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );
