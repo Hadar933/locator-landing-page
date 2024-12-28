@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -46,6 +47,10 @@ export const Features = () => {
     }
   ];
 
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  );
+
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -54,6 +59,7 @@ export const Features = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[plugin.current]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
