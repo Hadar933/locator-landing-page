@@ -52,11 +52,11 @@ export const Features = () => {
               viewport={{ once: true }}
               className="flex flex-col items-center text-center space-y-4"
             >
-              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative w-full max-w-[540px] aspect-[4/5] overflow-hidden rounded-2xl shadow-lg">
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover max-h-[960px]"
                 />
               </div>
               <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
