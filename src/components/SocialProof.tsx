@@ -37,7 +37,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 0,
+      delay: 2000,  // Changed from 0 to 2000 for smoother animation
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -62,7 +62,7 @@ export const SocialProof = () => {
               dragFree: true,
               skipSnaps: true,
               inViewThreshold: 0,
-              duration: 8000
+              duration: 1500  // Reduced from 8000 to 1500
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"

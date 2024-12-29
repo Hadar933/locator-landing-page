@@ -48,7 +48,7 @@ export const Features = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 8000,  // Increased from 0 to 8000
+      delay: 3000,  // Reduced from 8000 to 3000
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -66,7 +66,7 @@ export const Features = () => {
             dragFree: true,
             skipSnaps: true,
             inViewThreshold: 0,
-            duration: 8000  // Increased from default to 8000
+            duration: 2000  // Reduced from 8000 to 2000
           }}
           plugins={[plugin.current]}
           className="w-full"
