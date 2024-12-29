@@ -7,9 +7,10 @@ export const NavigationBar = () => {
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b"
-      initial={{ y: -100 }}
+      initial={{ y: 0 }}
       animate={{
-        y: scrollY.get() > 100 ? 0 : -100,
+        y: 0,
+        opacity: scrollY.get() > 100 ? 1 : 0.95,
       }}
       transition={{ duration: 0.3 }}
       style={{
