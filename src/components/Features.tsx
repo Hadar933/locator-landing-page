@@ -49,7 +49,7 @@ export const Features = () => {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false }) // Reduced from 4000ms to 2000ms
+    Autoplay({ delay: 0 }) // Remove delay for continuous movement
   );
 
   return (
@@ -59,6 +59,10 @@ export const Features = () => {
           opts={{
             align: "start",
             loop: true,
+            dragFree: true,
+            skipSnaps: true,
+            inViewThreshold: 0,
+            duration: 5000
           }}
           plugins={[plugin.current]}
           className="w-full"
