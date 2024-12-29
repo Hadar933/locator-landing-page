@@ -11,7 +11,7 @@ export const SocialProof = () => {
   const platforms = [
     {
       name: "Instagram Classic",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
     },
     {
       name: "Reddit",
@@ -53,14 +53,14 @@ export const SocialProof = () => {
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-8">
               {platforms.map((platform) => (
-                <CarouselItem key={platform.name} className="basis-1/3 md:basis-1/4">
-                  <div className="flex items-center justify-center h-32">
+                <CarouselItem key={platform.name} className="pl-8 basis-1/3 md:basis-1/4">
+                  <div className="flex items-center justify-center h-32 px-6">
                     <img 
                       src={platform.logo} 
                       alt={`${platform.name} logo`} 
-                      className="h-20 w-auto object-contain hover:grayscale hover:opacity-60 transition-all"
+                      className="h-20 w-auto object-contain grayscale-0 hover:grayscale hover:opacity-60 transition-all"
                     />
                   </div>
                 </CarouselItem>
