@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (
@@ -7,6 +10,13 @@ const About = () => {
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-3xl">
+            <Link to="/">
+              <Button variant="ghost" className="mb-8">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
