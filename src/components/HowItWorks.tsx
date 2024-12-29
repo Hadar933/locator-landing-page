@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Share2, MapPin, Map, FileText, Sparkles, ListPlus } from "lucide-react";
+import { Share2, MapPin, Map, FileText, Sparkles, ListPlus, ArrowDown } from "lucide-react";
 
 export const HowItWorks = () => {
   const commonStart = {
@@ -57,7 +57,7 @@ export const HowItWorks = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto mb-16"
+          className="max-w-2xl mx-auto mb-8"
         >
           <div className="flex items-center justify-center space-x-4 p-6 bg-blue-50 rounded-xl">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -69,6 +69,11 @@ export const HowItWorks = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Arrow pointing down */}
+        <div className="flex justify-center mb-8">
+          <ArrowDown className="w-8 h-8 text-gray-400" />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Without Locator */}
@@ -83,18 +88,25 @@ export const HowItWorks = () => {
               <p className="text-muted-foreground mt-2">The traditional way</p>
             </div>
             {withoutLocator.map((step, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <step.icon className="w-6 h-6 text-gray-500" />
+              <div key={index}>
+                <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-6 h-6 text-gray-500" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                    <p className="text-muted-foreground">{step.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
+                {index < withoutLocator.length - 1 && (
+                  <div className="flex justify-center my-4">
+                    <ArrowDown className="w-6 h-6 text-gray-300" />
+                  </div>
+                )}
               </div>
             ))}
             <div className="text-center text-muted-foreground">
-              ⏱️ Takes 15-20 minutes
+              ⏱️ Takes 15-20 minutes of active searching
             </div>
           </motion.div>
 
@@ -110,18 +122,30 @@ export const HowItWorks = () => {
               <p className="text-muted-foreground mt-2">The smart way</p>
             </div>
             {withLocator.map((step, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-blue-50 rounded-xl">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <step.icon className="w-6 h-6 text-blue-600" />
+              <div key={index}>
+                <div className="flex items-start space-x-4 p-6 bg-blue-50 rounded-xl">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                    <p className="text-muted-foreground">{step.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
+                {index < withLocator.length - 1 && (
+                  <div className="flex justify-center my-4">
+                    <ArrowDown className="w-6 h-6 text-blue-300" />
+                  </div>
+                )}
               </div>
             ))}
-            <div className="text-center text-muted-foreground">
-              ⚡ Takes less than 1 minute
+            <div className="text-center space-y-2">
+              <div className="text-muted-foreground">
+                ⚡ Takes less than 5 seconds
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Share and forget - doesn't interrupt your day
+              </div>
             </div>
           </motion.div>
         </div>
