@@ -10,10 +10,6 @@ import React from "react";
 export const SocialProof = () => {
   const platforms = [
     {
-      name: "Instagram New",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
-    },
-    {
       name: "Instagram Classic",
       logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg"
     },
@@ -64,7 +60,7 @@ export const SocialProof = () => {
                     <img 
                       src={platform.logo} 
                       alt={`${platform.name} logo`} 
-                      className="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                      className="h-20 w-auto object-contain hover:grayscale hover:opacity-60 transition-all"
                     />
                   </div>
                 </CarouselItem>
