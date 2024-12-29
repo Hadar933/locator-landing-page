@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll } from "framer-motion";
+import { BurgerMenu } from "./BurgerMenu";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const NavigationBar = () => {
   const { scrollY } = useScroll();
+  const isMobile = useIsMobile();
 
   return (
     <motion.nav
@@ -31,23 +34,27 @@ export const NavigationBar = () => {
             <span className="font-semibold text-lg">Locator</span>
           </Link>
           
-          <div className="hidden md:flex space-x-8">
-            <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/data-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Data Policy
-            </Link>
-            <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Blog
-            </Link>
-          </div>
+          {isMobile ? (
+            <BurgerMenu />
+          ) : (
+            <div className="hidden md:flex space-x-8">
+              <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                About
+              </Link>
+              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/data-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Data Policy
+              </Link>
+              <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Contact
+              </Link>
+              <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Blog
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </motion.nav>
