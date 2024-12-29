@@ -23,10 +23,15 @@ export const CtaSection = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-full flex items-center gap-2 hover:bg-purple-50 transition-all hover:gap-4">
+            <a 
+              href="https://play.google.com/store/apps/details?id=locator.android"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-purple-600 px-8 py-4 rounded-full flex items-center gap-2 hover:bg-purple-50 transition-all hover:gap-4"
+            >
               <span className="font-semibold">Download Now</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
