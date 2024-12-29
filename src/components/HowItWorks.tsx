@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import { Share2, MapPin, Map, ListPlus, FileText, Sparkles } from "lucide-react";
+import { Share2, MapPin, Map, FileText, Sparkles } from "lucide-react";
 
 export const HowItWorks = () => {
+  const commonStart = {
+    icon: FileText,
+    title: "Find Recommendations",
+    description: "Discover a blog post about '10 Best Coffee Shops in NYC'"
+  };
+
   const withoutLocator = [
-    {
-      icon: FileText,
-      title: "Find Recommendations",
-      description: "Discover a blog post about '10 Best Coffee Shops in NYC'"
-    },
     {
       icon: MapPin,
       title: "Manual Search",
-      description: "Search each place individually on Google Maps"
+      description: "Search each coffee shop individually on Google Maps"
     },
     {
       icon: ListPlus,
@@ -34,7 +35,7 @@ export const HowItWorks = () => {
     {
       icon: Map,
       title: "Instant Map View",
-      description: "All places instantly appear on your personal map"
+      description: "All coffee shops instantly appear on your personal map"
     }
   ];
 
@@ -49,6 +50,24 @@ export const HowItWorks = () => {
         >
           <h2 className="text-4xl font-bold mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground">See the difference Locator makes</p>
+        </motion.div>
+
+        {/* Common Starting Point */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-2xl mx-auto mb-16"
+        >
+          <div className="flex items-center justify-center space-x-4 p-6 bg-blue-50 rounded-xl">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <commonStart.icon className="w-6 h-6 text-blue-600" />
+            </div>
+            <div className="text-center">
+              <h4 className="text-lg font-semibold mb-2">{commonStart.title}</h4>
+              <p className="text-muted-foreground">{commonStart.description}</p>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
