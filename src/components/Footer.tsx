@@ -33,11 +33,6 @@ export const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <Link to="/data-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Data Policy
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

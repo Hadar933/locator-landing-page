@@ -29,9 +29,6 @@ export const BurgerMenu = () => {
               <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors py-1">
                 Privacy Policy
               </Link>
-              <Link to="/data-policy" className="text-muted-foreground hover:text-primary transition-colors py-1">
-                Data Policy
-              </Link>
             </div>
           </div>
           

@@ -44,9 +44,6 @@ export const NavigationBar = () => {
               <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/data-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Data Policy
-              </Link>
               <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </Link>
