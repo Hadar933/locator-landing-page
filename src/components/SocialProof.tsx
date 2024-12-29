@@ -10,21 +10,28 @@ import React from "react";
 export const SocialProof = () => {
   const platforms = [
     {
-      name: "Instagram",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg",
-      altLogo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg"
+      name: "Instagram New",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
     },
     {
-      name: "TikTok",
-      logo: "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
+      name: "Instagram Classic",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo.svg"
+    },
+    {
+      name: "Reddit",
+      logo: "https://upload.wikimedia.org/wikipedia/en/1/1f/Reddit_logo_2023.svg"
     },
     {
       name: "Google",
       logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
     },
     {
-      name: "Reddit",
-      logo: "https://upload.wikimedia.org/wikipedia/en/1/1f/Reddit_logo_2023.svg"
+      name: "TikTok",
+      logo: "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg"
+    },
+    {
+      name: "TripAdvisor",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/TripAdvisor_Logo.svg"
     }
   ];
 
@@ -51,27 +58,13 @@ export const SocialProof = () => {
             className="w-full max-w-4xl mx-auto"
           >
             <CarouselContent>
-              <CarouselItem className="basis-1/2 md:basis-1/3">
-                <div className="flex items-center justify-center gap-8 h-24">
-                  <img 
-                    src={platforms[0].logo}
-                    alt="Instagram logo"
-                    className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
-                  />
-                  <img 
-                    src={platforms[0].altLogo}
-                    alt="Instagram alt logo"
-                    className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
-                  />
-                </div>
-              </CarouselItem>
-              {platforms.slice(1).map((platform) => (
-                <CarouselItem key={platform.name} className="basis-1/2 md:basis-1/3">
-                  <div className="flex items-center justify-center h-24">
+              {platforms.map((platform) => (
+                <CarouselItem key={platform.name} className="basis-1/3 md:basis-1/4">
+                  <div className="flex items-center justify-center h-32">
                     <img 
                       src={platform.logo} 
                       alt={`${platform.name} logo`} 
-                      className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                      className="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
                     />
                   </div>
                 </CarouselItem>
