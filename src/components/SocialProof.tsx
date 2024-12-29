@@ -33,7 +33,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 1000, 
+      delay: 0, // Remove delay between slides
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -56,13 +56,16 @@ export const SocialProof = () => {
               align: "center",
               loop: true,
               dragFree: true,
+              skipSnaps: true, // Allow free-flowing movement
+              inViewThreshold: 0, // Show partial slides
+              speed: 50 // Slow down the animation speed for smoother movement
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
           >
             <CarouselContent className="-ml-8">
-              {platforms.map((platform) => (
-                <CarouselItem key={platform.name} className="pl-8 basis-1/3 md:basis-1/4">
+              {[...platforms, ...platforms].map((platform, index) => ( // Duplicate the platforms array for seamless loop
+                <CarouselItem key={`${platform.name}-${index}`} className="pl-8 basis-1/3 md:basis-1/4">
                   <div className="flex items-center justify-center h-32 px-6">
                     <img 
                       src={platform.logo} 
