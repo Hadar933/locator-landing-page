@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Share2, MapPin, Map, FileText, Sparkles } from "lucide-react";
+import { Share2, MapPin, Map, FileText, Sparkles, ListPlus } from "lucide-react";
 
 export const HowItWorks = () => {
   const commonStart = {
