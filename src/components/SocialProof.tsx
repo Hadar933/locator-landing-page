@@ -33,7 +33,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 2000, 
+      delay: 1000, 
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -55,6 +55,7 @@ export const SocialProof = () => {
             opts={{
               align: "center",
               loop: true,
+              dragFree: true,
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
