@@ -66,7 +66,7 @@ export const Features = () => {
             dragFree: true,
             skipSnaps: true,
             inViewThreshold: 0,
-            duration: 5000
+            duration: 8000
           }}
           plugins={[plugin.current]}
           className="w-full"

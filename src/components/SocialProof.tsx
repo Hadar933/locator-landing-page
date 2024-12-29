@@ -33,7 +33,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 0, // Remove delay between slides
+      delay: 0,
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -56,9 +56,9 @@ export const SocialProof = () => {
               align: "center",
               loop: true,
               dragFree: true,
-              skipSnaps: true, // Allow free-flowing movement
-              inViewThreshold: 0, // Show partial slides
-              duration: 5000 // Increased duration to 5 seconds for much slower movement
+              skipSnaps: true,
+              inViewThreshold: 0,
+              duration: 8000
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"

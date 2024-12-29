@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const Download = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 bg-secondary">
       <div className="container">
@@ -26,14 +29,30 @@ export const Download = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <a 
-              href="https://play.google.com/store/apps/details?id=locator.android"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-48 h-16 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors"
-            >
-              <span>Get it on Play Store</span>
-            </a>
+            <div className="flex flex-col gap-4">
+              <a 
+                href="https://play.google.com/store/apps/details?id=locator.android"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-48 hover:opacity-90 transition-opacity"
+              >
+                <img 
+                  src="/lovable-uploads/e69a0935-a169-4e70-b1d8-200d5f622c23.png" 
+                  alt="Get it on Google Play" 
+                  className="w-full h-auto"
+                />
+              </a>
+              <button
+                onClick={() => navigate("/coming-soon")}
+                className="w-48 hover:opacity-90 transition-opacity"
+              >
+                <img 
+                  src="/lovable-uploads/6d58cd60-f2f1-4697-8a87-bc7160e9cf66.png" 
+                  alt="Download on the App Store" 
+                  className="w-full h-auto"
+                />
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>
