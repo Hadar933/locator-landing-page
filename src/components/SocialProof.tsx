@@ -37,7 +37,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 2000,  // Consistent delay
+      delay: 2000,  // Consistent delay between slides
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -60,8 +60,8 @@ export const SocialProof = () => {
               align: "center",
               loop: true,
               dragFree: true,
-              skipSnaps: true,
-              inViewThreshold: 0,
+              skipSnaps: false, // Prevent skipping for smoother transitions
+              inViewThreshold: 0.5, // Ensure smooth transitions
               duration: 1000  // Consistent animation duration
             }}
             plugins={[plugin.current]}
