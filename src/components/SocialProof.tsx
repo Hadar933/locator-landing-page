@@ -37,7 +37,7 @@ export const SocialProof = () => {
 
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 2000,  // Changed from 0 to 2000 for smoother animation
+      delay: 2000,
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
@@ -62,19 +62,19 @@ export const SocialProof = () => {
               dragFree: true,
               skipSnaps: true,
               inViewThreshold: 0,
-              duration: 1500  // Reduced from 8000 to 1500
+              duration: 1500
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
           >
             <CarouselContent className="-ml-8">
-              {[...platforms, ...platforms].map((platform, index) => ( // Duplicate the platforms array for seamless loop
-                <CarouselItem key={`${platform.name}-${index}`} className="pl-8 basis-1/3 md:basis-1/4">
-                  <div className="flex items-center justify-center h-32 px-6">
+              {[...platforms, ...platforms].map((platform, index) => (
+                <CarouselItem key={`${platform.name}-${index}`} className="pl-8 basis-1/2 md:basis-1/4">
+                  <div className="flex items-center justify-center h-24 md:h-32 px-4 md:px-6">
                     <img 
                       src={platform.logo} 
                       alt={`${platform.name} logo`} 
-                      className="h-20 w-auto object-contain grayscale-0 hover:grayscale hover:opacity-60 transition-all"
+                      className="h-16 md:h-20 w-auto object-contain grayscale-0 hover:grayscale hover:opacity-60 transition-all"
                     />
                   </div>
                 </CarouselItem>
