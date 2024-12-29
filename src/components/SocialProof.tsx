@@ -28,6 +28,10 @@ export const SocialProof = () => {
     {
       name: "TripAdvisor",
       logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/TripAdvisor_Logo.svg"
+    },
+    {
+      name: "Medium",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Medium_%28website%29_logo.svg"
     }
   ];
 

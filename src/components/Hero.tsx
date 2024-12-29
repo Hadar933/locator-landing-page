@@ -18,7 +18,16 @@ export const Hero = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Extract and save locations from any content across the internet. Our AI reads blog posts, articles, and websites to automatically identify and organize places for you.
           </p>
-          <StoreButtons />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+            <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center p-2">
+              <img 
+                src="/lovable-uploads/de8d0f60-8ffc-4ea2-9f86-f4f56f972f5a.png" 
+                alt="Download QR Code" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <StoreButtons />
+          </div>
         </motion.div>
       </div>
     </section>
