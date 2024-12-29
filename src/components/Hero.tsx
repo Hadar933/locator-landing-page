@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import { StoreButtons } from "./StoreButtons";
+import { BurgerMenu } from "./BurgerMenu";
 
 export const Hero = () => {
   return (
     <section className="min-h-[40vh] flex items-center justify-center px-4 bg-gradient-to-b from-blue-50 to-white">
-      <div className="container max-w-6xl">
+      <div className="container max-w-6xl relative">
+        <div className="absolute top-4 right-4">
+          <BurgerMenu />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

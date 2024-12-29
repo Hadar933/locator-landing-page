@@ -4,6 +4,8 @@ import Privacy from "./pages/Privacy";
 import DataPolicy from "./pages/DataPolicy";
 import About from "./pages/About";
 import ComingSoon from "./pages/ComingSoon";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 
 const App = () => (
   <BrowserRouter>
@@ -13,6 +15,8 @@ const App = () => (
       <Route path="/data-policy" element={<DataPolicy />} />
       <Route path="/about" element={<About />} />
       <Route path="/coming-soon" element={<ComingSoon />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/blog" element={<Blog />} />
     </Routes>
   </BrowserRouter>
 );
