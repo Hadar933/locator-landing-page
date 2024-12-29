@@ -21,7 +21,7 @@ export const Benefits = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-purple-50">
+    <section className="py-24 bg-gradient-to-b from-white to-blue-50">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,8 +41,8 @@ export const Benefits = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                <benefit.icon className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                <benefit.icon className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
               <p className="text-muted-foreground">{benefit.description}</p>
