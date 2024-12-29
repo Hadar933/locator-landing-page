@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="min-h-[90vh] flex items-center justify-center px-4 py-16 bg-gradient-to-b from-purple-50 to-white">
+    <section className="min-h-[60vh] flex items-center justify-center px-4 py-8 bg-gradient-to-b from-purple-50 to-white">
       <div className="container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ export const Hero = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Extract and save locations from any content across the internet. Our AI reads blog posts, articles, and websites to automatically identify and organize places for you.
           </p>
-          <button className="bg-black text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-gray-800 transition-all hover:gap-4 mx-auto">
+          <button className="bg-black text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-gray-800 transition-all hover:gap-4 mx-auto mb-8">
             <span>Get Started Free</span>
             <ArrowRight className="w-4 h-4" />
           </button>

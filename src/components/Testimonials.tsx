@@ -4,22 +4,22 @@ import { Star } from "lucide-react";
 export const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Travel Blogger",
-      content: "Locator has completely transformed how I save and organize places for my blog posts. The AI extraction is incredibly accurate!",
+      name: "Dan",
+      role: "interested developer",
+      content: "Nice. It's been great for keeping track of some instagram recommendations. Only thing is, I wish I could share my maps with friends—it'd be so cool to compare or plan together",
+      rating: 4
+    },
+    {
+      name: "Jaycee",
+      role: "following the app for some time",
+      content: "Used it on my trip to Boston, and it saved me some time tracking places to check out.",
       rating: 5
     },
     {
-      name: "Michael Chen",
-      role: "Food Explorer",
-      content: "I use Locator daily to keep track of restaurants and cafes. It's become an essential tool for my foodie adventures.",
-      rating: 5
-    },
-    {
-      name: "Emma Williams",
-      role: "Digital Nomad",
-      content: "The ability to save locations from any website and organize them into collections is game-changing. Highly recommended!",
-      rating: 5
+      name: "Noa",
+      role: "Casual User",
+      content: "Used this to plan my New Zealand trip—super handy! Using unlimited plan because I want to save many recommendaations. Would love a web version to make planning easier, and my husband is already asking for an iOS app for his iPhone.",
+      rating: 4
     }
   ];
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Search, BookMarked, Share } from "lucide-react";
+import { Smartphone, Search, BookMarked, Map } from "lucide-react";
 
 export const HowItWorks = () => {
   const steps = [
@@ -19,9 +19,9 @@ export const HowItWorks = () => {
       description: "One tap to save locations with AI-powered extraction"
     },
     {
-      icon: Share,
-      title: "Share & Explore",
-      description: "Share your collections or explore places saved by others"
+      icon: Map,
+      title: "Explore Places",
+      description: "Access your saved locations anytime, anywhere"
     }
   ];
 
