@@ -32,7 +32,13 @@ export const SocialProof = () => {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
+    Autoplay({ 
+      delay: 2000, 
+      stopOnInteraction: false,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+      stopOnMouseEnter: false,
+      stopOnFocusIn: false
+    })
   );
 
   return (
