@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const Hero = () => {
   return (
-    <section className="min-h-[60vh] flex items-center justify-center px-4 pb-4 bg-gradient-to-b from-purple-50 to-white">
+    <section className="min-h-[50vh] flex items-center justify-center px-4 pb-0 bg-gradient-to-b from-purple-50 to-white">
       <div className="container max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

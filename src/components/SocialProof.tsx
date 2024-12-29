@@ -1,4 +1,11 @@
 import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import React from "react";
 
 export const SocialProof = () => {
   const platforms = [
@@ -21,8 +28,12 @@ export const SocialProof = () => {
     }
   ];
 
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  );
+
   return (
-    <section className="py-8 bg-white">
+    <section className="py-4 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,29 +41,43 @@ export const SocialProof = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <p className="text-lg text-muted-foreground mb-8">Extract locations from your favorite platforms</p>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            <div className="flex items-center gap-8">
-              <img 
-                src={platforms[0].logo}
-                alt="Instagram logo"
-                className="h-12 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
-              />
-              <img 
-                src={platforms[0].altLogo}
-                alt="Instagram alt logo"
-                className="h-12 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
-              />
-            </div>
-            {platforms.slice(1).map((platform) => (
-              <img 
-                key={platform.name}
-                src={platform.logo} 
-                alt={`${platform.name} logo`} 
-                className="h-12 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
-              />
-            ))}
-          </div>
+          <p className="text-lg text-muted-foreground mb-4">Extract locations from your favorite platforms</p>
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            plugins={[plugin.current]}
+            className="w-full max-w-4xl mx-auto"
+          >
+            <CarouselContent>
+              <CarouselItem className="basis-1/2 md:basis-1/3">
+                <div className="flex items-center justify-center gap-8 h-24">
+                  <img 
+                    src={platforms[0].logo}
+                    alt="Instagram logo"
+                    className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                  />
+                  <img 
+                    src={platforms[0].altLogo}
+                    alt="Instagram alt logo"
+                    className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                  />
+                </div>
+              </CarouselItem>
+              {platforms.slice(1).map((platform) => (
+                <CarouselItem key={platform.name} className="basis-1/2 md:basis-1/3">
+                  <div className="flex items-center justify-center h-24">
+                    <img 
+                      src={platform.logo} 
+                      alt={`${platform.name} logo`} 
+                      className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </motion.div>
       </div>
     </section>
