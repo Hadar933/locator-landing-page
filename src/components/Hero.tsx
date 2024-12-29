@@ -14,14 +14,19 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <span className="text-blue-600 font-semibold mb-4 block">AI-Powered Location Saving</span>
+            <span className="text-blue-600 font-semibold mb-4 block">AI-Powered Location Saving App</span>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
               Save & Organize Places with AI
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Extract and save locations from any content across the internet. Our AI reads blog posts, articles, and websites to automatically identify and organize places for you.
+              Never lose track of amazing places again! Save restaurants, travel spots, and local gems from social media and websites. Our AI automatically extracts and organizes locations for your next adventure.
             </p>
-            <StoreButtons />
+            <div className="flex flex-col items-center gap-6">
+              <StoreButtons />
+              <p className="text-sm text-muted-foreground">
+                Join thousands of travelers, foodies, and explorers using Locator to save their favorite places
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
