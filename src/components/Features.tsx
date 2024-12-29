@@ -47,7 +47,13 @@ export const Features = () => {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 0 }) // Remove delay for continuous movement
+    Autoplay({ 
+      delay: 0,
+      stopOnInteraction: false,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+      stopOnMouseEnter: false,
+      stopOnFocusIn: false
+    })
   );
 
   return (
