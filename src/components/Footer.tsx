@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="py-12 bg-white border-t">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <img 
               src="/lovable-uploads/47fe2b25-d83e-46e5-bb42-043d91389daf.png" 
@@ -16,19 +16,13 @@ export const Footer = () => {
             </p>
           </div>
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2">
-              <li><a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#how-it-works" className="text-sm text-muted-foreground hover:text-primary transition-colors">How It Works</a></li>
-              <li><a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
-            </ul>
-          </div>
-          <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</a></li>
-              <li><a href="#blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
-              <li><a href="#careers" className="text-sm text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
+              <li>
+                <Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -44,7 +38,11 @@ export const Footer = () => {
                   Data Policy
                 </Link>
               </li>
-              <li><a href="#terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
+              <li>
+                <Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

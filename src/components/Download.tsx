@@ -26,9 +26,14 @@ export const Download = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <button className="w-48 h-16 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors">
+            <a 
+              href="https://play.google.com/store/apps/details?id=locator.android"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-48 h-16 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors"
+            >
               <span>Get it on Play Store</span>
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
