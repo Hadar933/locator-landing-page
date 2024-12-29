@@ -66,7 +66,7 @@ export const Features = () => {
             dragFree: true,
             skipSnaps: false,
             inViewThreshold: 1,
-            duration: 20000  // Very long duration for smooth, constant movement
+            duration: 12000  // Faster duration for quicker movement
           }}
           plugins={[plugin.current]}
           className="w-full"

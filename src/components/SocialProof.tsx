@@ -62,7 +62,7 @@ export const SocialProof = () => {
               dragFree: true,
               skipSnaps: false,
               inViewThreshold: 1,
-              duration: 15000  // Very long duration for smooth, constant movement
+              duration: 8000  // Faster duration for quicker movement
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
