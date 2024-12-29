@@ -58,7 +58,7 @@ export const SocialProof = () => {
               dragFree: true,
               skipSnaps: true, // Allow free-flowing movement
               inViewThreshold: 0, // Show partial slides
-              duration: 100 // Control animation duration in milliseconds
+              duration: 5000 // Increased duration to 5 seconds for much slower movement
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"
