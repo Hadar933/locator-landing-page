@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { StoreButtons } from "./StoreButtons";
 
 export const CtaSection = () => {
-  const navigate = useNavigate();
-
   return (
     <section className="py-24 bg-gradient-to-b from-white to-purple-50">
       <div className="container max-w-4xl text-center">
@@ -25,30 +23,7 @@ export const CtaSection = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col gap-4">
-              <a 
-                href="https://play.google.com/store/apps/details?id=locator.android"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-48 hover:opacity-90 transition-opacity"
-              >
-                <img 
-                  src="/lovable-uploads/e69a0935-a169-4e70-b1d8-200d5f622c23.png" 
-                  alt="Get it on Google Play" 
-                  className="w-full h-auto"
-                />
-              </a>
-              <button
-                onClick={() => navigate("/coming-soon")}
-                className="w-48 hover:opacity-90 transition-opacity"
-              >
-                <img 
-                  src="/lovable-uploads/6d58cd60-f2f1-4697-8a87-bc7160e9cf66.png" 
-                  alt="Download on the App Store" 
-                  className="w-full h-auto"
-                />
-              </button>
-            </div>
+            <StoreButtons />
           </div>
         </motion.div>
       </div>

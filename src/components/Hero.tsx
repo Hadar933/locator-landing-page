@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { StoreButtons } from "./StoreButtons";
 
 export const Hero = () => {
   return (
@@ -17,14 +18,7 @@ export const Hero = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Extract and save locations from any content across the internet. Our AI reads blog posts, articles, and websites to automatically identify and organize places for you.
           </p>
-          <a 
-            href="https://play.google.com/store/apps/details?id=locator.android" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="bg-black text-white px-8 py-4 rounded-full inline-flex items-center gap-2 hover:bg-gray-800 transition-all hover:gap-4 mx-auto"
-          >
-            <span>Get it on Google Play</span>
-          </a>
+          <StoreButtons />
         </motion.div>
       </div>
     </section>
