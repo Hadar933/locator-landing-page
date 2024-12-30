@@ -3,13 +3,21 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Blog = () => {
   const blogCategories = [
     {
       title: "Travel Guides",
       description: "Discover hidden gems and must-visit locations around the world",
-      comingSoon: true
+      posts: [
+        {
+          title: "Phuket Local Guide: From Patong to Hidden Beaches",
+          slug: "phuket-local-guide",
+          excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
+          date: "2024-03-20"
+        }
+      ]
     },
     {
       title: "Food & Restaurants",
@@ -50,23 +58,42 @@ const Blog = () => {
                 Discover curated guides and recommendations for travelers and food enthusiasts
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8">
                 {blogCategories.map((category, index) => (
-                  <motion.article
+                  <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-lg shadow-md"
                   >
-                    <h2 className="text-2xl font-semibold mb-4">{category.title}</h2>
-                    <p className="text-muted-foreground mb-4">{category.description}</p>
-                    {category.comingSoon && (
-                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                        Coming Soon
-                      </span>
-                    )}
-                  </motion.article>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>{category.title}</CardTitle>
+                        <p className="text-muted-foreground">{category.description}</p>
+                      </CardHeader>
+                      <CardContent>
+                        {category.comingSoon ? (
+                          <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                            Coming Soon
+                          </span>
+                        ) : (
+                          <div className="space-y-4">
+                            {category.posts?.map((post, postIndex) => (
+                              <Link 
+                                key={postIndex}
+                                to={`/blog/${post.slug}`}
+                                className="block p-4 rounded-lg hover:bg-accent transition-colors"
+                              >
+                                <h3 className="text-lg font-semibold mb-2">{post.title}</h3>
+                                <p className="text-muted-foreground text-sm mb-2">{post.excerpt}</p>
+                                <time className="text-sm text-muted-foreground">{post.date}</time>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
               </div>
 
