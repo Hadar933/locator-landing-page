@@ -40,7 +40,7 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <section className="py-24">
-          <div className="container max-w-4xl">
+          <div className="container max-w-6xl">
             <Link to="/">
               <Button variant="ghost" className="mb-8">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -58,7 +58,7 @@ const Blog = () => {
                 Discover curated guides and recommendations for travelers and food enthusiasts
               </p>
               
-              <div className="grid grid-cols-1 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {blogCategories.map((category, index) => (
                   <motion.div
                     key={index}
@@ -66,7 +66,7 @@ const Blog = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Card>
+                    <Card className="h-full">
                       <CardHeader>
                         <CardTitle>{category.title}</CardTitle>
                         <p className="text-muted-foreground">{category.description}</p>
