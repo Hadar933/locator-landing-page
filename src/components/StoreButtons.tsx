@@ -14,7 +14,7 @@ export const StoreButtons = () => {
         <img
           src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
           alt="Get it on Google Play"
-          className="absolute w-[120%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute w-[140%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
       </a>
       <button
