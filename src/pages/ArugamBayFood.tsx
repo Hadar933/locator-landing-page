@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 
@@ -110,12 +110,22 @@ const ArugamBayFood = () => {
       <main className="flex-grow">
         <article className="py-24">
           <div className="container max-w-4xl">
-            <Link to="/blog">
-              <Button variant="ghost" className="mb-8">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Button>
-            </Link>
+            <div className="flex justify-between items-center mb-8">
+              <Link to="/blog">
+                <Button variant="ghost">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Blog
+                </Button>
+              </Link>
+              <a 
+                href="https://locator.ltd" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary flex items-center gap-1"
+              >
+                Visit Locator <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
