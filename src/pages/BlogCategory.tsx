@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 const BlogCategory = () => {
   const { category } = useParams();
@@ -12,7 +13,7 @@ const BlogCategory = () => {
       case 'travel-guides':
         return {
           title: "Travel Guides",
-          description: "Discover hidden gems and must-visit locations around the world",
+          description: "Discover hidden gems and must-visit locations around the world. Expert travel guides and local recommendations for your next adventure.",
           posts: [
             {
               title: "Phuket Local Guide: From Patong to Hidden Beaches",
@@ -25,7 +26,7 @@ const BlogCategory = () => {
       case 'food-restaurants':
         return {
           title: "Food & Restaurants",
-          description: "Curated lists of the best dining spots in popular destinations",
+          description: "Curated lists of the best dining spots in popular destinations. Local food guides and restaurant recommendations from around the world.",
           posts: [
             {
               title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
@@ -48,6 +49,40 @@ const BlogCategory = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>{categoryData.title} | Locator Travel Blog</title>
+        <meta name="description" content={categoryData.description} />
+        <meta property="og:title" content={`${categoryData.title} | Locator Travel Blog`} />
+        <meta property="og:description" content={categoryData.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://locator.app/blog/category/${category}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${categoryData.title} | Locator Travel Blog`} />
+        <meta name="twitter:description" content={categoryData.description} />
+        <link rel="canonical" href={`https://locator.app/blog/category/${category}`} />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "headline": categoryData.title,
+            "description": categoryData.description,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Locator",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://locator.app/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://locator.app/blog/category/${category}`
+            }
+          })}
+        </script>
+      </Helmet>
+
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-4xl">

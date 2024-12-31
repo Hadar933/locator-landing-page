@@ -3,12 +3,17 @@ import { Footer } from "@/components/Footer";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 const BlogPost = () => {
   const { slug } = useParams();
 
   const phuketGuide = {
     title: "Phuket Local Guide: From Patong to Hidden Beaches",
+    description: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife. Discover local recommendations for beaches, markets, landmarks, and nightlife spots in Phuket, Thailand.",
+    publishDate: "2024-12-30",
+    modifiedDate: "2024-12-30",
+    author: "Locator Team",
     content: `
       <article class="prose lg:prose-xl max-w-none">
         <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
@@ -75,6 +80,47 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>{phuketGuide.title} | Locator Travel Blog</title>
+        <meta name="description" content={phuketGuide.description} />
+        <meta name="author" content={phuketGuide.author} />
+        <meta property="og:title" content={phuketGuide.title} />
+        <meta property="og:description" content={phuketGuide.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://locator.app/blog/${slug}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={phuketGuide.title} />
+        <meta name="twitter:description" content={phuketGuide.description} />
+        <link rel="canonical" href={`https://locator.app/blog/${slug}`} />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": phuketGuide.title,
+            "description": phuketGuide.description,
+            "author": {
+              "@type": "Organization",
+              "name": phuketGuide.author
+            },
+            "datePublished": phuketGuide.publishDate,
+            "dateModified": phuketGuide.modifiedDate,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Locator",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://locator.app/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://locator.app/blog/${slug}`
+            }
+          })}
+        </script>
+      </Helmet>
+      
       <main className="flex-grow">
         <article className="py-24">
           <div className="container max-w-4xl">
@@ -91,6 +137,15 @@ const BlogPost = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl font-bold mb-6">{phuketGuide.title}</h1>
+              <div className="mb-8 text-muted-foreground">
+                <time dateTime={phuketGuide.publishDate}>
+                  Published on {new Date(phuketGuide.publishDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
               <div 
                 className="prose lg:prose-xl max-w-none"
                 dangerouslySetInnerHTML={{ __html: phuketGuide.content }}

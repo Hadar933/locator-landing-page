@@ -3,10 +3,15 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 const ArugamBayFood = () => {
   const arugamBayGuide = {
     title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
+    description: "Discover the best restaurants and cafes in Arugam Bay, Sri Lanka. From authentic local cuisine to wood-fired pizzas, burgers, and fresh smoothies - a casual food lover's guide to Sri Lanka's surf paradise.",
+    publishDate: "2024-12-31",
+    modifiedDate: "2024-12-31",
+    author: "Locator Team",
     content: `
       <article class="prose lg:prose-xl max-w-none">
         <p class="lead">Hey food lovers! If you're heading to Arugam Bay, you're in for a treat. This surf town isn't just about catching waves - it's got some seriously good eats. Here's my personal rundown of the best spots to grab a bite, from pizza to burgers to local Sri Lankan cuisine.</p>
@@ -61,6 +66,47 @@ const ArugamBayFood = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>{arugamBayGuide.title} | Locator Travel Blog</title>
+        <meta name="description" content={arugamBayGuide.description} />
+        <meta name="author" content={arugamBayGuide.author} />
+        <meta property="og:title" content={arugamBayGuide.title} />
+        <meta property="og:description" content={arugamBayGuide.description} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://locator.app/blog/arugam-bay-food" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={arugamBayGuide.title} />
+        <meta name="twitter:description" content={arugamBayGuide.description} />
+        <link rel="canonical" href="https://locator.app/blog/arugam-bay-food" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": arugamBayGuide.title,
+            "description": arugamBayGuide.description,
+            "author": {
+              "@type": "Organization",
+              "name": arugamBayGuide.author
+            },
+            "datePublished": arugamBayGuide.publishDate,
+            "dateModified": arugamBayGuide.modifiedDate,
+            "publisher": {
+              "@type": "Organization",
+              "name": "Locator",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://locator.app/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://locator.app/blog/arugam-bay-food"
+            }
+          })}
+        </script>
+      </Helmet>
+
       <main className="flex-grow">
         <article className="py-24">
           <div className="container max-w-4xl">
@@ -77,6 +123,15 @@ const ArugamBayFood = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl font-bold mb-6">{arugamBayGuide.title}</h1>
+              <div className="mb-8 text-muted-foreground">
+                <time dateTime={arugamBayGuide.publishDate}>
+                  Published on {new Date(arugamBayGuide.publishDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
               <div 
                 className="prose lg:prose-xl max-w-none"
                 dangerouslySetInnerHTML={{ __html: arugamBayGuide.content }}
