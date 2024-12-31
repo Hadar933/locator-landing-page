@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -10,35 +10,39 @@ const Blog = () => {
     {
       title: "Travel Guides",
       description: "Discover hidden gems and must-visit locations around the world",
+      slug: "travel-guides",
       posts: [
         {
           title: "Phuket Local Guide: From Patong to Hidden Beaches",
           slug: "phuket-local-guide",
           excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
-          date: "2024-03-20"
+          date: "2024-12-30"
         }
       ]
     },
     {
       title: "Food & Restaurants",
       description: "Curated lists of the best dining spots in popular destinations",
+      slug: "food-restaurants",
       posts: [
         {
           title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
           slug: "arugam-bay-food-guide",
           excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
-          date: "2024-03-21"
+          date: "2024-12-31"
         }
       ]
     },
     {
       title: "City Living",
       description: "Local recommendations for urban explorers and city dwellers",
+      slug: "city-living",
       comingSoon: true
     },
     {
       title: "Travel Planning",
       description: "Tips and tricks for organizing your travel itineraries",
+      slug: "travel-planning",
       comingSoon: true
     }
   ];
@@ -96,6 +100,12 @@ const Blog = () => {
                                 <time className="text-sm text-muted-foreground">{post.date}</time>
                               </Link>
                             ))}
+                            <Link to={`/blog/category/${category.slug}`}>
+                              <Button variant="secondary" className="w-full mt-4">
+                                See More
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                              </Button>
+                            </Link>
                           </div>
                         )}
                       </CardContent>

@@ -1,28 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavigationBar } from "@/components/NavigationBar";
-import Index from "@/pages/Index";
-import About from "@/pages/About";
-import Privacy from "@/pages/Privacy";
-import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
-import ArugamBayFood from "@/pages/ArugamBayFood";
+import Index from "./pages/Index";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import BlogCategory from "./pages/BlogCategory";
+import ArugamBayFood from "./pages/ArugamBayFood";
+import Footer from "./components/Footer";
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <NavigationBar />
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/phuket-local-guide" element={<BlogPost />} />
-        <Route path="/blog/arugam-bay-food-guide" element={<ArugamBayFood />} />
+        <Route path="/blog/category/:category" element={<BlogCategory />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/arugam-bay-food" element={<ArugamBayFood />} />
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
