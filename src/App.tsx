@@ -4,7 +4,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogCategory from "./pages/BlogCategory";
 import ArugamBayFood from "./pages/ArugamBayFood";
-import Footer from "./components/Footer";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
