@@ -4,7 +4,6 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogCategory from "./pages/BlogCategory";
 import ArugamBayFood from "./pages/ArugamBayFood";
-import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/category/:category" element={<BlogCategory />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/arugam-bay-food" element={<ArugamBayFood />} />
+        <Route path="/blog/arugam-bay-food-guide" element={<ArugamBayFood />} />
       </Routes>
     </Router>
   );
