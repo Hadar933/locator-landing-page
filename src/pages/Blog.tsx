@@ -22,7 +22,14 @@ const Blog = () => {
     {
       title: "Food & Restaurants",
       description: "Curated lists of the best dining spots in popular destinations",
-      comingSoon: true
+      posts: [
+        {
+          title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
+          slug: "arugam-bay-food-guide",
+          excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
+          date: "2024-03-21"
+        }
+      ]
     },
     {
       title: "City Living",
