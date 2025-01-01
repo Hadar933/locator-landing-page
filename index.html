@@ -15,8 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locator - AI-Powered Location Saving App | Save Places from Social Media</title>
     <meta name="description" content="Save and organize location recommendations from social media, blogs, and websites with AI-powered extraction. Perfect for travelers, foodies, and city explorers." />
-    <meta name="keywords" content="location saver app, save places app, travel planning tool, restaurant recommendations, AI location extractor, food spot collector" />
+    <meta name="keywords" content="location saver app, save places app, travel planning tool, restaurant recommendations, AI location extractor, food spot collector, travel app, place bookmarking" />
     <meta name="author" content="Locator" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -27,6 +29,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Locator" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -43,15 +46,17 @@
     <meta property="fb:app_id" content="your_fb_app_id" />
 
     <link rel="canonical" href="https://locator.app" />
+    <link rel="alternate" href="https://locator.app" hreflang="x-default" />
+    <link rel="alternate" href="https://locator.app" hreflang="en" />
     
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
-        "@type": "MobileApplication",
+        "@type": "SoftwareApplication",
         "name": "Locator",
         "description": "AI-powered location saving app that helps users organize place recommendations from social media and websites",
         "operatingSystem": "Android",
-        "applicationCategory": "Travel & Local",
+        "applicationCategory": "TravelApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -61,6 +66,11 @@
           "@type": "AggregateRating",
           "ratingValue": "4.5",
           "ratingCount": "100"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Locator",
+          "url": "https://locator.app"
         }
       }
     </script>

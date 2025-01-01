@@ -50,14 +50,14 @@ const BlogCategory = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{categoryData.title} | Locator Travel Blog</title>
+        <title>{`${categoryData.title} - Travel Blog | Locator App`}</title>
         <meta name="description" content={categoryData.description} />
-        <meta property="og:title" content={`${categoryData.title} | Locator Travel Blog`} />
+        <meta property="og:title" content={`${categoryData.title} - Travel Blog | Locator App`} />
         <meta property="og:description" content={categoryData.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://locator.app/blog/category/${category}`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${categoryData.title} | Locator Travel Blog`} />
+        <meta name="twitter:title" content={`${categoryData.title} - Travel Blog | Locator App`} />
         <meta name="twitter:description" content={categoryData.description} />
         <link rel="canonical" href={`https://locator.app/blog/category/${category}`} />
         
@@ -78,6 +78,11 @@ const BlogCategory = () => {
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": `https://locator.app/blog/category/${category}`
+            },
+            "about": {
+              "@type": "Thing",
+              "name": categoryData.title,
+              "description": categoryData.description
             }
           })}
         </script>
@@ -86,26 +91,30 @@ const BlogCategory = () => {
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-4xl">
-            <Link to="/blog">
-              <Button variant="ghost" className="mb-8">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Button>
-            </Link>
+            <nav aria-label="Breadcrumb" className="mb-8">
+              <Link to="/blog">
+                <Button variant="ghost">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  Back to Blog
+                </Button>
+              </Link>
+            </nav>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl font-bold mb-6">{categoryData.title}</h1>
-              <p className="text-xl text-muted-foreground mb-12">
-                {categoryData.description}
-              </p>
+              <header>
+                <h1 className="text-4xl font-bold mb-6">{categoryData.title}</h1>
+                <p className="text-xl text-muted-foreground mb-12">
+                  {categoryData.description}
+                </p>
+              </header>
               
-              <div className="space-y-8">
+              <div className="space-y-8" role="feed" aria-label={`${categoryData.title} posts`}>
                 {categoryData.posts.map((post, index) => (
-                  <motion.div
+                  <motion.article
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -115,9 +124,9 @@ const BlogCategory = () => {
                     <Link to={`/blog/${post.slug}`}>
                       <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
                       <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                      <time className="text-sm text-muted-foreground">{post.date}</time>
+                      <time dateTime={post.date} className="text-sm text-muted-foreground">{post.date}</time>
                     </Link>
-                  </motion.div>
+                  </motion.article>
                 ))}
               </div>
             </motion.div>
