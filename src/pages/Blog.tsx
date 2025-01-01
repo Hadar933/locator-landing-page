@@ -18,6 +18,12 @@ const Blog = () => {
           slug: "phuket-local-guide",
           excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
           date: "2024-12-30"
+        },
+        {
+          title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
+          slug: "coron-nature-guide",
+          excerpt: "Explore the pristine lakes, hot springs, and coral gardens of Coron, Philippines",
+          date: "2024-12-29"
         }
       ]
     },
