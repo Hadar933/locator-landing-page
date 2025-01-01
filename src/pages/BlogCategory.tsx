@@ -20,6 +20,12 @@ const BlogCategory = () => {
               slug: "phuket-local-guide",
               excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
               date: "2024-12-30"
+            },
+            {
+              title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
+              slug: "coron-nature-guide",
+              excerpt: "Explore the pristine lakes, hot springs, and coral gardens of Coron, Philippines",
+              date: "2024-12-29"
             }
           ]
         };
@@ -55,11 +61,11 @@ const BlogCategory = () => {
         <meta property="og:title" content={`${categoryData.title} - Travel Blog | Locator App`} />
         <meta property="og:description" content={categoryData.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://locator.app/blog/category/${category}`} />
+        <meta property="og:url" content={`https://locator.ltd/blog/category/${category}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${categoryData.title} - Travel Blog | Locator App`} />
         <meta name="twitter:description" content={categoryData.description} />
-        <link rel="canonical" href={`https://locator.app/blog/category/${category}`} />
+        <link rel="canonical" href={`https://locator.ltd/blog/category/${category}`} />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -72,12 +78,12 @@ const BlogCategory = () => {
               "name": "Locator",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://locator.app/logo.png"
+                "url": "https://locator.ltd/logo.png"
               }
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://locator.app/blog/category/${category}`
+              "@id": `https://locator.ltd/blog/category/${category}`
             },
             "about": {
               "@type": "Thing",
