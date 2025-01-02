@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
-import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
+import { BlogHeader } from "@/components/blog/BlogHeader";
+import { BlogSEO } from "@/components/blog/BlogSEO";
 
 const BlogPost = () => {
   const { slug } = useParams();
+  const currentDate = new Date().toISOString().split('T')[0];
 
   const posts = {
     "phuket-local-guide": {
@@ -153,8 +153,8 @@ const BlogPost = () => {
     "karpathos-local-guide": {
       title: "Karpathos: Greece's Hidden Paradise - Local Guide",
       description: "Discover the untouched beauty of Karpathos, a hidden gem in the Greek islands offering pristine beaches, authentic tavernas, and genuine Greek hospitality without the crowds of more famous destinations.",
-      publishDate: "2024-12-28",
-      modifiedDate: "2024-12-28",
+      publishDate: currentDate,
+      modifiedDate: currentDate,
       author: "Locator Team",
       content: `
         <article class="prose lg:prose-xl max-w-none">
@@ -231,86 +231,28 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>{post.title} | Locator Travel Blog</title>
-        <meta name="description" content={post.description} />
-        <meta name="author" content={post.author} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://locator.ltd/blog/${slug}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.description} />
-        <link rel="canonical" href={`https://locator.ltd/blog/${slug}`} />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": post.title,
-            "description": post.description,
-            "author": {
-              "@type": "Organization",
-              "name": post.author,
-              "url": "https://locator.ltd"
-            },
-            "datePublished": post.publishDate,
-            "dateModified": post.modifiedDate,
-            "publisher": {
-              "@type": "Organization",
-              "name": "Locator",
-              "url": "https://locator.ltd",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://locator.ltd/lovable-uploads/47fe2b25-d83e-46e5-bb42-043d91389daf.png"
-              }
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": `https://locator.ltd/blog/${slug}`
-            },
-            "keywords": "Coron, Philippines, travel guide, hot springs, lakes, beaches, marine life, island hopping, nature, tourism",
-            "articleSection": "Travel Guides"
-          })}
-        </script>
-      </Helmet>
+      <BlogSEO 
+        title={post.title}
+        description={post.description}
+        author={post.author}
+        publishDate={post.publishDate}
+        modifiedDate={post.modifiedDate}
+        slug={slug || ''}
+      />
       
       <main className="flex-grow">
         <article className="py-24">
           <div className="container max-w-4xl">
-            <div className="flex justify-between items-center mb-8">
-              <Link to="/blog">
-                <Button variant="ghost">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  Back to Blog
-                </Button>
-              </Link>
-              <a 
-                href="https://locator.ltd" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary flex items-center gap-1"
-              >
-                Visit Locator <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
+            <BlogHeader 
+              title={post.title}
+              publishDate={post.publishDate}
+            />
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
-              <div className="mb-8 text-muted-foreground">
-                <time dateTime={post.publishDate}>
-                  Published on {new Date(post.publishDate).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </time>
-              </div>
               <div 
                 className="prose lg:prose-xl max-w-none"
                 dangerouslySetInnerHTML={{ __html: post.content }}
