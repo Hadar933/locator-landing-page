@@ -10,69 +10,69 @@ const BlogPost = () => {
 
   const posts = {
     "phuket-local-guide": {
-    title: "Phuket Local Guide: From Patong to Hidden Beaches",
-    description: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife. Discover local recommendations for beaches, markets, landmarks, and nightlife spots in Phuket, Thailand.",
-    publishDate: "2024-12-30",
-    modifiedDate: "2024-12-30",
-    author: "Locator Team",
-    content: `
-      <article class="prose lg:prose-xl max-w-none">
-        <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
+      title: "Phuket Local Guide: From Patong to Hidden Beaches",
+      description: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife. Discover local recommendations for beaches, markets, landmarks, and nightlife spots in Phuket, Thailand.",
+      publishDate: "2024-12-30",
+      modifiedDate: "2024-12-30",
+      author: "Locator Team",
+      content: `
+        <article class="prose lg:prose-xl max-w-none">
+          <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
 
-        <h2>The Beaches (Because That's Why We're Here)</h2>
-        
-        <h3>Freedom Beach</h3>
-        <p>This is probably Phuket's best-kept secret. It's a bit tricky to get to, which keeps the crowds away - and that's exactly what makes it special. You can either take a longtail boat or brave the steep path down. The effort is totally worth it for the crystal-clear water and peaceful vibe.</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0461453465386!2d98.27439087507825!3d7.8741616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503a6e79d34f85%3A0xe25b4b9d1c2e01d4!2sFreedom%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h2>The Beaches (Because That's Why We're Here)</h2>
+          
+          <h3>Freedom Beach</h3>
+          <p>This is probably Phuket's best-kept secret. It's a bit tricky to get to, which keeps the crowds away - and that's exactly what makes it special. You can either take a longtail boat or brave the steep path down. The effort is totally worth it for the crystal-clear water and peaceful vibe.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0461453465386!2d98.27439087507825!3d7.8741616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503a6e79d34f85%3A0xe25b4b9d1c2e01d4!2sFreedom%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h3>Karon Beach</h3>
-        <p>If you're looking for a more laid-back alternative to Patong, Karon is your spot. The beach is huge, so you'll always find your own space. The water's usually calmer here, making it great for swimming. Pro tip: catch the sunset here - it's usually less crowded than Patong.</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7018557174886!2d98.29601097507773!3d7.820000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sKaron%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Karon Beach</h3>
+          <p>If you're looking for a more laid-back alternative to Patong, Karon is your spot. The beach is huge, so you'll always find your own space. The water's usually calmer here, making it great for swimming. Pro tip: catch the sunset here - it's usually less crowded than Patong.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7018557174886!2d98.29601097507773!3d7.820000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sKaron%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h3>Patong Beach</h3>
-        <p>The famous one! Yes, it's touristy, but there's a reason for that. The energy here is unmatched, especially around sunset when everyone gathers to watch the sky change colors. It's not just about the beach - the whole area comes alive at night.</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3012557174886!2d98.28601097507773!3d7.890000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sPatong%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Patong Beach</h3>
+          <p>The famous one! Yes, it's touristy, but there's a reason for that. The energy here is unmatched, especially around sunset when everyone gathers to watch the sky change colors. It's not just about the beach - the whole area comes alive at night.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.3012557174886!2d98.28601097507773!3d7.890000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sPatong%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h2>Local Culture & Shopping</h2>
+          <h2>Local Culture & Shopping</h2>
 
-        <h3>Wat Karon Market</h3>
-        <p>This is where you'll find the real local vibe. The market has everything from fresh fruit to street food. It's not as touristy as some other markets, which means better prices and more authentic food. Try the mango sticky rice - you won't regret it!</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8018557174886!2d98.30601097507773!3d7.810000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sWat%20Karon%20Market!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Wat Karon Market</h3>
+          <p>This is where you'll find the real local vibe. The market has everything from fresh fruit to street food. It's not as touristy as some other markets, which means better prices and more authentic food. Try the mango sticky rice - you won't regret it!</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8018557174886!2d98.30601097507773!3d7.810000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sWat%20Karon%20Market!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h3>Jungceylon Mall</h3>
-        <p>When you need a break from the heat, Jungceylon is your air-conditioned sanctuary. It's got everything from local boutiques to international brands, plus a really good food court with Thai and international options. Perfect for those occasional rainy days!</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4018557174886!2d98.29601097507773!3d7.880000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sJungceylon%20Shopping%20Center!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Jungceylon Mall</h3>
+          <p>When you need a break from the heat, Jungceylon is your air-conditioned sanctuary. It's got everything from local boutiques to international brands, plus a really good food court with Thai and international options. Perfect for those occasional rainy days!</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4018557174886!2d98.29601097507773!3d7.880000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sJungceylon%20Shopping%20Center!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h2>Must-See Landmarks</h2>
+          <h2>Must-See Landmarks</h2>
 
-        <h3>Big Buddha Phuket</h3>
-        <p>You can't miss this one - literally, you can see it from miles away! The view from up here is incredible, especially early morning or late afternoon. Remember to dress respectfully (they provide cover-ups if needed). The drive up is an adventure in itself!</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9018557174886!2d98.31601097507773!3d7.800000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sBig%20Buddha%20Phuket!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Big Buddha Phuket</h3>
+          <p>You can't miss this one - literally, you can see it from miles away! The view from up here is incredible, especially early morning or late afternoon. Remember to dress respectfully (they provide cover-ups if needed). The drive up is an adventure in itself!</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9018557174886!2d98.31601097507773!3d7.800000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sBig%20Buddha%20Phuket!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h2>Nightlife</h2>
+          <h2>Nightlife</h2>
 
-        <h3>Illuzion Club</h3>
-        <p>If you're into nightlife, Illuzion is Patong's premier spot. It's massive, with multiple rooms playing different music styles. Even if clubbing isn't your thing, it's worth checking out for the impressive light shows and atmosphere. Just remember - drinks here are pricier than at smaller bars.</p>
-        <div class="map-embed">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5018557174886!2d98.28601097507773!3d7.870000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sIlluzion%20Phuket!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+          <h3>Illuzion Club</h3>
+          <p>If you're into nightlife, Illuzion is Patong's premier spot. It's massive, with multiple rooms playing different music styles. Even if clubbing isn't your thing, it's worth checking out for the impressive light shows and atmosphere. Just remember - drinks here are pricier than at smaller bars.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5018557174886!2d98.28601097507773!3d7.870000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502af61b6c52f5%3A0x98d49ee68d75bb72!2sIlluzion%20Phuket!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <h2>Quick Tip About Locator</h2>
-        <p>By the way, I used Locator to save all these spots while I was researching my trip. It made it super easy to keep track of everything and plan my daily routes. You can save places directly from Google Maps, Instagram, or any website, and it organizes everything on a map for you. Really helped me visualize how close (or far) everything was from each other!</p>
-      </article>
-    `
+          <h2>Quick Tip About Locator</h2>
+          <p>By the way, I used Locator to save all these spots while I was researching my trip. It made it super easy to keep track of everything and plan my daily routes. You can save places directly from Google Maps, Instagram, or any website, and it organizes everything on a map for you. Really helped me visualize how close (or far) everything was from each other!</p>
+        </article>
+      `
     },
     "coron-nature-guide": {
       title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
@@ -145,6 +145,77 @@ const BlogPost = () => {
             <ul>
               <li><a href="https://tourism.gov.ph" target="_blank" rel="noopener noreferrer">Philippines Department of Tourism <ExternalLink className="inline h-4 w-4" /></a></li>
               <li><a href="https://divephilippines.com.ph" target="_blank" rel="noopener noreferrer">Diving Philippines <ExternalLink className="inline h-4 w-4" /></a></li>
+            </ul>
+          </div>
+        </article>
+      `
+    },
+    "karpathos-local-guide": {
+      title: "Karpathos: Greece's Hidden Paradise - Local Guide",
+      description: "Discover the untouched beauty of Karpathos, a hidden gem in the Greek islands offering pristine beaches, authentic tavernas, and genuine Greek hospitality without the crowds of more famous destinations.",
+      publishDate: "2024-12-28",
+      modifiedDate: "2024-12-28",
+      author: "Locator Team",
+      content: `
+        <article class="prose lg:prose-xl max-w-none">
+          <p class="lead">While most travelers flock to Santorini or Mykonos, Karpathos remains one of Greece's best-kept secrets. This guide will show you why this lesser-known island offers an authentic Greek experience at a fraction of the cost, with all the beauty but none of the crowds.</p>
+
+          <h2>Why Karpathos Should Be Your Next Greek Destination</h2>
+          <p>Nestled between Crete and Rhodes, Karpathos offers everything you'd expect from a Greek island - crystal-clear waters, stunning beaches, and authentic tavernas - but without the tourist crowds and inflated prices of more famous destinations. This relative obscurity has helped preserve both its natural beauty and cultural authenticity.</p>
+
+          <h2>Where to Eat: Authentic Greek Cuisine</h2>
+
+          <h3>Blue Garden Restaurant</h3>
+          <p>A hidden gem serving traditional Greek dishes with a modern twist. The garden setting creates a magical atmosphere for dinner, and their moussaka is legendary among locals.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.9876543210987!2d27.2012345!3d35.5087654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sBlue%20Garden%20Restaurant!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h3>Erasmias Grill House</h3>
+          <p>For the best souvlaki on the island, look no further. This family-run taverna offers generous portions of grilled meats and fresh seafood at local prices. The outdoor seating area provides stunning views of the sunset.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.8765432109876!2d27.2123456!3d35.5198765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sErasmias%20Grill%20House!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h2>Beaches: Untouched Paradise</h2>
+
+          <h3>Apella Beach</h3>
+          <p>Often ranked among Greece's finest beaches, Apella remains surprisingly uncrowded. The crystal-clear waters are perfect for snorkeling, and the dramatic cliffs provide a stunning backdrop for photos.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.7654321098765!2d27.2234567!3d35.5309876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sApella%20Beach!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h3>Michaliou Kipos Beach</h3>
+          <p>A hidden paradise accessible by a scenic drive. The beach's remote location means you might have this slice of heaven all to yourself, especially during shoulder season.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.6543210987654!2d27.2345678!3d35.5420987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sMichaliou%20Kipos%20Beach!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h2>Where to Stay</h2>
+
+          <h3>Alimounda Mare Hotel</h3>
+          <p>Luxury accommodation without the luxury price tag. This 5-star hotel offers stunning sea views, a private beach, and exceptional service at rates that would be unheard of in Santorini or Mykonos.</p>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5432109876543!2d27.2456789!3d35.5532098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sAlimounda%20Mare%20Hotel!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <h2>Travel Tips</h2>
+          <ul>
+            <li>Best time to visit: May-June or September-October for perfect weather and fewer tourists</li>
+            <li>Getting there: Direct flights from Athens or Rhodes are available</li>
+            <li>Rent a car to explore the island's hidden beaches and mountain villages</li>
+            <li>Learn a few Greek phrases - locals appreciate the effort!</li>
+            <li>Prices are generally 30-40% lower than in more popular Greek islands</li>
+          </ul>
+
+          <h2>Using Locator in Karpathos</h2>
+          <p>Save all these locations in your Locator app before your trip. The offline map feature will come in handy as some remote beaches might have limited mobile coverage. You can also discover more hidden gems from other travelers who've visited Karpathos.</p>
+
+          <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+            <h3>Additional Resources</h3>
+            <ul>
+              <li><a href="https://www.visitgreece.gr" target="_blank" rel="noopener noreferrer">Official Greek Tourism Website</a></li>
+              <li><a href="https://www.karpathos.gr" target="_blank" rel="noopener noreferrer">Karpathos Official Website</a></li>
             </ul>
           </div>
         </article>

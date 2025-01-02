@@ -26,6 +26,12 @@ const BlogCategory = () => {
               slug: "coron-nature-guide",
               excerpt: "Explore the pristine lakes, hot springs, and coral gardens of Coron, Philippines",
               date: "2024-12-29"
+            },
+            {
+              title: "Karpathos: Greece's Hidden Paradise - Local Guide",
+              slug: "karpathos-local-guide",
+              excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
+              date: "2024-12-28"
             }
           ]
         };
