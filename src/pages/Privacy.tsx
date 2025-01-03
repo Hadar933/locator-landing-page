@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen">
-      <div className="container py-16">
+    <div className="min-h-screen flex flex-col">
+      <div className="container py-16 flex-grow">
         <div className="max-w-3xl mx-auto">
           <Link to="/">
             <Button variant="ghost" className="mb-8">
@@ -135,6 +136,7 @@ const Privacy = () => {
           </article>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
