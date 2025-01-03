@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="py-12 bg-white border-t">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <div>
             <img 
               src="/lovable-uploads/47fe2b25-d83e-46e5-bb42-043d91389daf.png" 
