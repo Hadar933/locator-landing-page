@@ -132,7 +132,7 @@ const Privacy = () => {
 
             <h2>Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-            <p>By email: <a href="mailto:locatorapp.ai@gmail.com" className="text-primary hover:underline">locatorapp.ai@gmail.com</a></p>
+            <p>By email: <a href="mailto:locatorapp.ai@gmail.com" className="hover:text-blue-600 transition-colors">locatorapp.ai@gmail.com</a></p>
           </article>
         </div>
       </div>
