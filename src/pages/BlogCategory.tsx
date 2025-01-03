@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 
 const BlogCategory = () => {
@@ -148,16 +146,7 @@ const BlogCategory = () => {
 
       <main className="flex-grow">
         <section className="py-24">
-          <div className="container max-w-4xl">
-            <div className="mb-12">
-              <Link to="/blog">
-                <Button variant="ghost" className="gap-2">
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to Blog
-                </Button>
-              </Link>
-            </div>
-            
+          <div className="container max-w-4xl">            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

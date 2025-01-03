@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
@@ -89,16 +87,7 @@ const Blog = () => {
 
       <main className="flex-grow">
         <section className="py-24">
-          <div className="container max-w-6xl">
-            <div className="mb-12">
-              <Link to="/">
-                <Button variant="ghost" className="gap-2">
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to Home
-                </Button>
-              </Link>
-            </div>
-            
+          <div className="container max-w-6xl">            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
