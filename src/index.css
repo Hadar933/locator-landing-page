@@ -99,9 +99,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* Leaflet map styles */
-.leaflet-container {
-  width: 100%;
-  height: 100%;
-}
