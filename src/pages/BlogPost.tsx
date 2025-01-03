@@ -57,6 +57,9 @@ const BlogPost = () => {
     return <div>Post not found</div>;
   }
 
+  // Extract country from the URL or use a default
+  const country = post.country || 'philippines'; // Default to philippines if not specified
+
   return (
     <div className="min-h-screen flex flex-col">
       <BlogSEO 
@@ -67,6 +70,7 @@ const BlogPost = () => {
         modifiedDate={post.modifiedDate}
         slug={slug || ''}
         image={post.image}
+        country={country}
       />
       
       <main className="flex-grow">
