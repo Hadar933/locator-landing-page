@@ -7,11 +7,13 @@ export const post = {
   image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg"
-        alt="Scenic view of Coron's limestone cliffs and turquoise waters"
-        className="w-full aspect-[21/9] object-cover object-center rounded-lg mb-8"
-      />
+      <div class="h-64 w-full overflow-hidden rounded-lg mb-8">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg"
+          alt="Scenic view of Coron's limestone cliffs and turquoise waters"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
       <p class="lead">Welcome to Coron, a slice of paradise in the Philippines! This guide will take you through some of the most breathtaking natural wonders this island has to offer. From therapeutic hot springs to crystal-clear lakes and vibrant marine life, here's your guide to experiencing Coron's natural beauty.</p>
 
       <h2>Therapeutic Waters</h2>
