@@ -18,7 +18,23 @@ export const generateBlogPrompt = ({
   };
 
   const flag = countryFlags[country] || '🌍';
-  const locationsList = locations.map(loc => `- ${loc.name} (${loc.googleMapLink})`).join('\n');
+  
+  // Transform location data to include proper map embed code
+  const locationsList = locations.map(loc => {
+    const mapEmbedCode = `<iframe
+      src="${loc.googleMapLink.replace('/maps/', '/maps/embed/')}"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>`;
+    
+    return `- ${loc.name}
+      Map embed code: ${mapEmbedCode}
+      Google Maps link: ${loc.googleMapLink}`;
+  }).join('\n');
 
   return `
 Create an immersive and SEO-optimized travel blog post with the following specifications:
@@ -32,10 +48,12 @@ CONTENT STRUCTURE & NARRATIVE:
    - Include a brief overview of what readers will learn
    - End with a clear value proposition
 
-2. Quick Navigation:
-   - Add a table of contents with jump links
-   - Include estimated reading time
-   - List key highlights with emoji bullets
+2. Header Image Implementation:
+   - Main featured image: ${headerImage}
+   - Required format: Responsive image with 16:9 aspect ratio
+   - Alt text must include location keywords
+   - Lazy loading for performance
+   - Caption should include location context
 
 3. For each location (${locationsList}):
    - Start with an engaging story or local insight
@@ -43,36 +61,8 @@ CONTENT STRUCTURE & NARRATIVE:
    - Add local context and cultural significance
    - Incorporate relevant historical facts
    - End with insider tips that aren't commonly known
-
-4. Transitions:
-   - Create natural flow between locations
-   - Use local transportation details as transition elements
-   - Include time estimates between places
-
-VISUAL CONTENT STRATEGY:
-----------------------
-1. Header Image:
-   - Use ${headerImage} as main featured image
-   - Add descriptive alt text with location keywords
-
-2. Throughout Content:
-   - Place Google Maps embeds after location introductions
-   - Include image gallery for each location (3-4 images)
-   - Add captions that provide additional context
-   - Use icons for key information (⏰ for timing, 💰 for costs)
-
-USER ENGAGEMENT:
---------------
-1. Interactive Elements:
-   - Add "Save for Later" CTAs with Locator app
-   - Include social share buttons at key points
-   - Create pullout quotes for memorable insights
-
-2. Formatting for Readability:
-   - Use short paragraphs (2-3 sentences max)
-   - Include bullet points for quick tips
-   - Add highlighted boxes for important warnings/tips
-   - Create comparison tables where relevant
+   - Properly embed the provided Google Maps iframe
+   - Include image gallery section after map
 
 SEO OPTIMIZATION:
 ---------------
@@ -138,5 +128,5 @@ CONTENT REQUIREMENTS:
 5. Accuracy: Verify all facts and prices
 6. Local insights: Include non-obvious tips
 
-This structured approach ensures the content is both engaging for readers and optimized for search engines, while maintaining a natural flow and providing genuine value to travelers.`;
+This structured approach ensures proper handling of both images and maps while maintaining SEO optimization and user engagement.`;
 };
