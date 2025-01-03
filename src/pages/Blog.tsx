@@ -1,72 +1,17 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Search } from "lucide-react";
+import { ArrowLeft, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import { BlogCategoryCard } from "@/components/blog/BlogCategoryCard";
+import { blogCategories } from "@/content/blog/categories";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   
-  const blogCategories = [
-    {
-      title: "Philippines",
-      description: "Discover hidden gems and travel guides across the Philippine archipelago",
-      slug: "philippines",
-      posts: [
-        {
-          title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
-          slug: "coron-nature-guide",
-          excerpt: "Discover the natural wonders of Coron - from therapeutic hot springs to pristine lakes and vibrant coral gardens",
-          date: "2024-12-29"
-        }
-      ]
-    },
-    {
-      title: "Thailand",
-      description: "Local insights and travel guides for exploring Thailand",
-      slug: "thailand",
-      posts: [
-        {
-          title: "Phuket Local Guide: From Patong to Hidden Beaches",
-          slug: "phuket-local-guide",
-          excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
-          date: "2024-12-30"
-        }
-      ]
-    },
-    {
-      title: "Sri Lanka",
-      description: "Food, culture, and travel guides for Sri Lanka",
-      slug: "sri-lanka",
-      posts: [
-        {
-          title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
-          slug: "arugam-bay-food-guide",
-          excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
-          date: "2024-12-31"
-        }
-      ]
-    },
-    {
-      title: "Greece",
-      description: "Explore the hidden corners and local culture of Greece",
-      slug: "greece",
-      posts: [
-        {
-          title: "Karpathos: Greece's Hidden Paradise - Local Guide",
-          slug: "karpathos-local-guide",
-          excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
-          date: "2024-12-28"
-        }
-      ]
-    }
-  ];
-
-  // Filter categories and posts based on search query
   const filteredCategories = blogCategories.filter(category => {
     const matchesCategory = 
       category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -84,7 +29,10 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Travel & Food Blog | Locator App</title>
-        <meta name="description" content="Discover curated travel guides and food recommendations from around the world. Expert tips for travelers and food enthusiasts." />
+        <meta 
+          name="description" 
+          content="Discover curated travel guides and food recommendations from around the world. Expert tips for travelers and food enthusiasts." 
+        />
         <meta property="og:title" content="Travel & Food Blog | Locator App" />
         <meta property="og:description" content="Discover curated travel guides and food recommendations from around the world." />
         <meta property="og:type" content="blog" />
@@ -153,41 +101,7 @@ const Blog = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="feed" aria-label="Blog categories">
                 {filteredCategories.map((category, index) => (
-                  <motion.article
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Card className="h-full">
-                      <CardHeader>
-                        <CardTitle>{category.title}</CardTitle>
-                        <p className="text-muted-foreground">{category.description}</p>
-                      </CardHeader>
-                      <CardContent>
-                        <div className="space-y-4">
-                          {category.posts && category.posts.length > 0 && (
-                            <Link 
-                              to={`/blog/${category.posts[0].slug}`}
-                              className="block p-4 rounded-lg hover:bg-accent transition-colors"
-                            >
-                              <h3 className="text-lg font-semibold mb-2">{category.posts[0].title}</h3>
-                              <p className="text-muted-foreground text-sm mb-2">{category.posts[0].excerpt}</p>
-                              <time dateTime={category.posts[0].date} className="text-sm text-muted-foreground">
-                                {category.posts[0].date}
-                              </time>
-                            </Link>
-                          )}
-                          <Link to={`/blog/category/${category.slug}`}>
-                            <Button variant="secondary" className="w-full mt-4">
-                              See More
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.article>
+                  <BlogCategoryCard key={category.slug} category={category} index={index} />
                 ))}
               </div>
 
