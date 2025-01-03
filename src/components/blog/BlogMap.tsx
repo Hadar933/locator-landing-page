@@ -1,7 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import React from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for default marker icons in Leaflet
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
 
 // Blog locations data
 const blogLocations = [
@@ -32,79 +41,37 @@ const blogLocations = [
 ];
 
 const BlogMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState<string>('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!mapContainer.current || !mapboxToken) return;
-
-    mapboxgl.accessToken = mapboxToken;
-    
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/light-v11',
-      center: [0, 20],
-      zoom: 1.5,
-    });
-
-    // Add navigation controls
-    map.current.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-    // Add markers for each blog location
-    blogLocations.forEach((location) => {
-      const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-        `<h3 class="font-bold">${location.title}</h3>
-         <p class="text-sm text-muted-foreground">${location.description}</p>`
-      );
-
-      const marker = new mapboxgl.Marker()
-        .setLngLat(location.coordinates)
-        .setPopup(popup)
-        .addTo(map.current!);
-
-      // Add click event to marker
-      marker.getElement().addEventListener('click', () => {
-        navigate(`/blog/category/${location.country}`);
-      });
-    });
-
-    return () => {
-      map.current?.remove();
-    };
-  }, [mapboxToken, navigate]);
-
   return (
-    <div className="space-y-4">
-      {!mapboxToken && (
-        <div className="p-4 bg-secondary rounded-lg">
-          <label className="block text-sm font-medium mb-2">
-            Please enter your Mapbox public token to view the map:
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded"
-            placeholder="Enter Mapbox token..."
-            onChange={(e) => setMapboxToken(e.target.value)}
-          />
-          <p className="text-xs text-muted-foreground mt-2">
-            You can find your public token at{' '}
-            <a 
-              href="https://account.mapbox.com/access-tokens/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Mapbox Access Tokens
-            </a>
-          </p>
-        </div>
-      )}
-      <div 
-        ref={mapContainer} 
-        className="w-full h-[600px] rounded-lg shadow-lg"
-      />
+    <div className="w-full h-[600px] rounded-lg shadow-lg overflow-hidden">
+      <MapContainer
+        center={[20, 0]}
+        zoom={2}
+        style={{ height: '100%', width: '100%' }}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {blogLocations.map((location, index) => (
+          <Marker
+            key={index}
+            position={[location.coordinates[1], location.coordinates[0]]}
+            eventHandlers={{
+              click: () => navigate(`/blog/category/${location.country}`)
+            }}
+          >
+            <Popup>
+              <div>
+                <h3 className="font-bold">{location.title}</h3>
+                <p className="text-sm text-muted-foreground">{location.description}</p>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     </div>
   );
 };
