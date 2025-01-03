@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 
 const Blog = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  
   const blogCategories = [
     {
       title: "Philippines",
@@ -61,6 +65,20 @@ const Blog = () => {
       ]
     }
   ];
+
+  // Filter categories and posts based on search query
+  const filteredCategories = blogCategories.filter(category => {
+    const matchesCategory = 
+      category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      category.description.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesPosts = category.posts?.some(post =>
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return matchesCategory || matchesPosts;
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -118,12 +136,23 @@ const Blog = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl font-bold mb-6">Travel & Food Recommendations</h1>
-              <p className="text-xl text-muted-foreground mb-12">
+              <p className="text-xl text-muted-foreground mb-8">
                 Discover curated guides and recommendations from around the world
               </p>
+
+              <div className="relative mb-8">
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search countries, places, or food recommendations..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10"
+                />
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="feed" aria-label="Blog categories">
-                {blogCategories.map((category, index) => (
+                {filteredCategories.map((category, index) => (
                   <motion.article
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
