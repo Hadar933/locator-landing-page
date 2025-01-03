@@ -4,12 +4,12 @@ export const post = {
   publishDate: "2024-12-28",
   modifiedDate: "2024-12-28",
   author: "Locator Team",
-  image: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?q=80&w=1200&auto=format&fit=crop",
+  image: "https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?q=80&w=1200&auto=format&fit=crop",
   content: `
     <article class="prose lg:prose-xl max-w-none">
       <img 
-        src="https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?q=80&w=1200&auto=format&fit=crop"
-        alt="Beautiful Greek island landscape"
+        src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?q=80&w=1200&auto=format&fit=crop"
+        alt="Beautiful Greek coastal landscape with white buildings and blue sea"
         className="w-full h-[400px] object-cover rounded-lg mb-8"
       />
       <p class="lead">While most travelers flock to Santorini or Mykonos, Karpathos remains one of Greece's best-kept secrets. This guide will show you why this lesser-known island offers an authentic Greek experience at a fraction of the cost, with all the beauty but none of the crowds.</p>
