@@ -62,6 +62,38 @@ const BlogCategory = () => {
             }
           ]
         };
+      case 'israel':
+        return {
+          title: "Israel",
+          description: "Explore the vibrant food scene and cultural hotspots of Israel",
+          posts: [
+            {
+              title: "Tel Aviv Café Culture: Best Coffee Spots Guide",
+              slug: "tel-aviv-cafe-guide",
+              excerpt: "A curated guide to Tel Aviv's most charming cafés, from hidden gems to popular spots",
+              date: "2024-12-27"
+            },
+            {
+              title: "Tel Aviv's Ultimate Burger Guide: Local Favorites",
+              slug: "tel-aviv-burger-guide",
+              excerpt: "Discover the juiciest, most flavorful burgers in Tel Aviv's vibrant food scene",
+              date: "2024-01-20"
+            }
+          ]
+        };
+      case 'italy':
+        return {
+          title: "Italy",
+          description: "Explore the charming streets and hidden gems of Italy's most beautiful cities",
+          posts: [
+            {
+              title: "Naples Shopping Streets Guide: From Via Toledo to Via Chiaia",
+              slug: "naples-streets-guide",
+              excerpt: "Discover the most iconic shopping streets of Naples, from the historic Via Toledo to the elegant Via Chiaia",
+              date: "2024-01-15"
+            }
+          ]
+        };
       default:
         return null;
     }
