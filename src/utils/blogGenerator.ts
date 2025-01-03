@@ -98,16 +98,6 @@ export const generateBlogPost = ({
     publishDate: currentDate,
     modifiedDate: currentDate,
     image: headerImage,
-    content,
-    tags: [
-      inferredCountry,
-      "Travel Guide",
-      "Local Recommendations",
-      "Hidden Gems",
-      title,
-      ...locations.map(loc => loc.name)
-    ],
-    category: "Travel Guide",
-    readingTime: "5 min read"
+    content
   };
 };
