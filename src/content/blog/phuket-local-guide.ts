@@ -4,6 +4,7 @@ export const post = {
   publishDate: "2024-12-30",
   modifiedDate: "2024-12-30",
   author: "Locator Team",
+  image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop",
   content: `
     <article class="prose lg:prose-xl max-w-none">
       <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>

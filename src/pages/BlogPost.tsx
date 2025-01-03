@@ -22,6 +22,7 @@ const BlogPost = () => {
         publishDate={post.publishDate}
         modifiedDate={post.modifiedDate}
         slug={slug || ''}
+        image={post.image}
       />
       
       <main className="flex-grow">
