@@ -5,7 +5,38 @@ import { post as karpathosGuide } from './karpathos-local-guide';
 import { post as telAvivCafeGuide } from './tel-aviv-cafe-guide';
 import { post as naplesStreetsGuide } from './naples-streets-guide';
 
-export const posts = {
+export interface BlogLocation {
+  name: string;
+  googleMapLink: string;
+  coordinates?: {lat: number, lng: number};
+  contentSections: {
+    introduction: string;
+    highlights: string[];
+    bestTimeToVisit: string;
+    insiderTips: string[];
+    mapEmbed: string;
+  };
+}
+
+export interface BlogPost {
+  title: string;
+  description: string;
+  author: string;
+  publishDate: string;
+  modifiedDate: string;
+  image: string;
+  country: string;
+  flag: string;
+  locations: BlogLocation[];
+  callToAction: {
+    position: number;
+    text: string;
+    buttonText: string;
+    link: string;
+  };
+}
+
+export const posts: Record<string, BlogPost> = {
   "phuket-local-guide": phuketGuide,
   "arugam-bay-food-guide": arugamBayGuide,
   "coron-nature-guide": coronGuide,
@@ -13,5 +44,3 @@ export const posts = {
   "tel-aviv-cafe-guide": telAvivCafeGuide,
   "naples-streets-guide": naplesStreetsGuide
 };
-
-export type BlogPost = typeof phuketGuide;

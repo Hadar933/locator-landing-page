@@ -3,20 +3,18 @@ import { Footer } from "@/components/Footer";
 import { useParams } from "react-router-dom";
 import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogSEO } from "@/components/blog/BlogSEO";
-import { posts } from "@/content/blog/posts";
+import { posts, BlogPost as BlogPostType } from "@/content/blog/posts";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = posts[slug as keyof typeof posts];
+  const post = posts[slug as keyof typeof posts] as BlogPostType;
 
   if (!post) {
     return <div>Post not found</div>;
   }
 
-  const renderLocation = (location: typeof post.locations[0], index: number) => {
+  const renderLocation = (location: BlogPostType["locations"][0], index: number) => {
     return (
       <section key={location.name} className="mb-12">
         <h2 className="text-2xl font-bold mb-4">{location.name}</h2>
