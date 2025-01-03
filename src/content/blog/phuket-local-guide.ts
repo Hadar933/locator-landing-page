@@ -7,6 +7,11 @@ export const post = {
   image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop",
   content: `
     <article class="prose lg:prose-xl max-w-none">
+      <img 
+        src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?q=80&w=1200&auto=format&fit=crop"
+        alt="Beautiful beach in Phuket with traditional longtail boats"
+        className="w-full h-[400px] object-cover rounded-lg mb-8"
+      />
       <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
 
       <h2>The Beaches (Because That's Why We're Here)</h2>
