@@ -7,10 +7,12 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogCategory from "./pages/BlogCategory";
 import ComingSoon from "./pages/ComingSoon";
+import { NavigationBar } from "./components/NavigationBar";
 
 function App() {
   return (
     <Router>
+      <NavigationBar />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/privacy" element={<Privacy />} />
