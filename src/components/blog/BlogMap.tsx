@@ -3,17 +3,27 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 // Fix for default marker icons in Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
 });
 
-// Blog locations data
-const blogLocations = [
+// Blog locations data with proper typing
+interface BlogLocation {
+  country: string;
+  coordinates: [number, number]; // Explicitly typed as [lat, lng]
+  title: string;
+  description: string;
+}
+
+const blogLocations: BlogLocation[] = [
   {
     country: 'philippines',
     coordinates: [14.5995, 120.9842], // Philippines coordinates [lat, lng]
