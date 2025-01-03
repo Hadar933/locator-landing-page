@@ -1,9 +1,8 @@
-import { BlogPost } from "@/content/blog/posts";
-
 interface Location {
   googleMapLink: string;
   name: string;
   coordinates?: {lat: number, lng: number};
+  description?: string;
 }
 
 interface BlogInput {
@@ -19,6 +18,7 @@ const countryFlags: Record<string, string> = {
   'Sri Lanka': '🇱🇰',
   'Greece': '🇬🇷',
   'Israel': '🇮🇱',
+  'Italy': '🇮🇹'
 };
 
 const inferCountryFromTitle = (title: string): string => {
@@ -31,14 +31,14 @@ export const generateBlogPost = ({
   headerImage, 
   country, 
   locations 
-}: BlogInput): BlogPost => {
+}: BlogInput) => {
   const inferredCountry = country || inferCountryFromTitle(title);
   const flag = countryFlags[inferredCountry] || '🌍';
   
   const currentDate = new Date().toISOString().split('T')[0];
   
   const generateLocationContent = (location: Location, index: number) => {
-    return `
+    return location.description || `
       <section class="space-y-6">
         <h2 class="text-2xl font-bold">${location.name}</h2>
         
