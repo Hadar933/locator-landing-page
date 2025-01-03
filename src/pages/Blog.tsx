@@ -71,14 +71,13 @@ const Blog = () => {
               }
             },
             "blogPost": blogCategories
-              .flatMap(category => category.posts || [])
-              .map(post => ({
+              .flatMap(category => category.posts?.map(post => ({
                 "@type": "BlogPosting",
                 "headline": post.title,
                 "description": post.excerpt,
                 "datePublished": post.date,
-                "url": `https://locator.app/blog/${post.country?.toLowerCase()}.${post.slug}`
-              }))
+                "url": `https://locator.app/blog/${category.slug}.${post.slug}`
+              })) || [])
           })}
         </script>
       </Helmet>
