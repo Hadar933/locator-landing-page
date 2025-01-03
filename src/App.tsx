@@ -21,8 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:country" element={<BlogCategory />} />
         <Route path="/blog/:country/:slug" element={<BlogPost />} />
-        <Route path="/blog/category/:category" element={<BlogCategory />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sitemap.xml" element={<Sitemap />} />

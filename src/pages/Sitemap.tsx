@@ -45,7 +45,7 @@ const Sitemap = () => {
   <!-- Blog Categories -->
   ${blogCategories.map(category => `
   <url>
-    <loc>${baseUrl}/blog/category/${category.slug}</loc>
+    <loc>${baseUrl}/blog/${category.slug}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

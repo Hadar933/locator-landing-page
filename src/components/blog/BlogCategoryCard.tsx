@@ -40,7 +40,7 @@ export const BlogCategoryCard = ({ category, index }: BlogCategoryCardProps) => 
                 </time>
               </Link>
             )}
-            <Link to={`/blog/category/${category.slug}`}>
+            <Link to={`/blog/${category.slug}`}>
               <Button variant="secondary" className="w-full mt-4">
                 See More
                 <ArrowRight className="ml-2 h-4 w-4" />
