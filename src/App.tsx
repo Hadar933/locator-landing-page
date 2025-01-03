@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogCategory from "./pages/BlogCategory";
 import ComingSoon from "./pages/ComingSoon";
+import Newsletter from "./pages/Newsletter";
 import { NavigationBar } from "./components/NavigationBar";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/blog/category/:category" element={<BlogCategory />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
+        <Route path="/newsletter" element={<Newsletter />} />
       </Routes>
     </Router>
   );
