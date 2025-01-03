@@ -35,15 +35,6 @@ const BlogPost = () => {
           <p>{location.contentSections.bestTimeToVisit}</p>
         </div>
 
-        <div className="mb-6">
-          <h3 className="text-xl font-semibold mb-3">Insider Tips</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            {location.contentSections.insiderTips.map((tip, i) => (
-              <li key={i}>{tip}</li>
-            ))}
-          </ul>
-        </div>
-
         <div className="rounded-lg overflow-hidden">
           <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
         </div>
