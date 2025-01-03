@@ -12,6 +12,35 @@ interface BlogInput {
   locations: Location[];
 }
 
+interface BlogStructure {
+  title: string;
+  description: string;
+  author: string;
+  publishDate: string;
+  modifiedDate: string;
+  image: string;
+  country: string;
+  flag: string;
+  locations: {
+    name: string;
+    googleMapLink: string;
+    coordinates?: {lat: number, lng: number};
+    contentSections: {
+      introduction: string;
+      highlights: string[];
+      bestTimeToVisit: string;
+      insiderTips: string[];
+      mapEmbed: string;
+    };
+  }[];
+  callToAction: {
+    position: number; // After which location to insert the CTA
+    text: string;
+    buttonText: string;
+    link: string;
+  };
+}
+
 const countryFlags: Record<string, string> = {
   'Philippines': '🇵🇭',
   'Thailand': '🇹🇭',
@@ -31,65 +60,10 @@ export const generateBlogPost = ({
   headerImage, 
   country, 
   locations 
-}: BlogInput) => {
+}: BlogInput): BlogStructure => {
   const inferredCountry = country || inferCountryFromTitle(title);
   const flag = countryFlags[inferredCountry] || '🌍';
-  
   const currentDate = new Date().toISOString().split('T')[0];
-  
-  const generateLocationContent = (location: Location, index: number) => {
-    return location.description || `
-      <section class="space-y-6">
-        <h2 class="text-2xl font-bold">${location.name}</h2>
-        
-        <!-- Pre-content for ${location.name} -->
-        <p>[Add engaging introduction about ${location.name} here]</p>
-
-        <div class="aspect-w-16 aspect-h-9">
-          <iframe
-            src="${location.googleMapLink}"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-
-        <!-- Post-content for ${location.name} -->
-        <p>[Add detailed description, tips, and experiences about ${location.name} here]</p>
-      </section>
-
-      ${index === 1 ? `
-        <div class="my-12 text-center">
-          <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-            Add these places to Locator
-          </a>
-        </div>
-      ` : ''}
-    `;
-  };
-
-  const content = `
-    <div class="space-y-8">
-      <p class="text-lg leading-relaxed">
-        [Add introduction about the overall experience and what makes these locations special]
-      </p>
-
-      ${locations.map((location, index) => generateLocationContent(location, index)).join('\n')}
-
-      <section class="mt-12 space-y-4">
-        <h2 class="text-2xl font-bold">Tips for Your Visit</h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>[Add practical tip 1]</li>
-          <li>[Add practical tip 2]</li>
-          <li>[Add practical tip 3]</li>
-          <li>[Add practical tip 4]</li>
-        </ul>
-      </section>
-    </div>
-  `;
 
   return {
     title: `${flag} ${title}`,
@@ -98,6 +72,40 @@ export const generateBlogPost = ({
     publishDate: currentDate,
     modifiedDate: currentDate,
     image: headerImage,
-    content
+    country: inferredCountry,
+    flag,
+    locations: locations.map(location => ({
+      name: location.name,
+      googleMapLink: location.googleMapLink,
+      coordinates: location.coordinates,
+      contentSections: {
+        introduction: "[AI: Add engaging introduction about the location]",
+        highlights: [
+          "[AI: Add key highlight 1]",
+          "[AI: Add key highlight 2]",
+          "[AI: Add key highlight 3]"
+        ],
+        bestTimeToVisit: "[AI: Add best time to visit information]",
+        insiderTips: [
+          "[AI: Add insider tip 1]",
+          "[AI: Add insider tip 2]"
+        ],
+        mapEmbed: `<iframe
+          src="${location.googleMapLink}"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>`
+      }
+    })),
+    callToAction: {
+      position: 1, // Default to after the second location
+      text: "Want to save these places for your next trip?",
+      buttonText: "Download Locator App",
+      link: "https://locator.ltd"
+    }
   };
 };
