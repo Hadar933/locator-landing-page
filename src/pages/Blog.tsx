@@ -12,7 +12,6 @@ import { posts } from "@/content/blog/posts";
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   
-  // First, get all posts from all categories for searching
   const allPosts = Object.entries(posts).map(([slug, post]) => ({
     slug,
     title: post.title,
@@ -22,7 +21,6 @@ const Blog = () => {
     country: post.country
   }));
 
-  // Search through posts first
   const matchingPosts = searchQuery ? allPosts.filter(post => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -31,7 +29,6 @@ const Blog = () => {
     (post.category && post.category.toLowerCase().includes(searchQuery.toLowerCase()))
   ) : [];
 
-  // If no direct post matches, filter categories
   const filteredCategories = searchQuery && !matchingPosts.length ? blogCategories.filter(category => {
     const matchesCategory = 
       category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -80,7 +77,7 @@ const Blog = () => {
                 "headline": post.title,
                 "description": post.excerpt,
                 "datePublished": post.date,
-                "url": `https://locator.app/blog/${post.slug}`
+                "url": `https://locator.app/blog/${post.country?.toLowerCase()}.${post.slug}`
               }))
           })}
         </script>
@@ -120,7 +117,7 @@ const Blog = () => {
                       transition={{ delay: index * 0.1 }}
                       className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow"
                     >
-                      <Link to={`/blog/${post.slug}`}>
+                      <Link to={`/blog/${post.country?.toLowerCase()}.${post.slug}`}>
                         <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
                         <p className="text-muted-foreground mb-2">{post.description}</p>
                         {post.country && (
