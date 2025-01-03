@@ -68,20 +68,6 @@ export const blogCategories = [
         date: "2024-12-27"
       }
     ]
-  },
-  {
-    title: "Italy",
-    flag: "🇮🇹",
-    description: "Explore the charming streets and hidden gems of Italy's most beautiful cities",
-    slug: "italy",
-    posts: [
-      {
-        title: "Naples Shopping Streets Guide: From Via Toledo to Via Chiaia",
-        slug: "naples-streets-guide",
-        excerpt: "Discover the most iconic shopping streets of Naples, from the historic Via Toledo to the elegant Via Chiaia",
-        date: "2024-01-15"
-      }
-    ]
   }
 ];
 

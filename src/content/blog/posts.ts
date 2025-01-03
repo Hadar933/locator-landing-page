@@ -3,7 +3,6 @@ import { post as arugamBayGuide } from './arugam-bay-food-guide';
 import { post as coronGuide } from './coron-nature-guide';
 import { post as karpathosGuide } from './karpathos-local-guide';
 import { post as telAvivCafeGuide } from './tel-aviv-cafe-guide';
-import { post as naplesStreetsGuide } from './naples-streets-guide';
 
 export interface BlogLocation {
   name: string;
@@ -45,6 +44,5 @@ export const posts: Record<string, BlogPost> = {
   "arugam-bay-food-guide": arugamBayGuide,
   "coron-nature-guide": coronGuide,
   "karpathos-local-guide": karpathosGuide,
-  "tel-aviv-cafe-guide": telAvivCafeGuide,
-  "naples-streets-guide": naplesStreetsGuide
+  "tel-aviv-cafe-guide": telAvivCafeGuide
 };
