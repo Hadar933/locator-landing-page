@@ -15,7 +15,7 @@ export const BurgerMenu = () => {
         </button>
       </SheetTrigger>
       <SheetContent>
-        <nav className="flex flex-col gap-6 mt-8">
+        <nav className="flex flex-col gap-6 mt-20">
           <div>
             <h3 className="font-semibold mb-2">Company</h3>
             <Link to="/about" className="block text-muted-foreground hover:text-primary transition-colors py-1">
