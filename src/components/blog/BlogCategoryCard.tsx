@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BlogCategory } from "@/content/blog/categories";
-import { posts } from "@/content/blog/posts";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import type { BlogCategory } from "@/content/blog/categories";
 
 interface BlogCategoryCardProps {
   category: BlogCategory;
@@ -13,13 +11,6 @@ interface BlogCategoryCardProps {
 }
 
 export const BlogCategoryCard = ({ category, index }: BlogCategoryCardProps) => {
-  // Find the first post in this category to use its image
-  const firstPost = Object.values(posts).find(
-    post => post.category === category.title
-  );
-
-  const defaultImage = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
-
   return (
     <motion.article
       key={index}
@@ -29,15 +20,6 @@ export const BlogCategoryCard = ({ category, index }: BlogCategoryCardProps) => 
     >
       <Card className="h-full">
         <CardHeader>
-          <div className="mb-4 w-full max-w-[200px] mx-auto">
-            <AspectRatio ratio={16/9}>
-              <img
-                src={firstPost?.image || defaultImage}
-                alt={category.title}
-                className="object-cover w-full h-full rounded-lg"
-              />
-            </AspectRatio>
-          </div>
           <CardTitle>
             <span className="mr-2">{category.flag}</span>
             {category.title}
