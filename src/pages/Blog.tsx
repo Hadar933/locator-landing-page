@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,11 +8,32 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { BlogCategoryCard } from "@/components/blog/BlogCategoryCard";
 import { blogCategories } from "@/content/blog/categories";
+import { posts } from "@/content/blog/posts";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   
-  const filteredCategories = blogCategories.filter(category => {
+  // First, get all posts from all categories for searching
+  const allPosts = Object.entries(posts).map(([slug, post]) => ({
+    slug,
+    title: post.title,
+    description: post.description,
+    content: post.content,
+    category: post.category,
+    country: post.country
+  }));
+
+  // Search through posts first
+  const matchingPosts = searchQuery ? allPosts.filter(post => 
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (post.content && post.content.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    (post.country && post.country.toLowerCase().includes(searchQuery.toLowerCase())) ||
+    (post.category && post.category.toLowerCase().includes(searchQuery.toLowerCase()))
+  ) : [];
+
+  // If no direct post matches, filter categories
+  const filteredCategories = searchQuery && !matchingPosts.length ? blogCategories.filter(category => {
     const matchesCategory = 
       category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       category.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -23,7 +44,7 @@ const Blog = () => {
     );
 
     return matchesCategory || matchesPosts;
-  });
+  }) : blogCategories;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -99,11 +120,35 @@ const Blog = () => {
                 />
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="feed" aria-label="Blog categories">
-                {filteredCategories.map((category, index) => (
-                  <BlogCategoryCard key={category.slug} category={category} index={index} />
-                ))}
-              </div>
+              {searchQuery && matchingPosts.length > 0 ? (
+                <div className="space-y-6" role="feed" aria-label="Search results">
+                  {matchingPosts.map((post, index) => (
+                    <motion.article
+                      key={post.slug}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow"
+                    >
+                      <Link to={`/blog/${post.slug}`}>
+                        <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
+                        <p className="text-muted-foreground mb-2">{post.description}</p>
+                        {post.country && (
+                          <p className="text-sm text-muted-foreground">
+                            Country: {post.country}
+                          </p>
+                        )}
+                      </Link>
+                    </motion.article>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="feed" aria-label="Blog categories">
+                  {filteredCategories.map((category, index) => (
+                    <BlogCategoryCard key={category.slug} category={category} index={index} />
+                  ))}
+                </div>
+              )}
 
               <aside className="mt-16 p-8 bg-blue-50 rounded-xl">
                 <h2 className="text-2xl font-bold mb-4">Why Use Locator for Your Adventures?</h2>
