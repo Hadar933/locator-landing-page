@@ -21,8 +21,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       if (error) throw error;
 
       toast({
-        title: "Thanks for subscribing!",
-        description: "We'll keep you updated on our iOS launch.",
+        title: "You're In! 🎉",
+        description: "Thanks for joining! We'll keep you in the loop about our iOS launch.",
       });
       setEmail("");
     } catch (error: any) {
@@ -39,21 +39,26 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`max-w-md mx-auto ${className}`}>
-      <div className="flex flex-col sm:flex-row gap-3">
-        <Input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="flex-1"
-          disabled={isLoading}
-        />
-        <Button type="submit" disabled={isLoading}>
-          {isLoading ? "Subscribing..." : "Get Updates"}
-        </Button>
-      </div>
-    </form>
+    <div className={className}>
+      <p className="text-sm text-muted-foreground text-center mb-4">
+        We won't spam - promise 🤗
+      </p>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="flex-1"
+            disabled={isLoading}
+          />
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? "Subscribing..." : "Get Updates"}
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 };
