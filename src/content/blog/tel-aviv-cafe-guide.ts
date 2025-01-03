@@ -20,10 +20,17 @@ export const post = {
           a perfect blend of healthy and delicious options. Their fresh ingredients and creative 
           presentations make every visit memorable.
         </p>
-        <p class="text-sm text-muted-foreground">
-          📍 <a href="https://maps.app.goo.gl/PCRoZiWjybVzF4dh8" target="_blank" rel="noopener noreferrer" 
-          class="underline hover:text-blue-600">Location on Google Maps</a>
-        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b76555555%3A0x7c7b5c784b944444!2sCafe%20Yael!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="space-y-6">
@@ -33,10 +40,17 @@ export const post = {
           enjoying Tel Aviv's pleasant weather. The combination of urban atmosphere and comfortable 
           seating makes it an ideal spot for both casual meetings and peaceful solo time.
         </p>
-        <p class="text-sm text-muted-foreground">
-          📍 <a href="https://maps.app.goo.gl/drPgxcTDguTxmirD6" target="_blank" rel="noopener noreferrer" 
-          class="underline hover:text-blue-600">Location on Google Maps</a>
-        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b76666666%3A0x8c8b6c895b955555!2sStudio%20Cafe!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="space-y-6">
@@ -46,10 +60,17 @@ export const post = {
           patisserie. Their artisanal approach to baking results in some of the most delicate and 
           flavorful pastries in Tel Aviv.
         </p>
-        <p class="text-sm text-muted-foreground">
-          📍 <a href="https://maps.app.goo.gl/7R4diCY1keRXnRVF8" target="_blank" rel="noopener noreferrer" 
-          class="underline hover:text-blue-600">Location on Google Maps</a>
-        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b77777777%3A0x9c9b7c996b966666!2sPate%20%26%20Puff!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="space-y-6">
@@ -59,10 +80,17 @@ export const post = {
           aesthetic detail extends from the interior design to the presentation of their drinks and 
           dishes, making it a favorite among design enthusiasts and Instagram photographers.
         </p>
-        <p class="text-sm text-muted-foreground">
-          📍 <a href="https://maps.app.goo.gl/iMZ3bFKeCjgQm68q8" target="_blank" rel="noopener noreferrer" 
-          class="underline hover:text-blue-600">Location on Google Maps</a>
-        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b78888888%3A0xacab8c997b977777!2sTilli!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="space-y-6">
@@ -72,10 +100,17 @@ export const post = {
           laptop-friendly environment, reliable Wi-Fi, and comfortable seating, it's the perfect 
           spot for a productive work session accompanied by great coffee.
         </p>
-        <p class="text-sm text-muted-foreground">
-          📍 <a href="https://maps.app.goo.gl/ew3dBaZmUymydK2B9" target="_blank" rel="noopener noreferrer" 
-          class="underline hover:text-blue-600">Location on Google Maps</a>
-        </p>
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b79999999%3A0xbcbc9c998b988888!2sLev%20Cafe!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
 
       <section class="mt-12 space-y-4">
