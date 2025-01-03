@@ -1,21 +1,28 @@
-interface Location {
-  googleMapLink: string;
+interface BlogLocation {
   name: string;
-  coordinates?: {lat: number, lng: number};
+  googleMapLink: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
 }
 
 interface BlogInput {
   title?: string;
   headerImage: string;
   country: string;
-  locations: Location[];
+  locations: BlogLocation[];
+  category?: string;
+  author?: string;
 }
 
 export const generateBlogPrompt = ({ 
   title = '', 
   headerImage, 
   country, 
-  locations 
+  locations,
+  category = 'Travel Guide',
+  author = 'Local Expert'
 }: BlogInput): string => {
   const countryFlags: Record<string, string> = {
     'Philippines': '🇵🇭',
@@ -32,65 +39,124 @@ export const generateBlogPrompt = ({
   return `
 Create a comprehensive travel blog post with the following specifications:
 
-STRUCTURE AND FORMATTING:
-------------------------
-1. Title: Create an engaging title that includes "${country}" and ends with "${flag}". The title should be SEO-optimized and under 60 characters.
-2. Header Image: ${headerImage}
-3. Meta Description: Write a compelling meta description under 160 characters that includes the main locations and purpose of the guide.
-
-CONTENT SECTIONS:
+SEO OPTIMIZATION:
 ----------------
-1. Introduction (150-200 words):
-   - Hook readers with an engaging opening
-   - Briefly introduce ${country} and the specific area being covered
-   - Set expectations for what readers will learn
+1. Meta Tags:
+   - Title Tag (max 60 chars): Include "${country}" and "${flag}"
+   - Meta Description (max 155 chars): Focus on unique value proposition
+   - Canonical URL: https://locator.ltd/blog/[slug]
+   - robots: index, follow
+   - viewport: width=device-width, initial-scale=1
 
-2. Featured Locations:
+2. Open Graph Tags:
+   - og:title
+   - og:description
+   - og:type: article
+   - og:image: ${headerImage}
+   - og:url
+   - article:published_time
+   - article:modified_time
+   - article:author
+   - article:section: ${category}
+
+3. Twitter Card Tags:
+   - twitter:card: summary_large_image
+   - twitter:title
+   - twitter:description
+   - twitter:image
+
+4. Schema Markup:
+   - @type: BlogPosting
+   - headline
+   - description
+   - image
+   - author
+   - publisher
+   - datePublished
+   - dateModified
+   - mainEntityOfPage
+
+5. Keyword Strategy:
+   Primary Keywords:
+   - ${country} travel guide
+   - ${locations[0]?.name.toLowerCase()} guide
+   - things to do in ${country.toLowerCase()}
+   
+   Secondary Keywords:
+   - best time to visit ${country.toLowerCase()}
+   - ${country.toLowerCase()} local tips
+   - ${country.toLowerCase()} hidden gems
+
+6. Internal Linking:
+   - Link to related ${country} content
+   - Link to nearby destination guides
+   - Link to seasonal travel guides
+   - Reference the Locator app throughout content
+
+7. External Linking:
+   - Official tourism websites
+   - Local transportation resources
+   - Cultural/historical references
+   - Weather information sources
+
+CONTENT STRUCTURE:
+-----------------
+1. Header Section:
+   - Featured Image: ${headerImage}
+   - Title (H1)
+   - Author: ${author}
+   - Publication Date
+   - Reading Time Estimate
+   - Social Share Buttons
+
+2. Introduction (150-200 words):
+   - Hook readers with unique aspects of ${country}
+   - Overview of locations covered
+   - Value proposition for readers
+
+3. Featured Locations:
 ${locationsList}
 
 For each location, create:
-- A 200-word introduction paragraph
+- Engaging subheading (H2)
+- 200-word introduction
 - 3-5 key highlights (bullet points)
 - Best time to visit section
 - 2-3 insider tips
-- Include the provided Google Maps embed code for each location
+- Google Maps embed
+- High-quality location image
+- Location-specific keywords
 
-CALL TO ACTION PLACEMENTS:
--------------------------
-Insert two call-to-action blocks:
-1. Mid-content CTA (after the second location):
-   Text: "Want to save these places for your next trip?"
-   Button: "Download Locator App"
-   Link: "https://locator.ltd"
+4. Call-to-Action Placements:
+   Mid-content CTA (after second location):
+   - Text: "Want to save these places for your next trip?"
+   - Button: "Download Locator App"
+   - Link: "https://locator.ltd"
 
-2. End-content CTA (after the last location):
-   Text: "Ready to explore ${country}? Save all these locations in one place!"
-   Button: "Get Started with Locator"
-   Link: "https://locator.ltd"
-
-SEO OPTIMIZATION:
-----------------
-- Primary keyword: "${country} travel guide"
-- Include secondary keywords naturally throughout the content
-- Use H2 headings for location names
-- Use H3 headings for subsections (Highlights, Best Time to Visit, Insider Tips)
-- Optimize image alt texts
-- Include internal links to related ${country} content if available
+   End-content CTA:
+   - Text: "Ready to explore ${country}? Save all these locations in one place!"
+   - Button: "Get Started with Locator"
+   - Link: "https://locator.ltd"
 
 TECHNICAL REQUIREMENTS:
 ----------------------
 - Word count: 1,500-2,500 words
 - Mobile-responsive layout
-- Optimized images with alt text
-- Schema markup for travel article
-- Social sharing meta tags
+- Lazy loading for images
+- Alt text optimization
+- Schema markup implementation
+- Breadcrumb navigation
+- Table of contents with jump links
 
-TONE AND STYLE:
---------------
-- Conversational yet authoritative
-- First-hand experience perspective
-- Include practical tips and local insights
-- Focus on unique aspects of each location
-- Use active voice and present tense
-- Break up text with bullet points and short paragraphs`;
+URL STRUCTURE:
+-------------
+Recommended slug format: ${country.toLowerCase()}-${locations[0]?.name.toLowerCase().replace(/\s+/g, '-')}-guide
+
+CONTENT TAGS:
+------------
+Primary: ${country.toLowerCase()}, travel-guide
+Secondary: ${locations.map(loc => loc.name.toLowerCase().replace(/\s+/g, '-')).join(', ')}
+Category: ${category}
+
+This structured approach ensures comprehensive SEO optimization while maintaining engaging, valuable content for readers.`;
 };
