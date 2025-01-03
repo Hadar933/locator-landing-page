@@ -1,38 +1,72 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BlogCategory } from "@/content/blog/categories";
 import { posts } from "@/content/blog/posts";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface BlogCategoryCardProps {
   category: BlogCategory;
+  index: number;
 }
 
-export const BlogCategoryCard = ({ category }: BlogCategoryCardProps) => {
+export const BlogCategoryCard = ({ category, index }: BlogCategoryCardProps) => {
   // Find the first post in this category to use its image
   const firstPost = Object.values(posts).find(
-    post => post.category === category.name
+    post => post.category === category.title
   );
 
   const defaultImage = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b";
 
   return (
-    <Link
-      to={`/blog/category/${category.slug}`}
-      className="block overflow-hidden rounded-lg hover:bg-accent/50 transition-all"
+    <motion.article
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
     >
-      <div className="relative">
-        <AspectRatio ratio={16/9}>
-          <img
-            src={firstPost?.image || defaultImage}
-            alt={category.name}
-            className="object-cover w-full h-full"
-          />
-        </AspectRatio>
-        <div className="p-4">
-          <h3 className="text-xl font-semibold mb-2">{category.name}</h3>
+      <Card className="h-full">
+        <CardHeader>
+          <div className="mb-4 w-full max-w-[200px] mx-auto">
+            <AspectRatio ratio={16/9}>
+              <img
+                src={firstPost?.image || defaultImage}
+                alt={category.title}
+                className="object-cover w-full h-full rounded-lg"
+              />
+            </AspectRatio>
+          </div>
+          <CardTitle>
+            <span className="mr-2">{category.flag}</span>
+            {category.title}
+          </CardTitle>
           <p className="text-muted-foreground">{category.description}</p>
-        </div>
-      </div>
-    </Link>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {category.posts && category.posts.length > 0 && (
+              <Link 
+                to={`/blog/${category.posts[0].slug}`}
+                className="block p-4 rounded-lg hover:bg-accent transition-colors"
+              >
+                <h3 className="text-lg font-semibold mb-2">{category.posts[0].title}</h3>
+                <p className="text-muted-foreground text-sm mb-2">{category.posts[0].excerpt}</p>
+                <time dateTime={category.posts[0].date} className="text-sm text-muted-foreground">
+                  {category.posts[0].date}
+                </time>
+              </Link>
+            )}
+            <Link to={`/blog/category/${category.slug}`}>
+              <Button variant="secondary" className="w-full mt-4">
+                See More
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+    </motion.article>
   );
 };
