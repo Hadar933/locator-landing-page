@@ -21,8 +21,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       if (error) {
         if (error.message.includes("email_subscribers_email_key")) {
           toast({
-            title: "Already Subscribed",
-            description: "This email is already signed up for updates. We'll notify you when we launch!",
+            title: "Already signed in! 👋",
+            description: "You're already on our list. We'll notify you when we launch!",
             variant: "destructive",
           });
         } else {
@@ -34,7 +34,7 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
         }
       } else {
         toast({
-          title: "You're In! 🎉",
+          title: "You're in! 🎉",
           description: "Thanks for joining! We'll keep you in the loop about our iOS launch.",
         });
         setEmail("");
