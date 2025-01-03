@@ -7,7 +7,7 @@ export const post = {
   image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
-      <div class="h-32 w-full overflow-hidden rounded-lg mb-8">
+      <div class="h-128 w-full overflow-hidden rounded-lg mb-8">
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg"
           alt="Scenic view of Coron's limestone cliffs and turquoise waters"
