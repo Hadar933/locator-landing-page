@@ -7,6 +7,10 @@ export const NavigationBar = () => {
   const { scrollY } = useScroll();
   const isMobile = useIsMobile();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b"
@@ -25,7 +29,7 @@ export const NavigationBar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" onClick={scrollToTop}>
             <img 
               src="/lovable-uploads/47fe2b25-d83e-46e5-bb42-043d91389daf.png" 
               alt="Locator Logo" 
