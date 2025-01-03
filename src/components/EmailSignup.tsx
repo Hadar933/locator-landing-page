@@ -23,8 +23,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
 
       if (existingEmail) {
         toast({
-          title: "Already part of our community! 🌟",
-          description: "We recognize this email! You're already on our exclusive waitlist. We'll make sure you're the first to know when we launch. Stay tuned for exciting updates!",
+          title: "You're already on the list! 🎉",
+          description: "We've got your email saved. We'll notify you as soon as we launch!",
         });
         setIsLoading(false);
         return;
@@ -38,8 +38,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       if (error) {
         if (error.code === "23505") { // Unique constraint violation
           toast({
-            title: "Already part of our community! 🌟",
-            description: "We recognize this email! You're already on our exclusive waitlist. We'll make sure you're the first to know when we launch. Stay tuned for exciting updates!",
+            title: "You're already on the list! 🎉",
+            description: "We've got your email saved. We'll notify you as soon as we launch!",
           });
         } else {
           console.error("Signup error:", error);
@@ -51,8 +51,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
         }
       } else {
         toast({
-          title: "Welcome aboard! 🎉",
-          description: "Thanks for joining our waitlist! You'll be among the first to know when we launch. We can't wait to share our exciting updates with you!",
+          title: "Welcome aboard! 🚀",
+          description: "Thanks for joining! You'll be the first to know when we launch.",
         });
         setEmail("");
       }
