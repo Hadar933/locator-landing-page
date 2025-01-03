@@ -52,7 +52,7 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       } else {
         toast({
           title: "Welcome aboard! 🚀",
-          description: "Thanks for joining! You'll be the first to know when we launch.",
+          description: "Thanks for joining!",
         });
         setEmail("");
       }
