@@ -23,8 +23,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
 
       if (existingEmail) {
         toast({
-          title: "You're already on the list! 🎉",
-          description: "We've got your email saved. We'll notify you as soon as we launch!",
+          title: "We like your enthusiasm! 🎉",
+          description: "But you're already on the list.",
         });
         setIsLoading(false);
         return;
@@ -38,8 +38,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       if (error) {
         if (error.code === "23505") { // Unique constraint violation
           toast({
-            title: "You're already on the list! 🎉",
-            description: "We've got your email saved. We'll notify you as soon as we launch!",
+            title: "We like your enthusiasm! 🎉",
+            description: "But you're already on the list.",
           });
         } else {
           console.error("Signup error:", error);
