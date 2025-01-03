@@ -66,6 +66,12 @@ export const blogCategories = [
         slug: "tel-aviv-cafe-guide",
         excerpt: "A curated guide to Tel Aviv's most charming cafés, from hidden gems to popular spots",
         date: "2024-12-27"
+      },
+      {
+        title: "Tel Aviv's Ultimate Burger Guide: Local Favorites",
+        slug: "tel-aviv-burger-guide",
+        excerpt: "Discover the juiciest, most flavorful burgers in Tel Aviv's vibrant food scene",
+        date: "2024-01-20"
       }
     ]
   },
