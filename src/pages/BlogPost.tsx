@@ -5,6 +5,9 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogSEO } from "@/components/blog/BlogSEO";
 import { posts, BlogPost as BlogPostType } from "@/content/blog/posts";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -13,44 +16,6 @@ const BlogPost = () => {
   if (!post) {
     return <div>Post not found</div>;
   }
-
-  const renderLocation = (location: BlogPostType["locations"][0], index: number) => {
-    return (
-      <section key={location.name} className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">{location.name}</h2>
-        
-        <p className="mb-6">
-          {location.contentSections.introduction}
-          {location.contentSections.customInfo && location.contentSections.customInfo.map((info, i) => (
-            ` ${info}`
-          ))}
-        </p>
-
-        <div className="mb-6">
-          <h3 className="text-xl font-semibold mb-3">Best Time to Visit</h3>
-          <p>{location.contentSections.bestTimeToVisit}</p>
-        </div>
-
-        <div className="rounded-lg overflow-hidden">
-          <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
-        </div>
-
-        {post.callToAction && index === post.callToAction.position && (
-          <div className="my-12 p-6 bg-blue-50 rounded-lg text-center">
-            <p className="text-lg mb-4">{post.callToAction.text}</p>
-            <a
-              href={post.callToAction.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              {post.callToAction.buttonText}
-            </a>
-          </div>
-        )}
-      </section>
-    );
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -67,6 +32,15 @@ const BlogPost = () => {
       <main className="flex-grow">
         <article className="py-24">
           <div className="container max-w-4xl">
+            <div className="mb-12">
+              <Link to="/blog">
+                <Button variant="ghost" className="gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Blog
+                </Button>
+              </Link>
+            </div>
+
             <div className="mb-8 overflow-hidden rounded-lg border">
               <AspectRatio ratio={21/9}>
                 <img 

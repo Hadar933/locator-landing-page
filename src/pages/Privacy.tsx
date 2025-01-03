@@ -8,12 +8,14 @@ const Privacy = () => {
     <div className="min-h-screen flex flex-col">
       <div className="container py-16 flex-grow">
         <div className="max-w-3xl mx-auto">
-          <Link to="/">
-            <Button variant="ghost" className="mb-8">
-              <ArrowLeft className="mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+          <div className="mb-12">
+            <Link to="/">
+              <Button variant="ghost" className="gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
           
           <article className="prose prose-gray max-w-none">
             <h1>Privacy Policy</h1>

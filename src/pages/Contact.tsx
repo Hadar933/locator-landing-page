@@ -10,12 +10,14 @@ const Contact = () => {
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-3xl">
-            <Link to="/">
-              <Button variant="ghost" className="mb-8">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
+            <div className="mb-12">
+              <Link to="/">
+                <Button variant="ghost" className="gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Home
+                </Button>
+              </Link>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}

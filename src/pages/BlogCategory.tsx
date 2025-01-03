@@ -149,14 +149,14 @@ const BlogCategory = () => {
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-4xl">
-            <nav aria-label="Breadcrumb" className="mb-8">
+            <div className="mb-12">
               <Link to="/blog">
-                <Button variant="ghost">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                <Button variant="ghost" className="gap-2">
+                  <ArrowLeft className="h-4 w-4" />
                   Back to Blog
                 </Button>
               </Link>
-            </nav>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
