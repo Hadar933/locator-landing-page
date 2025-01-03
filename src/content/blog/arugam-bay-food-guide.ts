@@ -4,13 +4,13 @@ export const post = {
   publishDate: "2024-12-31",
   modifiedDate: "2024-12-31",
   author: "Locator Team",
-  image: "https://images.unsplash.com/photo-1606471191009-63994c53433b?q=80&w=1200&auto=format&fit=crop",
+  image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Beach_of_Arugam_Bay.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
       <img 
-        src="https://images.unsplash.com/photo-1606471191009-63994c53433b?q=80&w=1200&auto=format&fit=crop"
-        alt="Colorful Sri Lankan curry dishes served on banana leaf"
-        className="w-full h-[400px] object-cover rounded-lg mb-8"
+        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Beach_of_Arugam_Bay.jpg"
+        alt="Beautiful beach view of Arugam Bay, Sri Lanka"
+        className="w-full aspect-[21/9] object-cover rounded-lg mb-8"
       />
       <p class="lead">Hey food lovers! If you're heading to Arugam Bay, you're in for a treat. This surf town isn't just about catching waves - it's got some seriously good eats. Here's my personal rundown of the best spots to grab a bite, from pizza to burgers to local Sri Lankan cuisine.</p>
 

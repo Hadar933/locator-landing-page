@@ -4,13 +4,13 @@ export const post = {
   publishDate: "2024-12-30",
   modifiedDate: "2024-12-30",
   author: "Locator Team",
-  image: "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=1200&auto=format&fit=crop",
+  image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Phuket_Aerial.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
       <img 
-        src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=1200&auto=format&fit=crop"
-        alt="Scenic tropical beach in Phuket with longtail boats at sunset"
-        className="w-full h-[400px] object-cover rounded-lg mb-8"
+        src="https://upload.wikimedia.org/wikipedia/commons/6/60/Phuket_Aerial.jpg"
+        alt="Aerial view of Phuket's coastline and beaches"
+        className="w-full aspect-[21/9] object-cover rounded-lg mb-8"
       />
       <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
 

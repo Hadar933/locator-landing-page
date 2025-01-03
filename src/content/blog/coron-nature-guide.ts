@@ -4,13 +4,13 @@ export const post = {
   publishDate: "2024-12-29",
   modifiedDate: "2024-12-29",
   author: "Locator Team",
-  image: "https://images.unsplash.com/photo-1551361975-61fdff227c70?q=80&w=1200&auto=format&fit=crop",
+  image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
       <img 
-        src="https://images.unsplash.com/photo-1551361975-61fdff227c70?q=80&w=1200&auto=format&fit=crop"
-        alt="Scenic view of limestone cliffs and turquoise lagoon in Coron"
-        className="w-full h-[400px] object-cover rounded-lg mb-8"
+        src="https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg"
+        alt="Scenic view of Coron's limestone cliffs and turquoise waters"
+        className="w-full aspect-[21/9] object-cover rounded-lg mb-8"
       />
       <p class="lead">Welcome to Coron, a slice of paradise in the Philippines! This guide will take you through some of the most breathtaking natural wonders this island has to offer. From therapeutic hot springs to crystal-clear lakes and vibrant marine life, here's your guide to experiencing Coron's natural beauty.</p>
 
