@@ -2,7 +2,7 @@ import { generateBlogPost } from "@/utils/blogGenerator";
 
 export const post = generateBlogPost({
   title: "Naples Shopping Streets Guide: From Via Toledo to Via Chiaia",
-  headerImage: "/lovable-uploads/naples-streets.jpg", // You'll need to upload an image
+  headerImage: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Certosa_desde_Sant%27Elmo_10.JPG",
   country: "Italy",
   locations: [
     {
