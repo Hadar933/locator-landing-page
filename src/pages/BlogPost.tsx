@@ -53,22 +53,6 @@ const BlogPost = () => {
                 className="prose lg:prose-xl max-w-none"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
-
-              <div className="mt-12">
-                <h2 className="text-2xl font-bold mb-4">Locations Map</h2>
-                <div className="aspect-w-16 aspect-h-9">
-                  <iframe
-                    src="https://www.google.com/maps/d/embed?mid=1VR1lzX_5g5Pv_JIwEjKa3MYwU_5IXIU&ehbc=2E312F"
-                    width="100%"
-                    height="480"
-                    className="rounded-lg border"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </div>
             </motion.div>
           </div>
         </article>
