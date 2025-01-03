@@ -14,24 +14,33 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
     setIsLoading(true);
 
     try {
+      // First, check if the email already exists
+      const { data: existingEmails } = await supabase
+        .from("email_subscribers")
+        .select("email")
+        .eq("email", email)
+        .single();
+
+      if (existingEmails) {
+        toast({
+          title: "Already signed in! 👋",
+          description: "You're already on our list. We'll notify you when we launch!",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // If email doesn't exist, insert it
       const { error } = await supabase
         .from("email_subscribers")
         .insert([{ email }]);
 
       if (error) {
-        if (error.message.includes("email_subscribers_email_key")) {
-          toast({
-            title: "Already signed in! 👋",
-            description: "You're already on our list. We'll notify you when we launch!",
-            variant: "destructive",
-          });
-        } else {
-          toast({
-            title: "Something went wrong",
-            description: "Please try again later",
-            variant: "destructive",
-          });
-        }
+        toast({
+          title: "Something went wrong",
+          description: "Please try again later",
+          variant: "destructive",
+        });
       } else {
         toast({
           title: "You're in! 🎉",
