@@ -54,6 +54,9 @@ export const NavigationBar = () => {
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
+              <Link to="/newsletter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Newsletter
+              </Link>
             </div>
           )}
         </div>

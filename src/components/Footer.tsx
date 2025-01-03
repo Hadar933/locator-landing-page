@@ -48,6 +48,11 @@ export const Footer = () => {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link to="/newsletter" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Newsletter
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
