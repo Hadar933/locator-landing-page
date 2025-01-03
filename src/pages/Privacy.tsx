@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 
 const Privacy = () => {
@@ -6,7 +7,12 @@ const Privacy = () => {
       <main className="flex-grow">
         <section className="py-24">
           <div className="container max-w-3xl">
-            <article className="prose prose-gray max-w-none">
+            <motion.article 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="prose prose-gray max-w-none"
+            >
               <h1>Privacy Policy</h1>
               <p className="text-muted-foreground">Last updated: August 28, 2024</p>
 
@@ -124,7 +130,7 @@ const Privacy = () => {
               <h2>Contact Us</h2>
               <p>If you have any questions about this Privacy Policy, You can contact us:</p>
               <p>By email: <a href="mailto:locatorapp.ai@gmail.com" className="hover:text-blue-600 transition-colors">locatorapp.ai@gmail.com</a></p>
-            </article>
+            </motion.article>
           </div>
         </section>
       </main>

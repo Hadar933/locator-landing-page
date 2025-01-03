@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import { BlogCategoryCard } from "@/components/blog/BlogCategoryCard";
 import { blogCategories } from "@/content/blog/categories";
 import { posts } from "@/content/blog/posts";
