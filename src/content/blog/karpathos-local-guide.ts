@@ -7,11 +7,6 @@ export const post = {
   image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Pigadia.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Pigadia.jpg"
-        alt="View of Pigadia harbor in Karpathos, Greece"
-        className="w-full aspect-[21/9] object-cover rounded-lg mb-8"
-      />
       <p class="lead">While most travelers flock to Santorini or Mykonos, Karpathos remains one of Greece's best-kept secrets. This guide will show you why this lesser-known island offers an authentic Greek experience at a fraction of the cost, with all the beauty but none of the crowds.</p>
 
       <h2>Why Karpathos Should Be Your Next Greek Destination</h2>
