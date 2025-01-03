@@ -41,6 +41,9 @@ export const BurgerMenu = () => {
               <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors py-1">
                 Blog
               </Link>
+              <Link to="/newsletter" className="text-muted-foreground hover:text-primary transition-colors py-1">
+                Newsletter
+              </Link>
             </div>
           </div>
         </nav>
