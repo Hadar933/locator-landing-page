@@ -2,110 +2,141 @@ interface Location {
   googleMapLink: string;
   name: string;
   coordinates?: {lat: number, lng: number};
-  description?: string;
 }
 
 interface BlogInput {
   title?: string;
   headerImage: string;
-  country?: string;
+  country: string;
   locations: Location[];
 }
 
-interface BlogStructure {
+export const generateBlogPrompt = ({ 
+  title = '', 
+  headerImage, 
+  country, 
+  locations 
+}: BlogInput): string => {
+  const countryFlags: Record<string, string> = {
+    'Philippines': '🇵🇭',
+    'Thailand': '🇹🇭',
+    'Sri Lanka': '🇱🇰',
+    'Greece': '🇬🇷',
+    'Israel': '🇮🇱',
+    'Italy': '🇮🇹'
+  };
+
+  const flag = countryFlags[country] || '🌍';
+  const locationsList = locations.map(loc => `- ${loc.name} (${loc.googleMapLink})`).join('\n');
+
+  return `
+Create a comprehensive travel blog post with the following specifications:
+
+STRUCTURE AND FORMATTING:
+------------------------
+1. Title: Create an engaging title that includes "${country}" and ends with "${flag}". The title should be SEO-optimized and under 60 characters.
+2. Header Image: ${headerImage}
+3. Meta Description: Write a compelling meta description under 160 characters that includes the main locations and purpose of the guide.
+
+CONTENT SECTIONS:
+----------------
+1. Introduction (150-200 words):
+   - Hook readers with an engaging opening
+   - Briefly introduce ${country} and the specific area being covered
+   - Set expectations for what readers will learn
+
+2. Featured Locations:
+${locationsList}
+
+For each location, create:
+- A 200-word introduction paragraph
+- 3-5 key highlights (bullet points)
+- Best time to visit section
+- 2-3 insider tips
+- Include the provided Google Maps embed code for each location
+
+CALL TO ACTION PLACEMENTS:
+-------------------------
+Insert two call-to-action blocks:
+1. Mid-content CTA (after the second location):
+   Text: "Want to save these places for your next trip?"
+   Button: "Download Locator App"
+   Link: "https://locator.ltd"
+
+2. End-content CTA (after the last location):
+   Text: "Ready to explore ${country}? Save all these locations in one place!"
+   Button: "Get Started with Locator"
+   Link: "https://locator.ltd"
+
+SEO OPTIMIZATION:
+----------------
+- Primary keyword: "${country} travel guide"
+- Include secondary keywords naturally throughout the content
+- Use H2 headings for location names
+- Use H3 headings for subsections (Highlights, Best Time to Visit, Insider Tips)
+- Optimize image alt texts
+- Include internal links to related ${country} content if available
+
+TECHNICAL REQUIREMENTS:
+----------------------
+- Word count: 1,500-2,500 words
+- Mobile-responsive layout
+- Optimized images with alt text
+- Schema markup for travel article
+- Social sharing meta tags
+
+TONE AND STYLE:
+--------------
+- Conversational yet authoritative
+- First-hand experience perspective
+- Include practical tips and local insights
+- Focus on unique aspects of each location
+- Use active voice and present tense
+- Break up text with bullet points and short paragraphs
+
+Please generate the blog post following these specifications, ensuring all locations are covered comprehensively while maintaining reader engagement throughout the content.`;
+};
+
+export interface BlogLocation {
+  name: string;
+  googleMapLink: string;
+  coordinates?: {lat: number, lng: number};
+  contentSections: {
+    introduction: string;
+    highlights: string[];
+    bestTimeToVisit: string;
+    insiderTips: string[];
+    mapEmbed: string;
+  };
+}
+
+export interface BlogPost {
   title: string;
   description: string;
   author: string;
   publishDate: string;
   modifiedDate: string;
   image: string;
-  country: string;
-  flag: string;
-  locations: {
-    name: string;
-    googleMapLink: string;
-    coordinates?: {lat: number, lng: number};
-    contentSections: {
-      introduction: string;
-      highlights: string[];
-      bestTimeToVisit: string;
-      insiderTips: string[];
-      mapEmbed: string;
-    };
-  }[];
-  callToAction: {
-    position: number; // After which location to insert the CTA
+  content?: string;
+  country?: string;
+  flag?: string;
+  locations?: BlogLocation[];
+  callToAction?: {
+    position: number;
     text: string;
     buttonText: string;
     link: string;
   };
+  tags?: string[];
+  category?: string;
+  readingTime?: string;
 }
 
-const countryFlags: Record<string, string> = {
-  'Philippines': '🇵🇭',
-  'Thailand': '🇹🇭',
-  'Sri Lanka': '🇱🇰',
-  'Greece': '🇬🇷',
-  'Israel': '🇮🇱',
-  'Italy': '🇮🇹'
-};
-
-const inferCountryFromTitle = (title: string): string => {
-  const countries = Object.keys(countryFlags);
-  return countries.find(country => title.toLowerCase().includes(country.toLowerCase())) || 'Unknown';
-};
-
-export const generateBlogPost = ({ 
-  title = '', 
-  headerImage, 
-  country, 
-  locations 
-}: BlogInput): BlogStructure => {
-  const inferredCountry = country || inferCountryFromTitle(title);
-  const flag = countryFlags[inferredCountry] || '🌍';
-  const currentDate = new Date().toISOString().split('T')[0];
-
-  return {
-    title: `${flag} ${title}`,
-    description: `Discover the best locations and hidden gems in ${inferredCountry}. A comprehensive guide to ${title}.`,
-    author: "Locator Team",
-    publishDate: currentDate,
-    modifiedDate: currentDate,
-    image: headerImage,
-    country: inferredCountry,
-    flag,
-    locations: locations.map(location => ({
-      name: location.name,
-      googleMapLink: location.googleMapLink,
-      coordinates: location.coordinates,
-      contentSections: {
-        introduction: "[AI: Add engaging introduction about the location]",
-        highlights: [
-          "[AI: Add key highlight 1]",
-          "[AI: Add key highlight 2]",
-          "[AI: Add key highlight 3]"
-        ],
-        bestTimeToVisit: "[AI: Add best time to visit information]",
-        insiderTips: [
-          "[AI: Add insider tip 1]",
-          "[AI: Add insider tip 2]"
-        ],
-        mapEmbed: `<iframe
-          src="${location.googleMapLink}"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>`
-      }
-    })),
-    callToAction: {
-      position: 1, // Default to after the second location
-      text: "Want to save these places for your next trip?",
-      buttonText: "Download Locator App",
-      link: "https://locator.ltd"
-    }
-  };
+export const posts: Record<string, BlogPost> = {
+  "phuket-local-guide": phuketGuide,
+  "arugam-bay-food-guide": arugamBayGuide,
+  "coron-nature-guide": coronGuide,
+  "karpathos-local-guide": karpathosGuide,
+  "tel-aviv-cafe-guide": telAvivCafeGuide,
+  "naples-streets-guide": naplesStreetsGuide
 };
