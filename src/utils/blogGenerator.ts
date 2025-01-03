@@ -82,12 +82,15 @@ For each location (${locationsList}):
    - Ends with an evocative final image or moment
 
 6. Final Call-to-Action:
-   Create a compelling CTA that:
+   IMPORTANT: Make sure to include a compelling CTA at the end that:
    - References specific moments from the journey
    - Highlights how the app enhances travel experiences
    - Emphasizes the value of saving these locations
    - Encourages readers to start their own adventure
    - Uses emotional connection to drive action
+   - Position it naturally within the flow of content
+   - Make it feel like a natural extension of the story
+   - Avoid making it feel too promotional
 
 SEO & TECHNICAL REQUIREMENTS:
 --------------------------
