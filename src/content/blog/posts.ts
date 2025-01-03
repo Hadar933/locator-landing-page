@@ -12,9 +12,9 @@ export interface BlogLocation {
   coordinates?: {lat: number, lng: number};
   contentSections: {
     introduction: string;
-    highlights: string[];
     bestTimeToVisit: string;
     mapEmbed: string;
+    customInfo?: string[];
   };
 }
 

@@ -3,10 +3,9 @@ export interface Location {
   googleMapLink: string;
   contentSections: {
     introduction: string;
-    highlights: string[];
     bestTimeToVisit: string;
-    insiderTips: string[];
     mapEmbed: string;
+    customInfo?: string[];
   };
 }
 
@@ -17,6 +16,7 @@ export interface BlogInput {
   locations: {
     name: string;
     googleMapLink: string;
+    customInfo?: string[];
   }[];
   category?: string;
   author?: string;

@@ -21,14 +21,16 @@ const BlogPost = () => {
         
         <p className="mb-6">{location.contentSections.introduction}</p>
         
-        <div className="mb-6">
-          <h3 className="text-xl font-semibold mb-3">Highlights</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            {location.contentSections.highlights.map((highlight, i) => (
-              <li key={i}>{highlight}</li>
-            ))}
-          </ul>
-        </div>
+        {location.contentSections.customInfo && (
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold mb-3">Additional Information</h3>
+            <ul className="list-disc pl-6 space-y-2">
+              {location.contentSections.customInfo.map((info, i) => (
+                <li key={i}>{info}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-3">Best Time to Visit</h3>

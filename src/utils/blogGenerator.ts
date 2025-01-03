@@ -30,9 +30,15 @@ export const generateBlogPrompt = ({
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>`;
     
+    const customInfoSection = loc.customInfo ? 
+      `Custom Information:
+       ${loc.customInfo.map(info => `- ${info}`).join('\n')}` : 
+      'Generic location description will be used';
+    
     return `- ${loc.name}
       Map embed code: ${mapEmbedCode}
-      Google Maps link: ${loc.googleMapLink}`;
+      Google Maps link: ${loc.googleMapLink}
+      ${customInfoSection}`;
   }).join('\n');
 
   return `
@@ -54,8 +60,7 @@ STORYTELLING STRUCTURE:
 For each location (${locationsList}):
    Share a personal anecdote or memorable encounter
    Describe the unique atmosphere and character
-   Weave practical information naturally into the story
-   Include conversations with locals or fellow travelers
+   Include practical visiting information
    Create smooth transitions between locations
    Integrate maps as part of the journey
    Build emotional connections to each place
