@@ -15,7 +15,7 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
-              slug: "philippines.coron-nature-guide",
+              slug: "coron-nature-guide",
               excerpt: "Discover the natural wonders of Coron - from therapeutic hot springs to pristine lakes and vibrant coral gardens",
               date: "2024-12-29"
             }
@@ -28,7 +28,7 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Phuket Local Guide: From Patong to Hidden Beaches",
-              slug: "thailand.phuket-local-guide",
+              slug: "phuket-local-guide",
               excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
               date: "2024-12-30"
             }
@@ -41,7 +41,7 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
-              slug: "sri-lanka.arugam-bay-food-guide",
+              slug: "arugam-bay-food-guide",
               excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
               date: "2024-12-31"
             }
@@ -54,7 +54,7 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Karpathos: Greece's Hidden Paradise - Local Guide",
-              slug: "greece.karpathos-local-guide",
+              slug: "karpathos-local-guide",
               excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
               date: "2024-12-28"
             }
@@ -67,13 +67,13 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Tel Aviv Café Culture: Best Coffee Spots Guide",
-              slug: "israel.tel-aviv-cafe-guide",
+              slug: "tel-aviv-cafe-guide",
               excerpt: "A curated guide to Tel Aviv's most charming cafés, from hidden gems to popular spots",
               date: "2024-12-27"
             },
             {
               title: "Tel Aviv's Ultimate Burger Guide: Local Favorites",
-              slug: "israel.tel-aviv-burger-guide",
+              slug: "tel-aviv-burger-guide",
               excerpt: "Discover the juiciest, most flavorful burgers in Tel Aviv's vibrant food scene",
               date: "2024-01-20"
             }
@@ -86,7 +86,7 @@ const BlogCategory = () => {
           posts: [
             {
               title: "Naples Shopping Streets Guide: From Via Toledo to Via Chiaia",
-              slug: "italy.naples-streets-guide",
+              slug: "naples-streets-guide",
               excerpt: "Discover the most iconic shopping streets of Naples, from the historic Via Toledo to the elegant Via Chiaia",
               date: "2024-01-15"
             }
@@ -168,7 +168,7 @@ const BlogCategory = () => {
                     transition={{ delay: index * 0.1 }}
                     className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow"
                   >
-                    <Link to={`/blog/${post.slug}`}>
+                    <Link to={`/blog/${category}/${post.slug}`}>
                       <h2 className="text-2xl font-semibold mb-3">{post.title}</h2>
                       <p className="text-muted-foreground mb-4">{post.excerpt}</p>
                       <time dateTime={post.date} className="text-sm text-muted-foreground">{post.date}</time>

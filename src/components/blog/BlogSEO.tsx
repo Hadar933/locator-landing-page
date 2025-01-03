@@ -8,6 +8,7 @@ interface BlogSEOProps {
   modifiedDate: string;
   slug: string;
   image: string;
+  country: string;
 }
 
 export const BlogSEO = ({ 
@@ -17,7 +18,8 @@ export const BlogSEO = ({
   publishDate, 
   modifiedDate, 
   slug,
-  image
+  image,
+  country
 }: BlogSEOProps) => {
   return (
     <Helmet>
@@ -30,7 +32,7 @@ export const BlogSEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="article" />
-      <meta property="og:url" content={`https://locator.ltd/blog/${slug}`} />
+      <meta property="og:url" content={`https://locator.ltd/blog/${country}/${slug}`} />
       <meta property="og:image" content={image} />
       <meta property="article:published_time" content={publishDate} />
       <meta property="article:modified_time" content={modifiedDate} />
@@ -44,7 +46,7 @@ export const BlogSEO = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       
-      <link rel="canonical" href={`https://locator.ltd/blog/${slug}`} />
+      <link rel="canonical" href={`https://locator.ltd/blog/${country}/${slug}`} />
       
       <script type="application/ld+json">
         {JSON.stringify({
@@ -71,7 +73,7 @@ export const BlogSEO = ({
           },
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://locator.ltd/blog/${slug}`
+            "@id": `https://locator.ltd/blog/${country}/${slug}`
           },
           "keywords": "Travel Guide, Local Recommendations, Hidden Gems",
           "articleSection": "Travel Guides"

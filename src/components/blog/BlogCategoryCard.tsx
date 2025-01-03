@@ -30,7 +30,7 @@ export const BlogCategoryCard = ({ category, index }: BlogCategoryCardProps) => 
           <div className="space-y-4">
             {category.posts && category.posts.length > 0 && (
               <Link 
-                to={`/blog/${category.slug}.${category.posts[0].slug}`}
+                to={`/blog/${category.slug}/${category.posts[0].slug}`}
                 className="block p-4 rounded-lg hover:bg-accent transition-colors"
               >
                 <h3 className="text-lg font-semibold mb-2">{category.posts[0].title}</h3>
