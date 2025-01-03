@@ -1,20 +1,4 @@
-interface BlogLocation {
-  name: string;
-  googleMapLink: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
-}
-
-interface BlogInput {
-  title?: string;
-  headerImage: string;
-  country: string;
-  locations: BlogLocation[];
-  category?: string;
-  author?: string;
-}
+import { BlogInput } from "@/types/blog";
 
 export const generateBlogPrompt = ({ 
   title = '', 
@@ -37,126 +21,122 @@ export const generateBlogPrompt = ({
   const locationsList = locations.map(loc => `- ${loc.name} (${loc.googleMapLink})`).join('\n');
 
   return `
-Create a comprehensive travel blog post with the following specifications:
+Create an immersive and SEO-optimized travel blog post with the following specifications:
+
+CONTENT STRUCTURE & NARRATIVE:
+----------------------------
+1. Title & Introduction (300-400 words):
+   - Use engaging title with ${flag} emoji
+   - Start with a compelling hook (personal story or interesting fact)
+   - Set the scene and context for ${country}
+   - Include a brief overview of what readers will learn
+   - End with a clear value proposition
+
+2. Quick Navigation:
+   - Add a table of contents with jump links
+   - Include estimated reading time
+   - List key highlights with emoji bullets
+
+3. For each location (${locationsList}):
+   - Start with an engaging story or local insight
+   - Include practical details (best times, costs, tips)
+   - Add local context and cultural significance
+   - Incorporate relevant historical facts
+   - End with insider tips that aren't commonly known
+
+4. Transitions:
+   - Create natural flow between locations
+   - Use local transportation details as transition elements
+   - Include time estimates between places
+
+VISUAL CONTENT STRATEGY:
+----------------------
+1. Header Image:
+   - Use ${headerImage} as main featured image
+   - Add descriptive alt text with location keywords
+
+2. Throughout Content:
+   - Place Google Maps embeds after location introductions
+   - Include image gallery for each location (3-4 images)
+   - Add captions that provide additional context
+   - Use icons for key information (⏰ for timing, 💰 for costs)
+
+USER ENGAGEMENT:
+--------------
+1. Interactive Elements:
+   - Add "Save for Later" CTAs with Locator app
+   - Include social share buttons at key points
+   - Create pullout quotes for memorable insights
+
+2. Formatting for Readability:
+   - Use short paragraphs (2-3 sentences max)
+   - Include bullet points for quick tips
+   - Add highlighted boxes for important warnings/tips
+   - Create comparison tables where relevant
 
 SEO OPTIMIZATION:
-----------------
-1. Meta Tags:
-   - Title Tag (max 60 chars): Include "${country}" and "${flag}"
-   - Meta Description (max 155 chars): Focus on unique value proposition
+---------------
+1. Technical SEO:
+   - Title tag: "${title} ${flag} | Complete Guide [Current Year]"
+   - Meta description: Engaging summary under 155 characters
+   - URL structure: /${country.toLowerCase()}/${locations[0].name.toLowerCase().replace(/\s+/g, '-')}-guide
    - Canonical URL: https://locator.ltd/blog/[slug]
-   - robots: index, follow
-   - viewport: width=device-width, initial-scale=1
 
-2. Open Graph Tags:
-   - og:title
-   - og:description
-   - og:type: article
+2. Content Optimization:
+   - Primary keyword: "${country} travel guide"
+   - Secondary keywords: Include location names, activities
+   - LSI keywords: Add related terms naturally
+   - Semantic relevance: Include related topics and themes
+
+3. Structured Data:
+   {
+     "@context": "https://schema.org",
+     "@type": "TravelGuide",
+     "name": "${title}",
+     "author": {
+       "@type": "Person",
+       "name": "${author}"
+     },
+     "about": {
+       "@type": "Place",
+       "name": "${country}"
+     }
+   }
+
+4. Meta Tags:
+   - og:title: "${title}"
+   - og:description: [Compelling description]
    - og:image: ${headerImage}
-   - og:url
-   - article:published_time
-   - article:modified_time
-   - article:author
-   - article:section: ${category}
+   - twitter:card: "summary_large_image"
+   - article:published_time: [Current date]
+   - article:author: "${author}"
 
-3. Twitter Card Tags:
-   - twitter:card: summary_large_image
-   - twitter:title
-   - twitter:description
-   - twitter:image
+5. Internal Linking:
+   - Link to related ${country} guides
+   - Reference relevant city guides
+   - Link to seasonal travel content
+   - Add "Related Guides" section
 
-4. Schema Markup:
-   - @type: BlogPosting
-   - headline
-   - description
-   - image
-   - author
-   - publisher
-   - datePublished
-   - dateModified
-   - mainEntityOfPage
+CALL-TO-ACTION PLACEMENT:
+-----------------------
+1. Mid-Content CTA:
+   - Place after second location
+   - Focus on saving locations with Locator app
+   - Use action-oriented button text
 
-5. Keyword Strategy:
-   Primary Keywords:
-   - ${country} travel guide
-   - ${locations[0]?.name.toLowerCase()} guide
-   - things to do in ${country.toLowerCase()}
-   
-   Secondary Keywords:
-   - best time to visit ${country.toLowerCase()}
-   - ${country.toLowerCase()} local tips
-   - ${country.toLowerCase()} hidden gems
+2. End-Content CTA:
+   - Comprehensive CTA with app benefits
+   - Include app screenshot
+   - Add social proof element
 
-6. Internal Linking:
-   - Link to related ${country} content
-   - Link to nearby destination guides
-   - Link to seasonal travel guides
-   - Reference the Locator app throughout content
+CONTENT REQUIREMENTS:
+-------------------
+1. Word count: 2,000-2,500 words
+2. Tone: Conversational yet authoritative
+3. Perspective: First-hand experience
+4. Currency: Include recent updates and changes
+5. Accuracy: Verify all facts and prices
+6. Local insights: Include non-obvious tips
 
-7. External Linking:
-   - Official tourism websites
-   - Local transportation resources
-   - Cultural/historical references
-   - Weather information sources
-
-CONTENT STRUCTURE:
------------------
-1. Header Section:
-   - Featured Image: ${headerImage}
-   - Title (H1)
-   - Author: ${author}
-   - Publication Date
-   - Reading Time Estimate
-   - Social Share Buttons
-
-2. Introduction (150-200 words):
-   - Hook readers with unique aspects of ${country}
-   - Overview of locations covered
-   - Value proposition for readers
-
-3. Featured Locations:
-${locationsList}
-
-For each location, create:
-- Engaging subheading (H2)
-- 200-word introduction
-- 3-5 key highlights (bullet points)
-- Best time to visit section
-- 2-3 insider tips
-- Google Maps embed
-- High-quality location image
-- Location-specific keywords
-
-4. Call-to-Action Placements:
-   Mid-content CTA (after second location):
-   - Text: "Want to save these places for your next trip?"
-   - Button: "Download Locator App"
-   - Link: "https://locator.ltd"
-
-   End-content CTA:
-   - Text: "Ready to explore ${country}? Save all these locations in one place!"
-   - Button: "Get Started with Locator"
-   - Link: "https://locator.ltd"
-
-TECHNICAL REQUIREMENTS:
-----------------------
-- Word count: 1,500-2,500 words
-- Mobile-responsive layout
-- Lazy loading for images
-- Alt text optimization
-- Schema markup implementation
-- Breadcrumb navigation
-- Table of contents with jump links
-
-URL STRUCTURE:
--------------
-Recommended slug format: ${country.toLowerCase()}-${locations[0]?.name.toLowerCase().replace(/\s+/g, '-')}-guide
-
-CONTENT TAGS:
-------------
-Primary: ${country.toLowerCase()}, travel-guide
-Secondary: ${locations.map(loc => loc.name.toLowerCase().replace(/\s+/g, '-')).join(', ')}
-Category: ${category}
-
-This structured approach ensures comprehensive SEO optimization while maintaining engaging, valuable content for readers.`;
+This structured approach ensures the content is both engaging for readers and optimized for search engines, while maintaining a natural flow and providing genuine value to travelers.`;
 };
