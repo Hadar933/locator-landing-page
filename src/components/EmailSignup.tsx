@@ -23,9 +23,8 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
 
       if (existingEmail) {
         toast({
-          title: "Already signed in! 👋",
+          title: "Already subscribed! 👋",
           description: "You're already on our list. We'll notify you when we launch!",
-          variant: "destructive",
         });
         setIsLoading(false);
         return;
@@ -37,14 +36,13 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
         .insert([{ email }]);
 
       if (error) {
-        // Double-check for race condition where email might have been inserted
         if (error.code === "23505") { // Unique constraint violation
           toast({
-            title: "Already signed in! 👋",
+            title: "Already subscribed! 👋",
             description: "You're already on our list. We'll notify you when we launch!",
-            variant: "destructive",
           });
         } else {
+          console.error("Signup error:", error);
           toast({
             title: "Something went wrong",
             description: "Please try again later",
@@ -54,11 +52,12 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
       } else {
         toast({
           title: "You're in! 🎉",
-          description: "Thanks for joining! We'll keep you in the loop about our iOS launch.",
+          description: "Thanks for joining! We'll keep you in the loop about our launch.",
         });
         setEmail("");
       }
-    } catch (error: any) {
+    } catch (error) {
+      console.error("Signup error:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again later",
