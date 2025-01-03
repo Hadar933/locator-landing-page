@@ -9,17 +9,17 @@ export const StoreButtons = () => {
         href="https://play.google.com/store/apps/details?id=locator.android"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative inline-block w-[135px] h-[40px] rounded-xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
+        className="relative inline-block w-[240px] h-[80px] rounded-2xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
       >
         <img
           src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
           alt="Get it on Google Play"
-          className="absolute w-[120%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="absolute w-[128%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
       </a>
       <button
         onClick={() => navigate("/coming-soon")}
-        className="relative inline-block w-[160px] h-[48px] rounded-xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
+        className="relative inline-block w-[240px] h-[80px] rounded-2xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
       >
         <img
           src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
