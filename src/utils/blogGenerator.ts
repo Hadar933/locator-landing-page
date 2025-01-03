@@ -17,6 +17,7 @@ export const generateBlogPrompt = ({
     'Italy': '🇮🇹'
   };
 
+  const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
   const flag = countryFlags[country] || '🌍';
   
   const locationsList = locations.map(loc => {
@@ -124,6 +125,7 @@ CONTENT GUIDELINES:
 3. Voice: Warm, engaging, authentic
 4. Flow: Natural story progression
 5. Details: Rich in context and atmosphere
+6. Publication Date: ${today}
 
 This approach creates an engaging narrative that combines practical travel information with compelling storytelling, making the content both useful and enjoyable to read.`;
 };
