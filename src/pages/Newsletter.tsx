@@ -6,7 +6,7 @@ const Newsletter = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-1">
-        <section className="py-16 bg-secondary">
+        <section className="py-24 bg-secondary">
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-8 animate-fade-up">
               <h1 className="text-4xl font-bold mb-4">Stay Updated</h1>
