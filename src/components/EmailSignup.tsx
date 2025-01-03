@@ -15,18 +15,19 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
 
     try {
       // First, check if the email already exists
-      const { data: existingEmails } = await supabase
+      const { data: existingEmail } = await supabase
         .from("email_subscribers")
         .select("email")
         .eq("email", email)
-        .single();
+        .maybeSingle();
 
-      if (existingEmails) {
+      if (existingEmail) {
         toast({
           title: "Already signed in! 👋",
           description: "You're already on our list. We'll notify you when we launch!",
           variant: "destructive",
         });
+        setIsLoading(false);
         return;
       }
 
@@ -36,11 +37,20 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
         .insert([{ email }]);
 
       if (error) {
-        toast({
-          title: "Something went wrong",
-          description: "Please try again later",
-          variant: "destructive",
-        });
+        // Double-check for race condition where email might have been inserted
+        if (error.code === "23505") { // Unique constraint violation
+          toast({
+            title: "Already signed in! 👋",
+            description: "You're already on our list. We'll notify you when we launch!",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Something went wrong",
+            description: "Please try again later",
+            variant: "destructive",
+          });
+        }
       } else {
         toast({
           title: "You're in! 🎉",
