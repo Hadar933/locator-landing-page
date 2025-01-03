@@ -5,6 +5,8 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogSEO } from "@/components/blog/BlogSEO";
 import { posts } from "@/content/blog/posts";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -53,6 +55,14 @@ const BlogPost = () => {
                 className="prose lg:prose-xl max-w-none"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
+              
+              <div className="mt-16 text-center">
+                <Link to="/">
+                  <Button size="lg" className="font-semibold">
+                    Start Your Journey with Locator
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </article>
