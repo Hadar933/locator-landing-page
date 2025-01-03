@@ -25,15 +25,19 @@ export interface BlogPost {
   publishDate: string;
   modifiedDate: string;
   image: string;
-  country: string;
-  flag: string;
-  locations: BlogLocation[];
-  callToAction: {
+  content?: string;
+  country?: string;
+  flag?: string;
+  locations?: BlogLocation[];
+  callToAction?: {
     position: number;
     text: string;
     buttonText: string;
     link: string;
   };
+  tags?: string[];
+  category?: string;
+  readingTime?: string;
 }
 
 export const posts: Record<string, BlogPost> = {

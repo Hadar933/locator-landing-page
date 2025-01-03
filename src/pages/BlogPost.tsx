@@ -48,7 +48,7 @@ const BlogPost = () => {
           <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
         </div>
 
-        {index === post.callToAction.position && (
+        {post.callToAction && index === post.callToAction.position && (
           <div className="my-12 p-6 bg-blue-50 rounded-lg text-center">
             <p className="text-lg mb-4">{post.callToAction.text}</p>
             <a
@@ -101,7 +101,8 @@ const BlogPost = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="prose lg:prose-xl max-w-none">
-                {post.locations.map((location, index) => renderLocation(location, index))}
+                {post.content && <div dangerouslySetInnerHTML={{ __html: post.content }} />}
+                {post.locations?.map((location, index) => renderLocation(location, index))}
               </div>
             </motion.div>
           </div>
