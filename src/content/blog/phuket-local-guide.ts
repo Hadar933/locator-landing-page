@@ -7,11 +7,6 @@ export const post = {
   image: "https://upload.wikimedia.org/wikipedia/commons/6/60/Phuket_Aerial.jpg",
   content: `
     <article class="prose lg:prose-xl max-w-none">
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/6/60/Phuket_Aerial.jpg"
-        alt="Aerial view of Phuket's coastline and beaches"
-        className="w-full aspect-[21/9] object-cover rounded-lg mb-8"
-      />
       <p class="lead">Hey there! If you're planning a trip to Phuket, you're in for a treat. I recently explored the Patong Beach area and wanted to share some cool spots that might help you plan your adventure. From pristine beaches to vibrant markets, here's my take on what's worth checking out.</p>
 
       <h2>The Beaches (Because That's Why We're Here)</h2>
