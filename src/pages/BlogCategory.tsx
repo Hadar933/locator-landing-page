@@ -10,41 +10,55 @@ const BlogCategory = () => {
   
   const getCategoryPosts = (categorySlug: string) => {
     switch(categorySlug) {
-      case 'travel-guides':
+      case 'philippines':
         return {
-          title: "Travel Guides",
-          description: "Discover hidden gems and must-visit locations around the world. Expert travel guides and local recommendations for your next adventure.",
+          title: "Philippines",
+          description: "Discover hidden gems and travel guides across the Philippine archipelago",
+          posts: [
+            {
+              title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
+              slug: "coron-nature-guide",
+              excerpt: "Discover the natural wonders of Coron - from therapeutic hot springs to pristine lakes and vibrant coral gardens",
+              date: "2024-12-29"
+            }
+          ]
+        };
+      case 'thailand':
+        return {
+          title: "Thailand",
+          description: "Local insights and travel guides for exploring Thailand",
           posts: [
             {
               title: "Phuket Local Guide: From Patong to Hidden Beaches",
               slug: "phuket-local-guide",
               excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
               date: "2024-12-30"
-            },
-            {
-              title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
-              slug: "coron-nature-guide",
-              excerpt: "Explore the pristine lakes, hot springs, and coral gardens of Coron, Philippines",
-              date: "2024-12-29"
-            },
-            {
-              title: "Karpathos: Greece's Hidden Paradise - Local Guide",
-              slug: "karpathos-local-guide",
-              excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
-              date: "2024-12-28"
             }
           ]
         };
-      case 'food-restaurants':
+      case 'sri-lanka':
         return {
-          title: "Food & Restaurants",
-          description: "Curated lists of the best dining spots in popular destinations. Local food guides and restaurant recommendations from around the world.",
+          title: "Sri Lanka",
+          description: "Food, culture, and travel guides for Sri Lanka",
           posts: [
             {
               title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
               slug: "arugam-bay-food-guide",
               excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
               date: "2024-12-31"
+            }
+          ]
+        };
+      case 'greece':
+        return {
+          title: "Greece",
+          description: "Explore the hidden corners and local culture of Greece",
+          posts: [
+            {
+              title: "Karpathos: Greece's Hidden Paradise - Local Guide",
+              slug: "karpathos-local-guide",
+              excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
+              date: "2024-12-28"
             }
           ]
         };

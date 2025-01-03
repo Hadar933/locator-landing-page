@@ -9,22 +9,35 @@ import { Helmet } from "react-helmet";
 const Blog = () => {
   const blogCategories = [
     {
-      title: "Travel Guides",
-      description: "Discover hidden gems and must-visit locations around the world",
-      slug: "travel-guides",
+      title: "Philippines",
+      description: "Discover hidden gems and travel guides across the Philippine archipelago",
+      slug: "philippines",
+      posts: [
+        {
+          title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
+          slug: "coron-nature-guide",
+          excerpt: "Discover the natural wonders of Coron - from therapeutic hot springs to pristine lakes and vibrant coral gardens",
+          date: "2024-12-29"
+        }
+      ]
+    },
+    {
+      title: "Thailand",
+      description: "Local insights and travel guides for exploring Thailand",
+      slug: "thailand",
       posts: [
         {
           title: "Phuket Local Guide: From Patong to Hidden Beaches",
           slug: "phuket-local-guide",
           excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
           date: "2024-12-30"
-        },
+        }
       ]
     },
     {
-      title: "Food & Restaurants",
-      description: "Curated lists of the best dining spots in popular destinations",
-      slug: "food-restaurants",
+      title: "Sri Lanka",
+      description: "Food, culture, and travel guides for Sri Lanka",
+      slug: "sri-lanka",
       posts: [
         {
           title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
@@ -35,16 +48,17 @@ const Blog = () => {
       ]
     },
     {
-      title: "City Living",
-      description: "Local recommendations for urban explorers and city dwellers",
-      slug: "city-living",
-      comingSoon: true
-    },
-    {
-      title: "Travel Planning",
-      description: "Tips and tricks for organizing your travel itineraries",
-      slug: "travel-planning",
-      comingSoon: true
+      title: "Greece",
+      description: "Explore the hidden corners and local culture of Greece",
+      slug: "greece",
+      posts: [
+        {
+          title: "Karpathos: Greece's Hidden Paradise - Local Guide",
+          slug: "karpathos-local-guide",
+          excerpt: "Discover the untouched beauty of Karpathos - pristine beaches and authentic Greek culture away from the crowds",
+          date: "2024-12-28"
+        }
+      ]
     }
   ];
 
@@ -74,7 +88,6 @@ const Blog = () => {
               }
             },
             "blogPost": blogCategories
-              .filter(category => !category.comingSoon)
               .flatMap(category => category.posts || [])
               .map(post => ({
                 "@type": "BlogPosting",
@@ -106,7 +119,7 @@ const Blog = () => {
             >
               <h1 className="text-4xl font-bold mb-6">Travel & Food Recommendations</h1>
               <p className="text-xl text-muted-foreground mb-12">
-                Discover curated guides and recommendations for travelers and food enthusiasts
+                Discover curated guides and recommendations from around the world
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8" role="feed" aria-label="Blog categories">
@@ -123,33 +136,26 @@ const Blog = () => {
                         <p className="text-muted-foreground">{category.description}</p>
                       </CardHeader>
                       <CardContent>
-                        {category.comingSoon ? (
-                          <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                            Coming Soon
-                          </span>
-                        ) : (
-                          <div className="space-y-4">
-                            {/* Show only the first post */}
-                            {category.posts && category.posts.length > 0 && (
-                              <Link 
-                                to={`/blog/${category.posts[0].slug}`}
-                                className="block p-4 rounded-lg hover:bg-accent transition-colors"
-                              >
-                                <h3 className="text-lg font-semibold mb-2">{category.posts[0].title}</h3>
-                                <p className="text-muted-foreground text-sm mb-2">{category.posts[0].excerpt}</p>
-                                <time dateTime={category.posts[0].date} className="text-sm text-muted-foreground">
-                                  {category.posts[0].date}
-                                </time>
-                              </Link>
-                            )}
-                            <Link to={`/blog/category/${category.slug}`}>
-                              <Button variant="secondary" className="w-full mt-4">
-                                See More
-                                <ArrowRight className="ml-2 h-4 w-4" />
-                              </Button>
+                        <div className="space-y-4">
+                          {category.posts && category.posts.length > 0 && (
+                            <Link 
+                              to={`/blog/${category.posts[0].slug}`}
+                              className="block p-4 rounded-lg hover:bg-accent transition-colors"
+                            >
+                              <h3 className="text-lg font-semibold mb-2">{category.posts[0].title}</h3>
+                              <p className="text-muted-foreground text-sm mb-2">{category.posts[0].excerpt}</p>
+                              <time dateTime={category.posts[0].date} className="text-sm text-muted-foreground">
+                                {category.posts[0].date}
+                              </time>
                             </Link>
-                          </div>
-                        )}
+                          )}
+                          <Link to={`/blog/category/${category.slug}`}>
+                            <Button variant="secondary" className="w-full mt-4">
+                              See More
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </Link>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.article>
