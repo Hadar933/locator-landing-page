@@ -1,6 +1,6 @@
 export const post = {
   title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
-  description: "Discover the best restaurants and cafes in Arugam Bay, Sri Lanka. From authentic local cuisine to wood-fired pizzas, burgers, and fresh smoothies - a casual food lover's guide to Sri Lanka's surf paradise.",
+  description: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise. From local curry spots to beachside cafes, discover where to eat in Arugam Bay.",
   publishDate: "2024-12-31",
   modifiedDate: "2024-12-31",
   author: "Locator Team",
