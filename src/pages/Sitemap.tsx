@@ -54,7 +54,7 @@ const Sitemap = () => {
   <!-- Blog Posts -->
   ${Object.entries(posts).map(([slug, post]) => `
   <url>
-    <loc>${baseUrl}/blog/${post.country || 'philippines'}/${slug}</loc>
+    <loc>${baseUrl}/blog/${post.country?.toLowerCase() || 'philippines'}/${slug}</loc>
     <lastmod>${post.modifiedDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
