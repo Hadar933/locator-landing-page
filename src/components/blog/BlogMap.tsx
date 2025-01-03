@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
@@ -53,16 +53,8 @@ const blogLocations: BlogLocation[] = [
 const BlogMap: React.FC = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Ensure Leaflet container is properly sized
-    const map = L.map('map');
-    return () => {
-      map.remove();
-    };
-  }, []);
-
   return (
-    <div className="w-full h-[600px] rounded-lg shadow-lg overflow-hidden" id="map">
+    <div className="w-full h-[600px] rounded-lg shadow-lg overflow-hidden">
       <MapContainer
         center={[20, 0]}
         zoom={2}
