@@ -16,6 +16,57 @@ const BlogPost = () => {
     return <div>Post not found</div>;
   }
 
+  const renderLocation = (location: typeof post.locations[0], index: number) => {
+    return (
+      <section key={location.name} className="mb-12">
+        <h2 className="text-2xl font-bold mb-4">{location.name}</h2>
+        
+        <p className="mb-6">{location.contentSections.introduction}</p>
+        
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold mb-3">Highlights</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            {location.contentSections.highlights.map((highlight, i) => (
+              <li key={i}>{highlight}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold mb-3">Best Time to Visit</h3>
+          <p>{location.contentSections.bestTimeToVisit}</p>
+        </div>
+
+        <div className="mb-6">
+          <h3 className="text-xl font-semibold mb-3">Insider Tips</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            {location.contentSections.insiderTips.map((tip, i) => (
+              <li key={i}>{tip}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="rounded-lg overflow-hidden">
+          <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
+        </div>
+
+        {index === post.callToAction.position && (
+          <div className="my-12 p-6 bg-blue-50 rounded-lg text-center">
+            <p className="text-lg mb-4">{post.callToAction.text}</p>
+            <a
+              href={post.callToAction.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              {post.callToAction.buttonText}
+            </a>
+          </div>
+        )}
+      </section>
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <BlogSEO 
@@ -51,10 +102,9 @@ const BlogPost = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div 
-                className="prose lg:prose-xl max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              <div className="prose lg:prose-xl max-w-none">
+                {post.locations.map((location, index) => renderLocation(location, index))}
+              </div>
             </motion.div>
           </div>
         </article>
