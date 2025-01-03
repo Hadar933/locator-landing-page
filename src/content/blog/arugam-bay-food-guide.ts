@@ -7,6 +7,11 @@ export const post = {
   image: "https://images.unsplash.com/photo-1606461704396-f2d6dea36bf0?q=80&w=1200&auto=format&fit=crop",
   content: `
     <article class="prose lg:prose-xl max-w-none">
+      <img 
+        src="https://images.unsplash.com/photo-1606461704396-f2d6dea36bf0?q=80&w=1200&auto=format&fit=crop"
+        alt="Sri Lankan cuisine spread on a table"
+        className="w-full h-[400px] object-cover rounded-lg mb-8"
+      />
       <p class="lead">Hey food lovers! If you're heading to Arugam Bay, you're in for a treat. This surf town isn't just about catching waves - it's got some seriously good eats. Here's my personal rundown of the best spots to grab a bite, from pizza to burgers to local Sri Lankan cuisine.</p>
 
       <h2>Best Pizza in Town</h2>

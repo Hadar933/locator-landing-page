@@ -7,6 +7,11 @@ export const post = {
   image: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop",
   content: `
     <article class="prose lg:prose-xl max-w-none">
+      <img 
+        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=1200&auto=format&fit=crop"
+        alt="Beautiful lagoon in Coron, Philippines"
+        className="w-full h-[400px] object-cover rounded-lg mb-8"
+      />
       <p class="lead">Welcome to Coron, a slice of paradise in the Philippines! This guide will take you through some of the most breathtaking natural wonders this island has to offer. From therapeutic hot springs to crystal-clear lakes and vibrant marine life, here's your guide to experiencing Coron's natural beauty.</p>
 
       <h2>Therapeutic Waters</h2>
