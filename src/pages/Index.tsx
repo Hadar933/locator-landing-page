@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
+import { EmailSignup } from "@/components/EmailSignup";
 
 const Index = () => {
   return (
@@ -19,6 +20,17 @@ const Index = () => {
       <Testimonials />
       <FAQ />
       <CtaSection />
+      <section className="py-16 bg-secondary">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p className="text-muted-foreground">
+              Sign up to receive updates about new features and our iOS launch.
+            </p>
+          </div>
+          <EmailSignup />
+        </div>
+      </section>
       <Footer />
     </div>
   );
