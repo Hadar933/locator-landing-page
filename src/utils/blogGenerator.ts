@@ -41,73 +41,71 @@ Create an immersive and narrative-driven travel blog post that reads like a pers
 
 STORYTELLING STRUCTURE:
 ---------------------
-1. Opening Scene (300-400 words):
-   - Begin with a vivid sensory description of arriving at the first location
-   - Set the mood and atmosphere of ${country}
-   - Weave in cultural context naturally through observations
-   - End with a promise of what the journey will reveal
+1. Opening Scene:
+   Begin with a vivid sensory description that places the reader right in the heart of ${country}. 
+   Paint a picture of the atmosphere, the sounds, the smells, and the energy of the place.
+   Weave in cultural context naturally through your observations.
 
 2. Visual Elements:
-   - Featured header image: ${headerImage}
-   - Format: Responsive 16:9 aspect ratio
-   - Caption: Integrate into the narrative flow
-   - Use imagery to support the story progression
+   Featured header image: ${headerImage}
+   Format: Responsive 16:9 aspect ratio
+   Use imagery to support the story progression
 
 3. Location Narratives:
 For each location (${locationsList}):
-   - Open with a personal anecdote or local interaction
-   - Describe the atmosphere and energy of the place
-   - Weave practical information naturally into the story
-   - Include dialogue with locals or fellow travelers
-   - Connect each location's story to the next
-   - Embed maps as part of the journey's progression
-   - Include descriptive transitions between locations
+   Share a personal anecdote or memorable encounter
+   Describe the unique atmosphere and character
+   Weave practical information naturally into the story
+   Include conversations with locals or fellow travelers
+   Create smooth transitions between locations
+   Integrate maps as part of the journey
+   Build emotional connections to each place
 
 4. Narrative Elements:
-   - Use first-person perspective
-   - Include sensory details (sights, sounds, smells)
-   - Incorporate local characters and conversations
-   - Weave in historical context through storytelling
-   - Build emotional connections to places
-   - Create narrative arcs within each section
+   Write in first-person perspective
+   Include rich sensory details
+   Feature local characters and conversations
+   Weave historical context through storytelling
+   Create emotional connections to places
+   Build narrative arcs within each section
 
 SEO & TECHNICAL REQUIREMENTS:
 --------------------------
 1. Title Structure:
-   - Main title: "${title} ${flag}"
-   - URL-friendly slug format
-   - Meta description as story hook
+   Main title: "${title} ${flag}"
+   URL-friendly slug format
+   Meta description as story hook
 
 2. Content Organization:
-   - Natural paragraph flow
-   - Descriptive subheadings
-   - Seamless integration of practical details
-   - Narrative transitions between sections
+   Natural paragraph flow
+   Descriptive subheadings
+   Seamless integration of practical details
+   Narrative transitions between sections
 
 3. Rich Content:
-   - Schema markup for travel articles
-   - Location coordinates and maps
-   - Image optimization and alt text
-   - Internal linking through story context
+   Schema markup for travel articles
+   Location coordinates and maps
+   Image optimization and alt text
+   Internal linking through story context
 
 4. User Experience:
-   - Clear reading progression
-   - Natural placement of practical information
-   - Engaging story flow
-   - Mobile-responsive layout
+   Clear reading progression
+   Natural placement of practical information
+   Engaging story flow
+   Mobile-responsive layout
 
 CALL-TO-ACTION INTEGRATION:
 -------------------------
 1. Story-Based CTA:
-   - Integrate naturally into the narrative
-   - Connect to reader's emotional journey
-   - Place at key story moments
-   - Maintain narrative flow
+   Integrate naturally into the narrative
+   Connect to reader's emotional journey
+   Place at key story moments
+   Maintain narrative flow
 
 2. App Integration:
-   - Weave app benefits into the story
-   - Show how it enhances the journey
-   - Natural connection to narrative
+   Weave app benefits into the story
+   Show how it enhances the journey
+   Natural connection to narrative
 
 CONTENT GUIDELINES:
 -----------------
@@ -119,4 +117,3 @@ CONTENT GUIDELINES:
 
 This approach creates an engaging narrative that combines practical travel information with compelling storytelling, making the content both useful and enjoyable to read.`;
 };
-```
