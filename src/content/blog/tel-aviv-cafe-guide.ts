@@ -33,6 +33,12 @@ export const post = {
         </div>
       </section>
 
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Add these places to Locator
+        </a>
+      </div>
+
       <section class="space-y-6">
         <h2 class="text-2xl font-bold">Studio Café</h2>
         <p>

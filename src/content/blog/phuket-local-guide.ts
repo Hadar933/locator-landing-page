@@ -17,6 +17,12 @@ export const post = {
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0461453465386!2d98.27439087507825!3d7.8741616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503a6e79d34f85%3A0xe25b4b9d1c2e01d4!2sFreedom%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Add these places to Locator
+        </a>
+      </div>
+
       <h3>Karon Beach</h3>
       <p>If you're looking for a more laid-back alternative to Patong, Karon is your spot. The beach is huge, so you'll always find your own space. The water's usually calmer here, making it great for swimming. Pro tip: catch the sunset here - it's usually less crowded than Patong.</p>
       <div class="map-embed">

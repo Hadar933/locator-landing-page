@@ -17,6 +17,12 @@ export const post = {
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8018557174886!2d120.2043895!3d11.9940695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sMaquinit%20Hot%20Spring!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Add these places to Locator
+        </a>
+      </div>
+
       <h2>Marine Wonders</h2>
 
       <h3>Siete Pecados Marine Park</h3>

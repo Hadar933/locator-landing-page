@@ -17,6 +17,12 @@ export const post = {
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sCili%20Hotel%20%26%20Pizza%20Restaurant!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Add these places to Locator
+        </a>
+      </div>
+
       <h2>Local Flavors</h2>
 
       <h3>Mama's Restaurant</h3>
