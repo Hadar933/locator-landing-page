@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
@@ -7,44 +7,52 @@ import L from 'leaflet';
 // Fix for default marker icons in Leaflet
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
 // Blog locations data
 const blogLocations = [
   {
     country: 'philippines',
-    coordinates: [120.9842, 14.5995], // Philippines coordinates
+    coordinates: [14.5995, 120.9842], // Philippines coordinates [lat, lng]
     title: "Coron, Philippines",
     description: "Nature guide and marine wonders"
   },
   {
     country: 'thailand',
-    coordinates: [100.5018, 13.7563], // Thailand coordinates
+    coordinates: [13.7563, 100.5018], // Thailand coordinates [lat, lng]
     title: "Phuket, Thailand",
     description: "Local guide and hidden beaches"
   },
   {
     country: 'sri-lanka',
-    coordinates: [80.7718, 7.8731], // Sri Lanka coordinates
+    coordinates: [7.8731, 80.7718], // Sri Lanka coordinates [lat, lng]
     title: "Arugam Bay, Sri Lanka",
     description: "Food guide and local spots"
   },
   {
     country: 'greece',
-    coordinates: [27.2464, 35.5071], // Karpathos, Greece coordinates
+    coordinates: [35.5071, 27.2464], // Karpathos, Greece coordinates [lat, lng]
     title: "Karpathos, Greece",
     description: "Hidden paradise and local culture"
   }
 ];
 
-const BlogMap = () => {
+const BlogMap: React.FC = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Ensure Leaflet container is properly sized
+    const map = L.map('map');
+    return () => {
+      map.remove();
+    };
+  }, []);
+
   return (
-    <div className="w-full h-[600px] rounded-lg shadow-lg overflow-hidden">
+    <div className="w-full h-[600px] rounded-lg shadow-lg overflow-hidden" id="map">
       <MapContainer
         center={[20, 0]}
         zoom={2}
@@ -58,7 +66,7 @@ const BlogMap = () => {
         {blogLocations.map((location, index) => (
           <Marker
             key={index}
-            position={[location.coordinates[1], location.coordinates[0]]}
+            position={location.coordinates}
             eventHandlers={{
               click: () => navigate(`/blog/category/${location.country}`)
             }}
