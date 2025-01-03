@@ -37,96 +37,86 @@ export const generateBlogPrompt = ({
   }).join('\n');
 
   return `
-Create an immersive and SEO-optimized travel blog post with the following specifications:
+Create an immersive and narrative-driven travel blog post that reads like a personal journey through ${country}:
 
-CONTENT STRUCTURE & NARRATIVE:
-----------------------------
-1. Title & Introduction (300-400 words):
-   - Use engaging title with ${flag} emoji
-   - Start with a compelling hook (personal story or interesting fact)
-   - Set the scene and context for ${country}
-   - Include a brief overview of what readers will learn
-   - End with a clear value proposition
+STORYTELLING STRUCTURE:
+---------------------
+1. Opening Scene (300-400 words):
+   - Begin with a vivid sensory description of arriving at the first location
+   - Set the mood and atmosphere of ${country}
+   - Weave in cultural context naturally through observations
+   - End with a promise of what the journey will reveal
 
-2. Header Image Implementation:
-   - Main featured image: ${headerImage}
-   - Required format: Responsive image with 16:9 aspect ratio
-   - Alt text must include location keywords
-   - Lazy loading for performance
-   - Caption should include location context
+2. Visual Elements:
+   - Featured header image: ${headerImage}
+   - Format: Responsive 16:9 aspect ratio
+   - Caption: Integrate into the narrative flow
+   - Use imagery to support the story progression
 
-3. For each location (${locationsList}):
-   - Start with an engaging story or local insight
-   - Include practical details (best times, costs, tips)
-   - Add local context and cultural significance
-   - Incorporate relevant historical facts
-   - End with insider tips that aren't commonly known
-   - Properly embed the provided Google Maps iframe
-   - Include image gallery section after map
+3. Location Narratives:
+For each location (${locationsList}):
+   - Open with a personal anecdote or local interaction
+   - Describe the atmosphere and energy of the place
+   - Weave practical information naturally into the story
+   - Include dialogue with locals or fellow travelers
+   - Connect each location's story to the next
+   - Embed maps as part of the journey's progression
+   - Include descriptive transitions between locations
 
-SEO OPTIMIZATION:
----------------
-1. Technical SEO:
-   - Title tag: "${title} ${flag} | Complete Guide [Current Year]"
-   - Meta description: Engaging summary under 155 characters
-   - URL structure: /${country.toLowerCase()}/${locations[0].name.toLowerCase().replace(/\s+/g, '-')}-guide
-   - Canonical URL: https://locator.ltd/blog/[slug]
+4. Narrative Elements:
+   - Use first-person perspective
+   - Include sensory details (sights, sounds, smells)
+   - Incorporate local characters and conversations
+   - Weave in historical context through storytelling
+   - Build emotional connections to places
+   - Create narrative arcs within each section
 
-2. Content Optimization:
-   - Primary keyword: "${country} travel guide"
-   - Secondary keywords: Include location names, activities
-   - LSI keywords: Add related terms naturally
-   - Semantic relevance: Include related topics and themes
+SEO & TECHNICAL REQUIREMENTS:
+--------------------------
+1. Title Structure:
+   - Main title: "${title} ${flag}"
+   - URL-friendly slug format
+   - Meta description as story hook
 
-3. Structured Data:
-   {
-     "@context": "https://schema.org",
-     "@type": "TravelGuide",
-     "name": "${title}",
-     "author": {
-       "@type": "Person",
-       "name": "${author}"
-     },
-     "about": {
-       "@type": "Place",
-       "name": "${country}"
-     }
-   }
+2. Content Organization:
+   - Natural paragraph flow
+   - Descriptive subheadings
+   - Seamless integration of practical details
+   - Narrative transitions between sections
 
-4. Meta Tags:
-   - og:title: "${title}"
-   - og:description: [Compelling description]
-   - og:image: ${headerImage}
-   - twitter:card: "summary_large_image"
-   - article:published_time: [Current date]
-   - article:author: "${author}"
+3. Rich Content:
+   - Schema markup for travel articles
+   - Location coordinates and maps
+   - Image optimization and alt text
+   - Internal linking through story context
 
-5. Internal Linking:
-   - Link to related ${country} guides
-   - Reference relevant city guides
-   - Link to seasonal travel content
-   - Add "Related Guides" section
+4. User Experience:
+   - Clear reading progression
+   - Natural placement of practical information
+   - Engaging story flow
+   - Mobile-responsive layout
 
-CALL-TO-ACTION PLACEMENT:
------------------------
-1. Mid-Content CTA:
-   - Place after second location
-   - Focus on saving locations with Locator app
-   - Use action-oriented button text
+CALL-TO-ACTION INTEGRATION:
+-------------------------
+1. Story-Based CTA:
+   - Integrate naturally into the narrative
+   - Connect to reader's emotional journey
+   - Place at key story moments
+   - Maintain narrative flow
 
-2. End-Content CTA:
-   - Comprehensive CTA with app benefits
-   - Include app screenshot
-   - Add social proof element
+2. App Integration:
+   - Weave app benefits into the story
+   - Show how it enhances the journey
+   - Natural connection to narrative
 
-CONTENT REQUIREMENTS:
--------------------
-1. Word count: 2,000-2,500 words
-2. Tone: Conversational yet authoritative
-3. Perspective: First-hand experience
-4. Currency: Include recent updates and changes
-5. Accuracy: Verify all facts and prices
-6. Local insights: Include non-obvious tips
+CONTENT GUIDELINES:
+-----------------
+1. Length: 2,000-2,500 words
+2. Style: Personal, immersive, descriptive
+3. Voice: Warm, engaging, authentic
+4. Flow: Natural story progression
+5. Details: Rich in context and atmosphere
 
-This structured approach ensures proper handling of both images and maps while maintaining SEO optimization and user engagement.`;
+This approach creates an engaging narrative that combines practical travel information with compelling storytelling, making the content both useful and enjoyable to read.`;
 };
+```
