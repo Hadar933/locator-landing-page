@@ -19,7 +19,6 @@ export const generateBlogPrompt = ({
 
   const flag = countryFlags[country] || '🌍';
   
-  // Transform location data to include proper map embed code
   const locationsList = locations.map(loc => {
     const mapEmbedCode = `<iframe
       src="${loc.googleMapLink.replace('/maps/', '/maps/embed/')}"
@@ -69,6 +68,22 @@ For each location (${locationsList}):
    Create emotional connections to places
    Build narrative arcs within each section
 
+5. Ending Note:
+   Craft a reflective conclusion that:
+   - Ties together the journey's highlights
+   - Shares a personal insight or transformation
+   - Connects the experience to universal themes
+   - Invites readers to imagine their own journey
+   - Ends with an evocative final image or moment
+
+6. Final Call-to-Action:
+   Create a compelling CTA that:
+   - References specific moments from the journey
+   - Highlights how the app enhances travel experiences
+   - Emphasizes the value of saving these locations
+   - Encourages readers to start their own adventure
+   - Uses emotional connection to drive action
+
 SEO & TECHNICAL REQUIREMENTS:
 --------------------------
 1. Title Structure:
@@ -93,19 +108,6 @@ SEO & TECHNICAL REQUIREMENTS:
    Natural placement of practical information
    Engaging story flow
    Mobile-responsive layout
-
-CALL-TO-ACTION INTEGRATION:
--------------------------
-1. Story-Based CTA:
-   Integrate naturally into the narrative
-   Connect to reader's emotional journey
-   Place at key story moments
-   Maintain narrative flow
-
-2. App Integration:
-   Weave app benefits into the story
-   Show how it enhances the journey
-   Natural connection to narrative
 
 CONTENT GUIDELINES:
 -----------------

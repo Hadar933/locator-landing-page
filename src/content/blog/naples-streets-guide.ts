@@ -101,5 +101,15 @@ export const post = {
     buttonText: "Download Locator App",
     link: "https://locator.ltd"
   },
+  endingNote: {
+    reflection: "As the sun sets over the Bay of Naples, casting its golden light across these historic shopping streets, I can't help but reflect on how each avenue tells its own unique story. From the bustling energy of Via Toledo to the refined elegance of Via Chiaia, these streets aren't just shopping destinations – they're living museums where centuries of Neapolitan culture continue to thrive. The artisans, the architecture, and the daily rhythms of life here create an experience that goes far beyond mere retail therapy.",
+    insight: "What makes Naples' shopping streets truly special isn't just the boutiques or the brands – it's the way shopping here connects you to the city's soul. Every purchase becomes a story, every interaction a memory, and every street a chapter in your own Neapolitan adventure.",
+    finalImage: "As I take one last evening stroll down Via Toledo, watching the street lamps illuminate the historic facades and hearing the distant melodies of street musicians, I'm reminded that in Naples, shopping isn't just an activity – it's an art form that's been perfected over centuries."
+  },
+  finalCallToAction: {
+    text: "Don't let these magical moments slip away. With Locator, you can save each of these iconic streets, along with your favorite boutiques, cafes, and hidden gems. Start creating your own Naples shopping story today.",
+    buttonText: "Begin Your Naples Adventure",
+    link: "https://locator.ltd/download"
+  },
   tags: ["Shopping", "Naples", "Italy", "Fashion", "Luxury Shopping", "Street Guide"]
 };
