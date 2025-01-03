@@ -18,19 +18,31 @@ export const EmailSignup = ({ className = "" }: { className?: string }) => {
         .from("email_subscribers")
         .insert([{ email }]);
 
-      if (error) throw error;
-
-      toast({
-        title: "You're In! 🎉",
-        description: "Thanks for joining! We'll keep you in the loop about our iOS launch.",
-      });
-      setEmail("");
+      if (error) {
+        if (error.message.includes("email_subscribers_email_key")) {
+          toast({
+            title: "Already Subscribed",
+            description: "This email is already signed up for updates. We'll notify you when we launch!",
+            variant: "destructive",
+          });
+        } else {
+          toast({
+            title: "Something went wrong",
+            description: "Please try again later",
+            variant: "destructive",
+          });
+        }
+      } else {
+        toast({
+          title: "You're In! 🎉",
+          description: "Thanks for joining! We'll keep you in the loop about our iOS launch.",
+        });
+        setEmail("");
+      }
     } catch (error: any) {
       toast({
         title: "Something went wrong",
-        description: error.message === "duplicate key value violates unique constraint \"email_subscribers_email_key\""
-          ? "This email is already subscribed"
-          : "Please try again later",
+        description: "Please try again later",
         variant: "destructive",
       });
     } finally {
