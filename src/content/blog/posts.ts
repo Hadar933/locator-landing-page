@@ -14,7 +14,6 @@ export interface BlogLocation {
     introduction: string;
     highlights: string[];
     bestTimeToVisit: string;
-    insiderTips: string[];
     mapEmbed: string;
   };
 }

@@ -25,12 +25,6 @@ export const post: BlogPost = {
           "Intimate atmosphere perfect for casual dining"
         ],
         bestTimeToVisit: "Visit during weekday lunch hours (12:00-14:00) to avoid the evening rush. The restaurant is particularly busy during weekend evenings.",
-        insiderTips: [
-          "Try their special 'Tel Aviv Sauce' - a secret recipe that perfectly balances heat and tang",
-          "Ask for extra crispy fries - they're worth it",
-          "Don't skip the homemade pickles that come with every burger",
-          "Consider making a reservation for dinner service"
-        ],
         mapEmbed: `<iframe src="https://maps.google.com/maps?q=prozdor+tel+aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }
     },
@@ -46,12 +40,6 @@ export const post: BlogPost = {
           "Vegetarian options that rival their meat counterparts"
         ],
         bestTimeToVisit: "Early evening (17:00-19:00) tends to be less crowded, and you'll catch the beautiful Tel Aviv sunset while dining.",
-        insiderTips: [
-          "Their secret menu includes a special 'Mediterranean Burger' - ask for it",
-          "Pair your burger with their homemade lemonade with mint",
-          "The outdoor seating area offers the best atmosphere",
-          "Follow their Instagram for daily specials"
-        ],
         mapEmbed: `<iframe src="https://maps.google.com/maps?q=the+little+burger+shop+tel+aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }
     },
@@ -67,12 +55,6 @@ export const post: BlogPost = {
           "Modern industrial-chic atmosphere"
         ],
         bestTimeToVisit: "Late afternoon (15:00-17:00) offers the most relaxed dining experience, especially on weekdays.",
-        insiderTips: [
-          "Their 'Special Sauce' is available for purchase by the bottle",
-          "The sweet potato fries with aioli are a must-try side",
-          "Ask for your burger 'Vitrina Style' for extra toppings",
-          "They often collaborate with local craft breweries - check the specials board"
-        ],
         mapEmbed: `<iframe src="https://maps.google.com/maps?q=vitrina+tel+aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }
     },
@@ -88,12 +70,6 @@ export const post: BlogPost = {
           "Family-friendly atmosphere with outdoor seating"
         ],
         bestTimeToVisit: "Lunch hours (12:00-14:00) during weekdays offer the best combination of fresh food and minimal wait times.",
-        insiderTips: [
-          "Try their special 'Benz Sauce' - a unique blend of traditional and modern flavors",
-          "The onion rings are made to order - worth the wait",
-          "Ask about their burger of the month",
-          "Happy hour deals available Sunday through Thursday"
-        ],
         mapEmbed: `<iframe src="https://maps.google.com/maps?q=benz+brothers+tel+aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }
     },
@@ -109,12 +85,6 @@ export const post: BlogPost = {
           "Fun, casual atmosphere perfect for groups"
         ],
         bestTimeToVisit: "Early dinner (18:00-20:00) offers the full experience with the most energetic atmosphere.",
-        insiderTips: [
-          "Their 'Secret Menu' changes monthly - ask your server",
-          "The loaded fries are enough to share between two",
-          "Don't skip their homemade milkshakes",
-          "Check their social media for daily specials"
-        ],
         mapEmbed: `<iframe src="https://maps.google.com/maps?q=silly+kid+tel+aviv&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
       }
     }
