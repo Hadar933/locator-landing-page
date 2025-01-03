@@ -53,7 +53,7 @@ export const Footer = () => {
         </div>
         <div className="border-t pt-8">
           <p className="text-sm text-center text-muted-foreground">
-            © 2024 Locator. All rights reserved.
+            © {new Date().getFullYear()} Locator. All rights reserved.
           </p>
         </div>
       </div>
