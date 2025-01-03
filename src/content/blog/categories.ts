@@ -54,6 +54,20 @@ export const blogCategories = [
         date: "2024-12-28"
       }
     ]
+  },
+  {
+    title: "Israel",
+    flag: "🇮🇱",
+    description: "Explore the vibrant food scene and cultural hotspots of Israel",
+    slug: "israel",
+    posts: [
+      {
+        title: "Tel Aviv Café Culture: Best Coffee Spots Guide",
+        slug: "tel-aviv-cafe-guide",
+        excerpt: "A curated guide to Tel Aviv's most charming cafés, from hidden gems to popular spots",
+        date: "2024-12-27"
+      }
+    ]
   }
 ];
 
