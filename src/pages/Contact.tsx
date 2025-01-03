@@ -27,7 +27,7 @@ const Contact = () => {
               
               <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground mb-4">
                 <Mail className="h-5 w-5" />
-                <a href="mailto:locatorapp.ai@gmail.com" className="hover:text-blue-600 transition-colors">
+                <a href="mailto:locatorapp.ai@gmail.com" className="text-primary hover:underline">
                   locatorapp.ai@gmail.com
                 </a>
               </div>
