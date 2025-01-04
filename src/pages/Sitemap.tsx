@@ -75,18 +75,19 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Create a Blob containing the XML
+      // Set the content type to XML
       const blob = new Blob([xml], { type: 'application/xml' });
       const url = URL.createObjectURL(blob);
 
-      // Create a link element and trigger download
+      // Create a link element and set its attributes
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'sitemap.xml';
+      link.setAttribute('type', 'application/xml');
       document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      
+      // Set the XML content directly in the document
+      document.documentElement.innerHTML = xml;
+      document.contentType = 'application/xml';
     };
 
     generateSitemap();
