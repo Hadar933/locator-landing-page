@@ -1,5 +1,31 @@
 import { BlogInput } from "@/types/blog";
 
+const generateContextSpecificCTA = (category: string, country: string) => {
+  switch (category.toLowerCase()) {
+    case 'food guide':
+      return `Save these restaurants to your ${country} food map`;
+    case 'nature guide':
+      return `Map your ${country} nature spots`;
+    case 'shopping guide':
+      return `Create your ${country} shopping route`;
+    default:
+      return `Add these places to your ${country} map`;
+  }
+};
+
+const getCategorySpecificCompanion = (category: string) => {
+  switch (category.toLowerCase()) {
+    case 'food guide':
+      return 'food guide companion';
+    case 'nature guide':
+      return 'nature exploration companion';
+    case 'shopping guide':
+      return 'shopping guide companion';
+    default:
+      return 'travel companion';
+  }
+};
+
 export const generateBlogPrompt = ({ 
   title = '', 
   headerImage, 
@@ -57,32 +83,6 @@ export const generateBlogPrompt = ({
       Download Locator App
     </a>
   </div>`;
-
-  const generateContextSpecificCTA = (category: string, country: string) => {
-    switch (category.toLowerCase()) {
-      case 'food guide':
-        return `Save these restaurants to your ${country} food map`;
-      case 'nature guide':
-        return `Map your ${country} nature spots`;
-      case 'shopping guide':
-        return `Create your ${country} shopping route`;
-      default:
-        return `Add these places to your ${country} map`;
-    }
-  };
-
-  const getCategorySpecificCompanion = (category: string) => {
-    switch (category.toLowerCase()) {
-      case 'food guide':
-        return 'food guide companion';
-      case 'nature guide':
-        return 'nature exploration companion';
-      case 'shopping guide':
-        return 'shopping guide companion';
-      default:
-        return 'travel companion';
-    }
-  };
 
   return `
 Create an immersive and narrative-driven travel blog post that reads like a personal journey through ${country}:
