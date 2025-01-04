@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <>
       <NavigationBar />
-      <section className="min-h-[40vh] flex items-center justify-center px-4 pt-20 md:pt-16 bg-gradient-to-b from-blue-50 to-white">
+      <section className="min-h-[40vh] flex items-center justify-center px-4 pt-28 md:pt-24 bg-gradient-to-b from-blue-50 to-white">
         <div className="container max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
