@@ -19,7 +19,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your Coron island-hopping adventure
+          Map your Coron nature spots with Locator
         </a>
       </div>
 
@@ -84,6 +84,12 @@ export const post = {
         <p class="mb-6">Ready to explore these natural wonders? Save all these locations in one place with Locator - your personal island-hopping companion.</p>
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
           Download Locator App
+        </a>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your Coron nature spots with Locator
         </a>
       </div>
     </article>

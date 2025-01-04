@@ -19,7 +19,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Save these restaurants to your Arugam Bay food map
+          Map your favorite food spots with Locator
         </a>
       </div>
 
@@ -64,7 +64,13 @@ export const post = {
         <h3 class="text-xl font-semibold mb-4">Create Your Arugam Bay Food Journey</h3>
         <p class="mb-6">Ready to explore these amazing restaurants? Save them all in one place with Locator - your personal food guide companion.</p>
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Download Locator App
+          Map your favorite food spots with Locator
+        </a>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your favorite food spots with Locator
         </a>
       </div>
     </article>

@@ -111,5 +111,44 @@ export const post = {
     buttonText: "Begin Your Naples Adventure",
     link: "https://locator.ltd/download"
   },
-  tags: ["Shopping", "Naples", "Italy", "Fashion", "Luxury Shopping", "Street Guide"]
+  tags: ["Shopping", "Naples", "Italy", "Fashion", "Luxury Shopping", "Street Guide"],
+  content: `
+    <article class="prose lg:prose-xl max-w-none">
+      <p class="lead">As I step onto Via Toledo, the heartbeat of Naples pulses through the cobblestones beneath my feet. The morning sun casts long shadows through the historic Galleria Umberto I, where the marble floors tell stories of centuries past. The aroma of freshly baked sfogliatella mingles with the rich scent of Neapolitan coffee wafting from the iconic Gambrinus café. This isn't just Naples' most famous shopping street; it's a living museum where history and modern life dance together in perfect harmony.</p>
+
+      <h2>Via Toledo</h2>
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your shopping destinations with Locator
+        </a>
+      </div>
+
+      <h2>Via Chiaia</h2>
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your shopping destinations with Locator
+        </a>
+      </div>
+
+      <h2>Via Calabritto</h2>
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your shopping destinations with Locator
+        </a>
+      </div>
+
+      <h2>Via dei Mille</h2>
+      <div class="my-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your shopping destinations with Locator
+        </a>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your shopping destinations with Locator
+        </a>
+      </div>
+    </article>
+  `
 };

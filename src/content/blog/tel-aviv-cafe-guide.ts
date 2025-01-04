@@ -35,7 +35,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Add these places to Locator
+          Map your favorite cafes with Locator
         </a>
       </div>
 
@@ -128,6 +128,12 @@ export const post = {
           <li>Free Wi-Fi is generally available at all locations</li>
         </ul>
       </section>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Map your favorite cafes with Locator
+        </a>
+      </div>
     </div>
   `,
   tags: [

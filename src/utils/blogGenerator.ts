@@ -1,28 +1,15 @@
 import { BlogInput } from "@/types/blog";
 
-const generateContextSpecificCTA = (category: string, country: string) => {
+const generateContextSpecificCTA = (category: string) => {
   switch (category.toLowerCase()) {
     case 'food guide':
-      return `Save these restaurants to your ${country} food map`;
+      return 'Map your favorite food spots';
     case 'nature guide':
-      return `Map your ${country} nature spots`;
+      return 'Map your nature exploration spots';
     case 'shopping guide':
-      return `Create your ${country} shopping route`;
+      return 'Save these shopping destinations';
     default:
-      return `Add these places to your ${country} map`;
-  }
-};
-
-const getCategorySpecificCompanion = (category: string) => {
-  switch (category.toLowerCase()) {
-    case 'food guide':
-      return 'food guide companion';
-    case 'nature guide':
-      return 'nature exploration companion';
-    case 'shopping guide':
-      return 'shopping guide companion';
-    default:
-      return 'travel companion';
+      return 'Save these locations';
   }
 };
 
@@ -68,19 +55,10 @@ export const generateBlogPrompt = ({
       ${customInfoSection}`;
   }).join('\n');
 
-  const midPageCTA = `
+  const ctaTemplate = `
   <div class="my-12 text-center">
     <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-      ${generateContextSpecificCTA(category, country)}
-    </a>
-  </div>`;
-
-  const endPageCTA = `
-  <div class="mt-12 p-6 bg-blue-50 rounded-lg">
-    <h3 class="text-xl font-semibold mb-4">Start Your ${country} Journey</h3>
-    <p class="mb-6">Ready to explore these amazing locations? Save them all in one place with Locator - your personal ${getCategorySpecificCompanion(category)}.</p>
-    <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-      Download Locator App
+      ${generateContextSpecificCTA(category)} with Locator
     </a>
   </div>`;
 
@@ -109,7 +87,7 @@ For each location (${locationsList}):
    Build emotional connections to each place
 
    IMPORTANT: After describing 50% of the locations, insert this CTA:
-   ${midPageCTA}
+   ${ctaTemplate}
 
 4. Narrative Elements:
    Write in first-person perspective
@@ -128,33 +106,8 @@ For each location (${locationsList}):
    - Ends with an evocative final image or moment
 
 6. Final Call-to-Action:
-   IMPORTANT: Always end the post with this CTA:
-   ${endPageCTA}
-
-SEO & TECHNICAL REQUIREMENTS:
---------------------------
-1. Title Structure:
-   Main title: "${title} ${flag}"
-   URL-friendly slug format
-   Meta description as story hook
-
-2. Content Organization:
-   Natural paragraph flow
-   Descriptive subheadings
-   Seamless integration of practical details
-   Narrative transitions between sections
-
-3. Rich Content:
-   Schema markup for travel articles
-   Location coordinates and maps
-   Image optimization and alt text
-   Internal linking through story context
-
-4. User Experience:
-   Clear reading progression
-   Natural placement of practical information
-   Engaging story flow
-   Mobile-responsive layout
+   IMPORTANT: End the post with:
+   ${ctaTemplate}
 
 CONTENT GUIDELINES:
 -----------------

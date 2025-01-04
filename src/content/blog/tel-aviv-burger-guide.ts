@@ -97,6 +97,12 @@ export const post: BlogPost = {
       The best time to explore Tel Aviv's burger scene is during weekday afternoons when the crowds are smaller and you can truly savor each experience. Many locations offer lunch specials that make your culinary adventure even more enjoyable.
     </p>
 
+    <div class="my-12 text-center">
+      <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+        Map your favorite burger spots with Locator
+      </a>
+    </div>
+
     <div class="bg-blue-50 p-6 rounded-lg my-8">
       <h3 class="font-bold mb-2">Pro Tips for Your Burger Adventure:</h3>
       <ul class="list-disc pl-6 space-y-2">
@@ -105,12 +111,6 @@ export const post: BlogPost = {
         <li>Don't hesitate to ask for recommendations - staff are usually passionate about their burgers</li>
         <li>Follow each location's social media for special offers and new menu items</li>
       </ul>
-    </div>
-
-    <div class="my-12 text-center">
-      <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-        Add these places to Locator
-      </a>
     </div>
 
     <div class="mt-12 p-6 bg-blue-50 rounded-lg">
