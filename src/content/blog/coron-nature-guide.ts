@@ -19,7 +19,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Add these places to Locator
+          Map your Coron island-hopping adventure
         </a>
       </div>
 
@@ -71,12 +71,20 @@ export const post = {
       <h2>Using Locator in Coron</h2>
       <p>Planning to visit these spots? Save them all in Locator for easy access during your trip. You can organize them by categories (beaches, lakes, diving spots) and even add your own notes and photos. It's particularly useful for planning island hopping routes since you can see all locations on a single map.</p>
 
-      <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
         <h3>Additional Resources</h3>
         <ul>
           <li><a href="https://tourism.gov.ph" target="_blank" rel="noopener noreferrer">Philippines Department of Tourism <ExternalLink className="inline h-4 w-4" /></a></li>
           <li><a href="https://divephilippines.com.ph" target="_blank" rel="noopener noreferrer">Diving Philippines <ExternalLink className="inline h-4 w-4" /></a></li>
         </ul>
+      </div>
+
+      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4">Plan Your Perfect Coron Adventure</h3>
+        <p class="mb-6">Ready to explore these natural wonders? Save all these locations in one place with Locator - your personal island-hopping companion.</p>
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Download Locator App
+        </a>
       </div>
     </article>
   `

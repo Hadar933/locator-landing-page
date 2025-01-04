@@ -45,18 +45,44 @@ export const generateBlogPrompt = ({
   const midPageCTA = `
   <div class="my-12 text-center">
     <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-      Add these places to Locator
+      ${generateContextSpecificCTA(category, country)}
     </a>
   </div>`;
 
   const endPageCTA = `
   <div class="mt-12 p-6 bg-blue-50 rounded-lg">
-    <h3 class="text-xl font-semibold mb-4">Start Your Journey with Locator</h3>
-    <p class="mb-6">Ready to explore these amazing locations? Save them all in one place with Locator - your personal travel companion.</p>
+    <h3 class="text-xl font-semibold mb-4">Start Your ${country} Journey</h3>
+    <p class="mb-6">Ready to explore these amazing locations? Save them all in one place with Locator - your personal ${getCategorySpecificCompanion(category)}.</p>
     <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
       Download Locator App
     </a>
   </div>`;
+
+  const generateContextSpecificCTA = (category: string, country: string) => {
+    switch (category.toLowerCase()) {
+      case 'food guide':
+        return `Save these restaurants to your ${country} food map`;
+      case 'nature guide':
+        return `Map your ${country} nature spots`;
+      case 'shopping guide':
+        return `Create your ${country} shopping route`;
+      default:
+        return `Add these places to your ${country} map`;
+    }
+  };
+
+  const getCategorySpecificCompanion = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'food guide':
+        return 'food guide companion';
+      case 'nature guide':
+        return 'nature exploration companion';
+      case 'shopping guide':
+        return 'shopping guide companion';
+      default:
+        return 'travel companion';
+    }
+  };
 
   return `
 Create an immersive and narrative-driven travel blog post that reads like a personal journey through ${country}:

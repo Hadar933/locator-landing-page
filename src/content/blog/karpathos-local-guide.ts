@@ -22,7 +22,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Add these places to Locator
+          Create your Karpathos island map
         </a>
       </div>
 
@@ -65,6 +65,14 @@ export const post = {
 
       <h2>Using Locator in Karpathos</h2>
       <p>Save all these locations in your Locator app before your trip. The offline map feature will come in handy as some remote beaches might have limited mobile coverage. You can also discover more hidden gems from other travelers who've visited Karpathos.</p>
+
+      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4">Plan Your Karpathos Adventure</h3>
+        <p class="mb-6">Ready to explore this hidden Greek paradise? Save all these spots in one place with Locator - your personal island guide.</p>
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Download Locator App
+        </a>
+      </div>
 
       <div class="mt-8 p-4 bg-blue-50 rounded-lg">
         <h3>Additional Resources</h3>

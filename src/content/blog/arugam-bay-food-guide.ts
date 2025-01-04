@@ -19,7 +19,7 @@ export const post = {
 
       <div class="my-12 text-center">
         <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Add these places to Locator
+          Save these restaurants to your Arugam Bay food map
         </a>
       </div>
 
@@ -59,6 +59,14 @@ export const post = {
 
       <h2>Quick Tip About Locator</h2>
       <p>By the way, I used Locator to save all these spots while I was exploring Arugam Bay. It's super handy when you're walking around and want to remember a place for later. Just save the location straight from Google Maps or any website, and it'll show up on your personal map. Makes it way easier to plan your meals and remember where all the good spots are!</p>
+
+      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4">Create Your Arugam Bay Food Journey</h3>
+        <p class="mb-6">Ready to explore these amazing restaurants? Save them all in one place with Locator - your personal food guide companion.</p>
+        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+          Download Locator App
+        </a>
+      </div>
     </article>
   `
 };
