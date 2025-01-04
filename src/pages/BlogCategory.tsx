@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
-import { Link, useParams, useNavigate, useEffect } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { blogCategories } from "@/content/blog/categories";
 
