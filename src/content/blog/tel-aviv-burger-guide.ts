@@ -63,7 +63,7 @@ export const post: BlogPost = {
     }
   ],
   callToAction: {
-    position: 2,
+    position: 2, // After 2 locations (40% through the content)
     text: "Never lose track of your favorite burger spots in Tel Aviv! Save these locations and discover more hidden gems with Locator.",
     buttonText: "Start Saving Your Burger Adventures",
     link: "https://locator.ltd"
@@ -105,6 +105,20 @@ export const post: BlogPost = {
         <li>Don't hesitate to ask for recommendations - staff are usually passionate about their burgers</li>
         <li>Follow each location's social media for special offers and new menu items</li>
       </ul>
+    </div>
+
+    <div class="my-12 text-center">
+      <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+        Add these places to Locator
+      </a>
+    </div>
+
+    <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+      <h3 class="text-xl font-semibold mb-4">Start Your Journey with Locator</h3>
+      <p class="mb-6">Ready to explore these amazing locations? Save them all in one place with Locator - your personal travel companion.</p>
+      <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+        Download Locator App
+      </a>
     </div>
   `,
 };
