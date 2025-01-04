@@ -8,6 +8,30 @@ const Sitemap = () => {
       const baseUrl = "https://locator.ltd";
       const today = new Date().toISOString();
 
+      // Collect all blog post URLs
+      const blogPostUrls = Object.entries(posts).map(([slug, post]) => {
+        const country = blogCategories.find(cat => 
+          cat.posts.some(p => p.slug === slug)
+        )?.slug || 'uncategorized';
+        
+        return `
+  <url>
+    <loc>${baseUrl}/blog/${country}/${slug}</loc>
+    <lastmod>${post.modifiedDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>`;
+      }).join('');
+
+      // Collect all category URLs
+      const categoryUrls = blogCategories.map(category => `
+  <url>
+    <loc>${baseUrl}/blog/${category.slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('');
+
       const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Static Pages -->
@@ -41,24 +65,14 @@ const Sitemap = () => {
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Blog Categories -->
-  ${blogCategories.map(category => `
   <url>
-    <loc>${baseUrl}/blog/${category.slug}</loc>
+    <loc>${baseUrl}/privacy</loc>
     <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`).join('')}
-
-  <!-- Blog Posts -->
-  ${Object.entries(posts).map(([slug, post]) => `
-  <url>
-    <loc>${baseUrl}/blog/${post.country?.toLowerCase() || 'philippines'}/${slug}</loc>
-    <lastmod>${post.modifiedDate}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`).join('')}
+    <priority>0.5</priority>
+  </url>
+  ${categoryUrls}
+  ${blogPostUrls}
 </urlset>`;
 
       // Create a Blob containing the XML
