@@ -17,7 +17,7 @@ export const generateBlogPrompt = ({
     'Italy': '🇮🇹'
   };
 
-  const today = new Date().toISOString().split('T')[0]; // Format: YYYY-MM-DD
+  const today = new Date().toISOString().split('T')[0];
   const flag = countryFlags[country] || '🌍';
   
   const locationsList = locations.map(loc => {
@@ -41,6 +41,22 @@ export const generateBlogPrompt = ({
       Google Maps link: ${loc.googleMapLink}
       ${customInfoSection}`;
   }).join('\n');
+
+  const midPageCTA = `
+  <div class="my-12 text-center">
+    <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+      Add these places to Locator
+    </a>
+  </div>`;
+
+  const endPageCTA = `
+  <div class="mt-12 p-6 bg-blue-50 rounded-lg">
+    <h3 class="text-xl font-semibold mb-4">Start Your Journey with Locator</h3>
+    <p class="mb-6">Ready to explore these amazing locations? Save them all in one place with Locator - your personal travel companion.</p>
+    <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+      Download Locator App
+    </a>
+  </div>`;
 
   return `
 Create an immersive and narrative-driven travel blog post that reads like a personal journey through ${country}:
@@ -66,6 +82,9 @@ For each location (${locationsList}):
    Integrate maps as part of the journey
    Build emotional connections to each place
 
+   IMPORTANT: After describing 50% of the locations, insert this CTA:
+   ${midPageCTA}
+
 4. Narrative Elements:
    Write in first-person perspective
    Include rich sensory details
@@ -83,15 +102,8 @@ For each location (${locationsList}):
    - Ends with an evocative final image or moment
 
 6. Final Call-to-Action:
-   IMPORTANT: Make sure to include a compelling CTA at the end that:
-   - References specific moments from the journey
-   - Highlights how the app enhances travel experiences
-   - Emphasizes the value of saving these locations
-   - Encourages readers to start their own adventure
-   - Uses emotional connection to drive action
-   - Position it naturally within the flow of content
-   - Make it feel like a natural extension of the story
-   - Avoid making it feel too promotional
+   IMPORTANT: Always end the post with this CTA:
+   ${endPageCTA}
 
 SEO & TECHNICAL REQUIREMENTS:
 --------------------------
