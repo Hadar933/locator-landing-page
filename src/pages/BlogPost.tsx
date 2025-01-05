@@ -9,42 +9,61 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const renderLocation = (location: BlogLocation, index: number) => {
+const renderLocation = (location: BlogLocation, index: number, post: BlogPostType) => {
+  // Check if we need to render CTA after this location
+  const shouldRenderCTA = post.callToAction && post.callToAction.position === index;
+
   return (
-    <div key={index} className="my-12">
-      <h2 className="text-2xl font-bold mb-4">{location.name}</h2>
-      
-      <div className="prose lg:prose-xl max-w-none mb-6">
-        <p>{location.contentSections.introduction}</p>
+    <div key={index}>
+      <div className="my-12">
+        <h2 className="text-2xl font-bold mb-4">{location.name}</h2>
         
-        {location.contentSections.customInfo && (
-          <ul className="list-disc pl-6 space-y-2 my-4">
-            {location.contentSections.customInfo.map((info, i) => (
-              <li key={i}>{info}</li>
-            ))}
-          </ul>
-        )}
-        
-        <div className="my-4">
-          <strong>Best Time to Visit:</strong>
-          <p>{location.contentSections.bestTimeToVisit}</p>
+        <div className="prose lg:prose-xl max-w-none mb-6">
+          <p>{location.contentSections.introduction}</p>
+          
+          {location.contentSections.customInfo && (
+            <ul className="list-disc pl-6 space-y-2 my-4">
+              {location.contentSections.customInfo.map((info, i) => (
+                <li key={i}>{info}</li>
+              ))}
+            </ul>
+          )}
+          
+          <div className="my-4">
+            <strong>Best Time to Visit:</strong>
+            <p>{location.contentSections.bestTimeToVisit}</p>
+          </div>
+        </div>
+
+        <div className="mt-6">
+          <a 
+            href={location.googleMapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline mb-4 inline-block"
+          >
+            View on Google Maps
+          </a>
+        </div>
+
+        <div className="mt-4 rounded-lg overflow-hidden border">
+          <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
         </div>
       </div>
 
-      <div className="mt-6">
-        <a 
-          href={location.googleMapLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 underline mb-4 inline-block"
-        >
-          View on Google Maps
-        </a>
-      </div>
-
-      <div className="mt-4 rounded-lg overflow-hidden border">
-        <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
-      </div>
+      {shouldRenderCTA && (
+        <div className="my-8 p-6 bg-blue-50 rounded-lg text-center">
+          <h3 className="text-xl font-bold mb-4">{post.callToAction.text}</h3>
+          <a 
+            href={post.callToAction.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            {post.callToAction.buttonText}
+          </a>
+        </div>
+      )}
     </div>
   );
 };
@@ -107,7 +126,7 @@ const BlogPost = () => {
             >
               <div className="prose lg:prose-xl max-w-none">
                 {post.content && <div dangerouslySetInnerHTML={{ __html: post.content }} />}
-                {post.locations?.map((location, index) => renderLocation(location, index))}
+                {post.locations?.map((location, index) => renderLocation(location, index, post))}
               </div>
             </motion.div>
           </div>
