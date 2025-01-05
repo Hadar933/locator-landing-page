@@ -34,6 +34,12 @@ export const blogCategories = [
     slug: "sri-lanka",
     posts: [
       {
+        title: "Mirissa Backpacking Guide: Hidden Beaches & Local Gems",
+        slug: "mirissa-backpacking-guide",
+        excerpt: "Discover the laid-back charm of Mirissa - from secret beaches to the best local restaurants and viewpoints",
+        date: "2024-01-25"
+      },
+      {
         title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
         slug: "arugam-bay-food-guide",
         excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
