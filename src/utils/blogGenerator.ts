@@ -1,19 +1,14 @@
 import { BlogInput } from "@/types/blog";
 
-const generateContextSpecificCTA = (category: string) => {
-  switch (category.toLowerCase()) {
-    case 'food guide':
-      return 'Map your favorite food spots';
-    case 'nature guide':
-      return 'Map your nature exploration spots';
-    case 'shopping guide':
-      return 'Save these shopping destinations';
-    default:
-      return 'Save these locations';
-  }
-};
+interface Location {
+  name: string;
+  googleMapLink: string;
+  customInfo?: string[];
+  bestTimeToVisit?: string;
+  tips?: string[];
+}
 
-export const generateBlogPrompt = ({ 
+const generateBlogPrompt = ({ 
   title = '', 
   headerImage, 
   country, 
@@ -21,18 +16,7 @@ export const generateBlogPrompt = ({
   category = 'Travel Guide',
   author = 'Local Expert'
 }: BlogInput): string => {
-  const countryFlags: Record<string, string> = {
-    'Philippines': '🇵🇭',
-    'Thailand': '🇹🇭',
-    'Sri Lanka': '🇱🇰',
-    'Greece': '🇬🇷',
-    'Israel': '🇮🇱',
-    'Italy': '🇮🇹'
-  };
-
-  const today = new Date().toISOString().split('T')[0];
-  const flag = countryFlags[country] || '🌍';
-  
+  // Format locations into a readable string
   const locationsList = locations.map(loc => {
     const mapEmbedCode = `<iframe
       src="${loc.googleMapLink.replace('/maps/', '/maps/embed/')}"
@@ -45,80 +29,98 @@ export const generateBlogPrompt = ({
     </iframe>`;
     
     const customInfoSection = loc.customInfo ? 
-      `Custom Information:
+      `Location Details:
        ${loc.customInfo.map(info => `- ${info}`).join('\n')}` : 
-      'Generic location description will be used';
+      '';
     
-    return `- ${loc.name}
-      Map embed code: ${mapEmbedCode}
-      Google Maps link: ${loc.googleMapLink}
-      ${customInfoSection}`;
-  }).join('\n');
-
-  const ctaTemplate = `
-  <div class="my-8 p-6 bg-blue-50 rounded-lg text-center">
-    <h3 class="text-xl font-bold mb-4">📍 Add these recommendations to your map!</h3>
-    <p class="mb-4">Save all these local favorites in ${country} with Locator - your personal travel companion for discovering and organizing the best spots.</p>
-    <a href="https://locator.ltd" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-      Map Your ${country} Adventure
-    </a>
-  </div>`;
+    return `Location: ${loc.name}
+      ${customInfoSection}
+      Map: ${loc.googleMapLink}`;
+  }).join('\n\n');
 
   return `
-Create an immersive and narrative-driven travel blog post that reads like a personal journey through ${country}:
+BLOG POST GENERATION PROMPT
+==========================
 
-STORYTELLING STRUCTURE:
----------------------
-1. Opening Scene:
-   Begin with a vivid sensory description that places the reader right in the heart of ${country}. 
-   Paint a picture of the atmosphere, the sounds, the smells, and the energy of the place.
-   Weave in cultural context naturally through your observations.
+REQUIRED INPUTS:
+---------------
+1. Country: ${country}
+2. Category: ${category}
+3. Title: ${title}
+4. Header Image: ${headerImage}
+5. Author: ${author}
 
-2. Visual Elements:
-   Featured header image: ${headerImage}
-   Format: Responsive 16:9 aspect ratio
-   Use imagery to support the story progression
+LOCATIONS TO COVER:
+------------------
+${locationsList}
 
-3. Location Narratives:
-For each location (${locationsList}):
-   Share a personal anecdote or memorable encounter
-   Describe the unique atmosphere and character
-   Include practical visiting information
-   Create smooth transitions between locations
-   Integrate maps as part of the journey
-   Build emotional connections to each place
-
-   IMPORTANT: After describing 50% of the locations, insert this CTA:
-   ${ctaTemplate}
-
-4. Narrative Elements:
-   Write in first-person perspective
-   Include rich sensory details
-   Feature local characters and conversations
-   Weave historical context through storytelling
-   Create emotional connections to places
-   Build narrative arcs within each section
-
-5. Ending Note:
-   Craft a reflective conclusion that:
-   - Ties together the journey's highlights
-   - Shares a personal insight or transformation
-   - Connects the experience to universal themes
-   - Invites readers to imagine their own journey
-   - Ends with an evocative final image or moment
-
-6. Final Call-to-Action:
-   IMPORTANT: End the post with:
-   ${ctaTemplate}
-
-CONTENT GUIDELINES:
+CONTENT STRUCTURE:
 -----------------
-1. Length: 2,000-2,500 words
-2. Style: Personal, immersive, descriptive
-3. Voice: Warm, engaging, authentic
-4. Flow: Natural story progression
-5. Details: Rich in context and atmosphere
-6. Publication Date: ${today}
+Create an immersive travel narrative following this structure:
 
-This approach creates an engaging narrative that combines practical travel information with compelling storytelling, making the content both useful and enjoyable to read.`;
+1. INTRODUCTION (300-400 words)
+   - Hook: Start with an engaging sensory description
+   - Context: Brief overview of ${country} and its significance
+   - Purpose: What makes these locations special
+   - Promise: What readers will learn/experience
+
+2. MAIN LOCATIONS (1500-1800 words)
+   For each location, cover:
+   - Vivid description of arrival and first impressions
+   - Historical or cultural significance
+   - Personal observations and experiences
+   - Practical tips (best times, costs, insider advice)
+   - Local interactions or memorable moments
+   - [INSERT LOCATION MAP HERE]
+   
+   NOTE: After covering 50% of locations, insert this CTA:
+   <div class="my-8 p-6 bg-blue-50 rounded-lg text-center">
+     <h3 class="text-xl font-bold mb-4">📍 Save These Places!</h3>
+     <p class="mb-4">Add these ${country} recommendations to your personal map with Locator.</p>
+     <a href="https://locator.ltd" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+       Start Planning Your Trip
+     </a>
+   </div>
+
+3. CONCLUSION (200-300 words)
+   - Summarize the journey
+   - Share personal reflections
+   - Offer final tips or recommendations
+   - End with an inspiring call to action
+
+WRITING GUIDELINES:
+------------------
+1. Style:
+   - First-person perspective
+   - Conversational yet informative tone
+   - Rich in sensory details
+   - Include dialogue where relevant
+
+2. Technical Requirements:
+   - Total length: 2,000-2,500 words
+   - SEO-friendly headings
+   - Include alt text for images
+   - Proper formatting for quotes and citations
+
+3. Cultural Sensitivity:
+   - Respect local customs and traditions
+   - Use correct local terminology
+   - Acknowledge cultural context
+   - Avoid stereotypes or generalizations
+
+FINAL ELEMENTS:
+--------------
+1. Meta Description (150-160 characters)
+2. Keywords (5-8 relevant terms)
+3. Social Media Snippet (240 characters)
+4. Final CTA Block:
+   <div class="my-8 p-6 bg-blue-50 rounded-lg text-center">
+     <h3 class="text-xl font-bold mb-4">Ready to Explore ${country}?</h3>
+     <p class="mb-4">Save all these locations to your personal map and start planning your adventure.</p>
+     <a href="https://locator.ltd" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+       Download Locator
+     </a>
+   </div>`;
 };
+
+export { generateBlogPrompt };
