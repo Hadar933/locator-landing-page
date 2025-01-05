@@ -90,8 +90,15 @@ export const post = {
     </ul>
     
     <h2>Best Time to Visit</h2>
-    <p>The best time to visit Mirissa is from November to April when the weather is dry and sunny. December to March is peak season, so book accommodation in advance and expect higher prices.</p>`,
+    <p>The best time to visit Mirissa is from November to April when the weather is dry and sunny. December to March is peak season, so book accommodation in advance and expect higher prices.</p>
+  `,
   readingTime: "5 min read",
   tags: ["Backpacking", "Budget Travel", "Beaches", "Food", "Sri Lanka"],
-  category: "Travel Guide"
+  category: "Travel Guide",
+  callToAction: {
+    position: 3, // After 3 locations (around 40% through the content)
+    text: "Never lose track of your favorite spots in Mirissa! Save these hidden gems and discover more local favorites with Locator.",
+    buttonText: "Start Mapping Your Mirissa Adventure",
+    link: "https://locator.ltd"
+  }
 };
