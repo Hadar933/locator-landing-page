@@ -10,9 +10,9 @@ export const StoreButtons = () => {
           .storeLink {
             position: relative;
             display: inline-block;
-            width: 240px;
-            height: 80px;
-            border-radius: 16px;
+            width: 180px;
+            height: 60px;
+            border-radius: 12px;
             overflow: hidden;
             background-color: black;
           }
