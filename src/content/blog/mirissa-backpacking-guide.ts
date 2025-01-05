@@ -78,6 +78,14 @@ export const post = {
     <h2>Why Mirissa?</h2>
     <p>Mirissa has evolved from a quiet fishing village into a backpacker's haven while maintaining its authentic charm. With its perfect waves for surfing, pristine beaches for relaxation, and vibrant nightlife, it caters to all types of travelers without feeling overcrowded.</p>
     
+    <div class="my-8 p-6 bg-blue-50 rounded-lg text-center">
+      <h3 class="text-xl font-bold mb-4">📍 Add these recommendations to your map!</h3>
+      <p class="mb-4">Save all these local favorites in Mirissa with Locator - your personal travel companion for discovering and organizing the best spots.</p>
+      <a href="https://locator.ltd" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+        Map Your Mirissa Adventure
+      </a>
+    </div>
+    
     <h2>Getting Around</h2>
     <p>Most locations in Mirissa are within walking distance, but tuk-tuks are readily available for longer journeys. Expect to pay around 200-300 LKR for short rides within Mirissa. Always negotiate the price before getting in.</p>
     
@@ -96,9 +104,9 @@ export const post = {
   tags: ["Backpacking", "Budget Travel", "Beaches", "Food", "Sri Lanka"],
   category: "Travel Guide",
   callToAction: {
-    position: 3, // After 3 locations (around 40% through the content)
-    text: "Never lose track of your favorite spots in Mirissa! Save these hidden gems and discover more local favorites with Locator.",
-    buttonText: "Start Mapping Your Mirissa Adventure",
+    position: 3,
+    text: "Add these recommendations to your map! Save all these local favorites in Mirissa with Locator - your personal travel companion.",
+    buttonText: "Map Your Mirissa Adventure",
     link: "https://locator.ltd"
   }
 };
