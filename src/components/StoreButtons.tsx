@@ -17,16 +17,21 @@ export const StoreButtons = () => {
           alt="Get it on Google Play"
         />
       </a>
-      <button
-        onClick={() => navigate("/coming-soon")}
-        className="relative inline-block w-[160px] h-[53px] rounded-xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
+      <a
+        href="/coming-soon"
+        tabIndex={0}
+        onClick={(e) => {
+          e.preventDefault();
+          navigate("/coming-soon");
+        }}
+        className="relative inline-block"
       >
         <img
-          src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+          className="w-[150px] h-[50px]"
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
           alt="Download on the App Store"
-          className="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
-      </button>
+      </a>
     </div>
   );
 };
