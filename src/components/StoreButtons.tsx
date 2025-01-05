@@ -9,12 +9,12 @@ export const StoreButtons = () => {
         href="https://play.google.com/store/apps/details?id=locator.android"
         target="_blank"
         rel="noopener noreferrer"
-        className="relative inline-block w-[160px] h-[53px] rounded-xl overflow-hidden bg-black hover:opacity-90 transition-opacity"
+        className="relative inline-block"
       >
         <img
-          src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+          className="w-[170px] h-[50px]"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
           alt="Get it on Google Play"
-          className="absolute w-[128%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         />
       </a>
       <button
