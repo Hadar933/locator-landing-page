@@ -47,8 +47,13 @@ const renderLocation = (location: BlogLocation, index: number, post: BlogPostTyp
           </a>
         </div>
 
-        <div className="mt-4 rounded-lg overflow-hidden border">
-          <div dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} />
+        <div className="mt-4 w-full">
+          <div className="aspect-video w-full">
+            <div 
+              dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} 
+              className="w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:rounded-lg [&>iframe]:border-0"
+            />
+          </div>
         </div>
       </div>
 
