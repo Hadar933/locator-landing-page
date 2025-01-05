@@ -1,15 +1,15 @@
 export const blogCategories = [
   {
-    title: "Philippines",
-    flag: "🇵🇭",
-    description: "Discover hidden gems and travel guides across the Philippine archipelago",
-    slug: "philippines",
+    title: "Hong Kong",
+    flag: "🇭🇰",
+    description: "Discover spiritual sanctuaries and hidden natural gems in Hong Kong",
+    slug: "hong-kong",
     posts: [
       {
-        title: "Coron Nature Guide: Hidden Lakes and Marine Wonders",
-        slug: "coron-nature-guide",
-        excerpt: "Discover the natural wonders of Coron - from therapeutic hot springs to pristine lakes and vibrant coral gardens",
-        date: "2024-12-29"
+        title: "Hong Kong's Hidden Temples & Gardens: Off the Beaten Path Guide",
+        slug: "hong-kong-temples-guide",
+        excerpt: "Explore Hong Kong's serene temples and lush gardens away from the tourist crowds",
+        date: "2024-01-30"
       }
     ]
   },
