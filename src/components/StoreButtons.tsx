@@ -12,7 +12,7 @@ export const StoreButtons = () => {
         className="relative inline-block"
       >
         <img
-          className="w-[160px] h-[47px]"
+          className="w-[160px] h-[60px]"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
           alt="Get it on Google Play"
         />
