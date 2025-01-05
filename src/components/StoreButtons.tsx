@@ -27,7 +27,7 @@ export const StoreButtons = () => {
         className="relative inline-block"
       >
         <img
-          className="w-[160px] h-[47px]"
+          className="w-[160px] h-[80px]"
           src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
           alt="Download on the App Store"
         />
