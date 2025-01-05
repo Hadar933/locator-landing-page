@@ -14,7 +14,7 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent leading-[1.2] md:leading-[1.2]">
               Save & Organize Places with AI
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
