@@ -75,19 +75,14 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Set the content type to XML
-      const blob = new Blob([xml], { type: 'application/xml' });
-      const url = URL.createObjectURL(blob);
-
-      // Create a link element and set its attributes
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('type', 'application/xml');
-      document.body.appendChild(link);
-      
       // Set the XML content directly in the document
       document.documentElement.innerHTML = xml;
-      document.contentType = 'application/xml';
+      
+      // Set content type using meta tag
+      const meta = document.createElement('meta');
+      meta.httpEquiv = "Content-Type";
+      meta.content = "application/xml";
+      document.head.appendChild(meta);
     };
 
     generateSitemap();
