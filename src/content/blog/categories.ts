@@ -94,6 +94,20 @@ export const blogCategories = [
         date: "2024-01-15"
       }
     ]
+  },
+  {
+    title: "Croatia",
+    flag: "🇭🇷",
+    description: "Discover the stunning coastal cities and national parks of Croatia",
+    slug: "croatia",
+    posts: [
+      {
+        title: "Croatia's Must-Visit Cities: A Complete Guide",
+        slug: "croatia-cities-guide",
+        excerpt: "From ancient Roman ruins to stunning islands - explore Croatia's most beautiful destinations",
+        date: "2024-02-01"
+      }
+    ]
   }
 ];
 
