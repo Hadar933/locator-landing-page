@@ -1,25 +1,27 @@
 import { useNavigate } from "react-router-dom";
-import { AppStoreButton, GooglePlayButton, ButtonsContainer } from "react-mobile-app-button";
+import MobileStoreButton from 'react-mobile-store-button';
 
 export const StoreButtons = () => {
   const navigate = useNavigate();
 
   return (
-    <ButtonsContainer gap={16}>
-      <AppStoreButton
+    <div className="flex flex-col sm:flex-row gap-4 items-center">
+      <MobileStoreButton
+        store="ios"
         url="/coming-soon"
-        theme="dark"
-        height={48}
-        onClick={(e) => {
-          e.preventDefault();
-          navigate("/coming-soon");
+        linkProps={{
+          onClick: (e) => {
+            e.preventDefault();
+            navigate("/coming-soon");
+          }
         }}
+        width={135}
       />
-      <GooglePlayButton
+      <MobileStoreButton
+        store="android"
         url="https://play.google.com/store/apps/details?id=locator.android"
-        theme="dark"
-        height={48}
+        width={135}
       />
-    </ButtonsContainer>
+    </div>
   );
 };
