@@ -8,6 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CtaSection } from "@/components/CtaSection";
 
 const renderLocation = (location: BlogLocation, index: number, post: BlogPostType) => {
   // Check if we need to render CTA after this location
@@ -52,17 +53,22 @@ const renderLocation = (location: BlogLocation, index: number, post: BlogPostTyp
       </div>
 
       {shouldRenderCTA && (
-        <div className="my-8 p-6 bg-blue-50 rounded-lg text-center">
-          <h3 className="text-xl font-bold mb-4">{post.callToAction.text}</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="my-12 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-3xl p-12 text-center"
+        >
+          <h3 className="text-3xl font-bold mb-4">{post.callToAction.text}</h3>
           <a 
             href={post.callToAction.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
             {post.callToAction.buttonText}
           </a>
-        </div>
+        </motion.div>
       )}
     </div>
   );
