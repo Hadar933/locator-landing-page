@@ -5,31 +5,50 @@ export const StoreButtons = () => {
 
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a
-        href="https://play.google.com/store/apps/details?id=locator.android"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative inline-block"
-      >
-        <img
-          className="w-[160px] h-[60px]"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
-          alt="Get it on Google Play"
-        />
-      </a>
+      <style>
+        {`
+          .storeLink {
+            position: relative;
+            display: inline-block;
+            width: 240px;
+            height: 80px;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: black;
+          }
+          .storeLink > img {
+            --width: 100%;
+            position: absolute;
+            width: var(--width);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        `}
+      </style>
       <a
         href="/coming-soon"
-        tabIndex={0}
+        className="storeLink"
         onClick={(e) => {
           e.preventDefault();
           navigate("/coming-soon");
         }}
-        className="relative inline-block"
       >
-        <img
-          className="w-[160px] h-[60px]"
-          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+        <img 
+          src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
           alt="Download on the App Store"
+        />
+      </a>
+      <a
+        href="https://play.google.com/store/apps/details?id=locator.android"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="storeLink"
+      >
+        <img 
+          alt="Get it on Google Play"
+          src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+          style={{ "--width": "128%" } as React.CSSProperties}
         />
       </a>
     </div>
