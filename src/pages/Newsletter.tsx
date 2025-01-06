@@ -11,7 +11,7 @@ const Newsletter = () => {
         <meta name="description" content="Sign up to receive updates about new features and our iOS launch." />
         <meta property="og:title" content="Stay Updated - Newsletter Signup" />
         <meta property="og:description" content="Sign up to receive updates about new features and our iOS launch." />
-        <meta property="og:image" content="/lovable-uploads/69d731ec-c142-4b3f-a661-b18db53b18ab.png" />
+        <meta property="og:image" content="https://locator.ltd/lovable-uploads/69d731ec-c142-4b3f-a661-b18db53b18ab.png" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
