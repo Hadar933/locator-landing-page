@@ -10,7 +10,8 @@ const Sitemap = () => {
           console.error('Error fetching sitemap:', error);
           return;
         }
-        window.location.href = `${window.location.origin}/functions/v1/sitemap`;
+        // Redirect to the actual Supabase function URL
+        window.location.href = 'https://hnozwaewntvatstutros.supabase.co/functions/v1/sitemap';
       } catch (error) {
         console.error('Error redirecting to sitemap:', error);
       }
