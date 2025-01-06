@@ -75,22 +75,21 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Create a new document
-      const doc = new DOMParser().parseFromString(xml, 'application/xml');
+      // Create a Blob with XML content and correct MIME type
+      const blob = new Blob([xml], { type: 'application/xml' });
       
-      // Remove existing content
-      while (document.documentElement.firstChild) {
-        document.documentElement.firstChild.remove();
-      }
+      // Create a link element
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'sitemap.xml';
       
-      // Set content type
-      document.contentType = 'application/xml';
+      // Programmatically click the link to download the file
+      document.body.appendChild(link);
+      link.click();
       
-      // Replace document content with XML
-      document.replaceChild(
-        document.importNode(doc.documentElement, true),
-        document.documentElement
-      );
+      // Clean up
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
     };
 
     generateSitemap();
