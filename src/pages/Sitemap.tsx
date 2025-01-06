@@ -75,14 +75,10 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Set the XML content type
-      const meta = document.createElement('meta');
-      meta.httpEquiv = "Content-Type";
-      meta.content = "application/xml";
-      document.head.appendChild(meta);
-
-      // Set the XML content
-      document.documentElement.innerHTML = xml;
+      // Set response headers
+      const blob = new Blob([xml], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      window.location.href = url;
     };
 
     generateSitemap();
