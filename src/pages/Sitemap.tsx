@@ -48,13 +48,15 @@ const Sitemap = () => {
 
       // Create XML structure
       const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(item => `  <url>
-    <loc>${item.url}</loc>
-    <changefreq>${item.changefreq}</changefreq>
-    <priority>${item.priority.toFixed(1)}</priority>
-  </url>`).join('\n')}
-</urlset>`;
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${allUrls.map(item => `
+          <url>
+          <loc>${item.url}</loc>
+          <changefreq>${item.changefreq}</changefreq>
+          <priority>${item.priority.toFixed(1)}</priority>
+        </url>`
+      ).join('\n')}
+      </urlset>`;
 
       // Set content type to XML
       document.querySelector('html')?.setAttribute('content-type', 'application/xml');
