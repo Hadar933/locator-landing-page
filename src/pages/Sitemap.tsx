@@ -1,8 +1,14 @@
 import { useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Sitemap = () => {
   useEffect(() => {
-    window.location.href = 'https://hnozwaewntvatstutros.functions.supabase.co/sitemap'
+    const redirectToSitemap = async () => {
+      const { data: { origin } } = await supabase.functions.invoke('sitemap');
+      window.location.href = origin;
+    };
+    
+    redirectToSitemap();
   }, []);
 
   return null;

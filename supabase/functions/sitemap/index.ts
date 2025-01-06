@@ -1,6 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { blogCategories } from '../../../src/content/blog/categories.ts'
-import { posts } from '../../../src/content/blog/posts.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -8,7 +6,35 @@ const corsHeaders = {
   'Content-Type': 'application/xml',
 }
 
+// Define blog categories and posts directly in the Edge Function
+const blogCategories = [
+  {
+    title: "Hong Kong",
+    slug: "hong-kong",
+    posts: [
+      {
+        title: "Hong Kong's Hidden Temples & Gardens",
+        slug: "hong-kong-temples-guide",
+        date: "2024-01-30"
+      }
+    ]
+  },
+  {
+    title: "Thailand",
+    slug: "thailand",
+    posts: [
+      {
+        title: "Phuket Local Guide",
+        slug: "phuket-local-guide",
+        date: "2024-12-30"
+      }
+    ]
+  },
+  // ... other categories can be added here
+];
+
 serve(async (req) => {
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
@@ -34,19 +60,15 @@ serve(async (req) => {
     }))
 
     // Blog posts
-    const postUrls = Object.entries(posts).map(([slug, post]) => {
-      const category = blogCategories.find(cat => 
-        cat.posts.some(p => p.slug === slug)
-      )
-      return {
-        url: `${baseUrl}/blog/${category?.slug || 'uncategorized'}/${slug}`,
+    const postUrls = blogCategories.flatMap(category => 
+      category.posts.map(post => ({
+        url: `${baseUrl}/blog/${category.slug}/${post.slug}`,
         priority: 0.7,
         changefreq: 'monthly',
-        lastmod: post.modifiedDate || post.publishDate
-      }
-    })
+        lastmod: post.date
+      }))
+    )
 
-    // Generate XML
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticUrls.map(item => `
@@ -71,10 +93,7 @@ ${postUrls.map(item => `
 </urlset>`
 
     return new Response(xml, {
-      headers: {
-        ...corsHeaders,
-        'Content-Type': 'application/xml',
-      },
+      headers: corsHeaders
     })
   } catch (error) {
     console.error('Error generating sitemap:', error)
