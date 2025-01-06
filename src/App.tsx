@@ -25,7 +25,7 @@ function App() {
         <Route path="/blog/:country/:slug" element={<BlogPost />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/newsletter" element={<Newsletter />} />
-        <Route path="/sitemap.xml" element={<Sitemap />} />
+        <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
       </Routes>
     </Router>
   );
