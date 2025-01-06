@@ -75,14 +75,14 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Set the XML content directly in the document
-      document.documentElement.innerHTML = xml;
-      
-      // Set content type using meta tag
+      // Set the XML content type
       const meta = document.createElement('meta');
       meta.httpEquiv = "Content-Type";
       meta.content = "application/xml";
       document.head.appendChild(meta);
+
+      // Set the XML content
+      document.documentElement.innerHTML = xml;
     };
 
     generateSitemap();
