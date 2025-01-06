@@ -75,10 +75,22 @@ const Sitemap = () => {
   ${blogPostUrls}
 </urlset>`;
 
-      // Set response headers
-      const blob = new Blob([xml], { type: 'application/xml' });
-      const url = URL.createObjectURL(blob);
-      window.location.href = url;
+      // Create a new document
+      const doc = new DOMParser().parseFromString(xml, 'application/xml');
+      
+      // Remove existing content
+      while (document.documentElement.firstChild) {
+        document.documentElement.firstChild.remove();
+      }
+      
+      // Set content type
+      document.contentType = 'application/xml';
+      
+      // Replace document content with XML
+      document.replaceChild(
+        document.importNode(doc.documentElement, true),
+        document.documentElement
+      );
     };
 
     generateSitemap();
