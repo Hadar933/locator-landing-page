@@ -14,7 +14,7 @@ import { NavigationBar } from "./components/NavigationBar";
 function App() {
   return (
     <Router>
-      {window.location.pathname !== '/sitemap_index.xml' && <NavigationBar />}
+      {window.location.pathname !== '/sitemap.xml' && <NavigationBar />}
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/privacy" element={<Privacy />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/blog/:country/:slug" element={<BlogPost />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/newsletter" element={<Newsletter />} />
-        <Route path="/sitemap_index.xml" element={<Sitemap />} />
+        <Route path="/sitemap.xml" element={<Sitemap />} />
       </Routes>
     </Router>
   );
