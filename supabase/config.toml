@@ -14,4 +14,3 @@ port = 54323
 
 [[functions]]
 verify_jwt = false
-name = "sitemap"

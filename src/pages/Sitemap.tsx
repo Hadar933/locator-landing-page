@@ -4,8 +4,16 @@ import { supabase } from "@/integrations/supabase/client";
 const Sitemap = () => {
   useEffect(() => {
     const redirectToSitemap = async () => {
-      const { data: { origin } } = await supabase.functions.invoke('sitemap');
-      window.location.href = origin;
+      try {
+        const { data, error } = await supabase.functions.invoke('sitemap');
+        if (error) {
+          console.error('Error fetching sitemap:', error);
+          return;
+        }
+        window.location.href = `${window.location.origin}/functions/v1/sitemap`;
+      } catch (error) {
+        console.error('Error redirecting to sitemap:', error);
+      }
     };
     
     redirectToSitemap();
