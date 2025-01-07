@@ -108,6 +108,20 @@ export const blogCategories = [
         date: "2024-02-01"
       }
     ]
+  },
+  {
+    title: "Indonesia",
+    flag: "🇮🇩",
+    description: "Discover hidden gems and local favorites across the Indonesian archipelago",
+    slug: "indonesia",
+    posts: [
+      {
+        title: "Bali Hidden Gems: Local's Guide to Paradise",
+        slug: "bali-local-guide",
+        excerpt: "Discover Bali's most enchanting spots away from the tourist crowds - from secret waterfalls to authentic local warungs",
+        date: "2024-02-15"
+      }
+    ]
   }
 ];
 
