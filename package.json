@@ -60,6 +60,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.53.0",
+    "react-markdown": "^9.0.3",
     "react-mobile-app-button": "^1.2.18",
     "react-mobile-store-button": "^0.0.6",
     "react-resizable-panels": "^2.1.3",

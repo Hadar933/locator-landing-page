@@ -8,7 +8,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CtaSection } from "@/components/CtaSection";
+import ReactMarkdown from 'react-markdown';
 
 const renderLocation = (location: BlogLocation, index: number, post: BlogPostType) => {
   // Check if we need to render CTA after this location
@@ -49,9 +49,15 @@ const renderLocation = (location: BlogLocation, index: number, post: BlogPostTyp
 
         <div className="mt-4 w-full">
           <div className="aspect-video w-full">
-            <div 
-              dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }} 
-              className="w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:rounded-lg [&>iframe]:border-0"
+            <iframe 
+              src={location.contentSections.mapEmbed}
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
             />
           </div>
         </div>
@@ -136,7 +142,9 @@ const BlogPost = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="prose lg:prose-xl max-w-none">
-                {post.content && <div dangerouslySetInnerHTML={{ __html: post.content }} />}
+                {post.content && (
+                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                )}
                 {post.locations?.map((location, index) => renderLocation(location, index, post))}
               </div>
             </motion.div>
