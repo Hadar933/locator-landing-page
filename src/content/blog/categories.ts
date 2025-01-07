@@ -122,6 +122,20 @@ export const blogCategories = [
         date: "2024-02-15"
       }
     ]
+  },
+  {
+    title: "Japan",
+    flag: "🇯🇵",
+    description: "Explore the fascinating blend of tradition and modernity in Japan",
+    slug: "japan",
+    posts: [
+      {
+        title: "Tokyo's Hidden Corners: A Local's Guide to Japan's Capital",
+        slug: "tokyo-local-guide",
+        excerpt: "Discover Tokyo's most enchanting spots away from the tourist crowds - from secret gardens to authentic local izakayas",
+        date: "2024-02-20"
+      }
+    ]
   }
 ];
 
