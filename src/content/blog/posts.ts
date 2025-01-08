@@ -10,6 +10,7 @@ import { post as hongKongTemplesGuide } from './hong-kong-temples-guide';
 import { post as croatiaCitiesGuide } from './croatia-cities-guide';
 import { post as baliGuide } from './bali-local-guide';
 import { post as tokyoGuide } from './tokyo-local-guide';
+import { post as pragueGuide } from './prague-local-guide';
 
 export interface BlogLocation {
   name: string;
@@ -57,5 +58,6 @@ export const posts: Record<string, BlogPost> = {
   "hong-kong-temples-guide": hongKongTemplesGuide,
   "croatia-cities-guide": croatiaCitiesGuide,
   "bali-local-guide": baliGuide,
-  "tokyo-local-guide": tokyoGuide
+  "tokyo-local-guide": tokyoGuide,
+  "prague-local-guide": pragueGuide
 };

@@ -136,6 +136,20 @@ export const blogCategories = [
         date: "2024-02-20"
       }
     ]
+  },
+  {
+    title: "Czech Republic",
+    flag: "🇨🇿",
+    description: "Discover the magical corners and local favorites of the Czech Republic",
+    slug: "czech-republic",
+    posts: [
+      {
+        title: "Prague's Hidden Corners: A Local's Guide to the Golden City",
+        slug: "prague-local-guide",
+        excerpt: "Discover Prague's most enchanting spots away from the tourist crowds - from secret gardens to authentic Czech pubs",
+        date: "2024-02-25"
+      }
+    ]
   }
 ];
 
