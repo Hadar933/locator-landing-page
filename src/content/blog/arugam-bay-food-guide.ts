@@ -5,74 +5,57 @@ export const post = {
   modifiedDate: "2024-12-31",
   author: "Locator Team",
   image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Beach_of_Arugam_Bay.jpg",
-  content: `
-    <article class="prose lg:prose-xl max-w-none">
-      <p class="lead">Hey food lovers! If you're heading to Arugam Bay, you're in for a treat. This surf town isn't just about catching waves - it's got some seriously good eats. Here's my personal rundown of the best spots to grab a bite, from pizza to burgers to local Sri Lankan cuisine.</p>
-
-      <h2>Best Pizza in Town</h2>
-      
-      <h3>Cili Hotel & Pizza Restaurant</h3>
-      <p>If you're craving pizza in Arugam Bay, this is your spot. The wood-fired pizzas here are the real deal, and the casual vibe makes it perfect for post-surf meals. They've got this amazing seafood pizza that's worth trying - fresh catches from the bay make all the difference.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sCili%20Hotel%20%26%20Pizza%20Restaurant!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <div class="my-12 text-center">
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your favorite food spots with Locator
-        </a>
-      </div>
-
-      <h2>Local Flavors</h2>
-
-      <h3>Mama's Restaurant</h3>
-      <p>Want to try authentic Sri Lankan food? Mama's is where it's at. Their rice and curry is the real deal - the kind of food that makes you understand why Sri Lankan cuisine is so special. The dhal curry here is particularly good, and they're super friendly with dietary restrictions.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sMamas%20Restaurant!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <h3>The Spice Trail</h3>
-      <p>A bit fancier than your typical beach spot, but still totally casual. Their seafood curry is amazing - super fresh and perfectly spiced. If you're not into spicy food, just let them know, and they'll adjust the heat level for you.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sThe%20Spice%20Trail!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <h2>Quick Bites & Comfort Food</h2>
-
-      <h3>Hello Burger</h3>
-      <p>Sometimes you just need a good burger, right? Hello Burger's got you covered. Their portions are huge, and they've got this awesome sauce that goes with everything. Perfect for when you're starving after a surf session.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sHello%20Burger!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <h3>Squeeze Me</h3>
-      <p>Not exactly a restaurant, but you can't miss this juice bar. Their fresh fruit smoothies are perfect for those hot Arugam Bay days. Try their special coconut smoothie - it's basically paradise in a glass.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sSqueeze%20Me!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <h3>Kaffi Coffee Shop</h3>
-      <p>Need your morning coffee fix? Kaffi's got some of the best coffee in town. Their iced lattes are perfect for hot days, and they've got some really good breakfast options too. The avocado toast is surprisingly good!</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sKaffi%20Coffee%20Shop!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <h2>Quick Tip About Locator</h2>
-      <p>By the way, I used Locator to save all these spots while I was exploring Arugam Bay. It's super handy when you're walking around and want to remember a place for later. Just save the location straight from Google Maps or any website, and it'll show up on your personal map. Makes it way easier to plan your meals and remember where all the good spots are!</p>
-
-      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
-        <h3 class="text-xl font-semibold mb-4">Create Your Arugam Bay Food Journey</h3>
-        <p class="mb-6">Ready to explore these amazing restaurants? Save them all in one place with Locator - your personal food guide companion.</p>
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your favorite food spots with Locator
-        </a>
-      </div>
-
-      <div class="mt-12 text-center">
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your favorite food spots with Locator
-        </a>
-      </div>
-    </article>
-  `
+  locations: [
+    {
+      name: "Cili Hotel & Pizza Restaurant",
+      googleMapLink: "https://maps.google.com/maps?q=Cili+Hotel+and+Pizza+Arugam+Bay",
+      contentSections: {
+        introduction: "If you're craving pizza in Arugam Bay, this is your spot. The wood-fired pizzas here are the real deal, and the casual vibe makes it perfect for post-surf meals. They've got this amazing seafood pizza that's worth trying - fresh catches from the bay make all the difference.",
+        bestTimeToVisit: "Evening time for dinner, when the wood-fired oven is in full swing.",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sCili%20Hotel%20%26%20Pizza%20Restaurant!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Best wood-fired pizzas in Arugam Bay",
+          "Fresh seafood toppings",
+          "Casual dining atmosphere",
+          "Perfect for post-surf meals"
+        ]
+      }
+    },
+    {
+      name: "Mama's Restaurant",
+      googleMapLink: "https://maps.google.com/maps?q=Mamas+Restaurant+Arugam+Bay",
+      contentSections: {
+        introduction: "Want to try authentic Sri Lankan food? Mama's is where it's at. Their rice and curry is the real deal - the kind of food that makes you understand why Sri Lankan cuisine is so special. The dhal curry here is particularly good, and they're super friendly with dietary restrictions.",
+        bestTimeToVisit: "Lunch time for the best rice and curry selection.",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sMamas%20Restaurant!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Authentic Sri Lankan cuisine",
+          "Famous for rice and curry",
+          "Vegetarian options available",
+          "Family-run restaurant"
+        ]
+      }
+    },
+    {
+      name: "Hello Burger",
+      googleMapLink: "https://maps.google.com/maps?q=Hello+Burger+Arugam+Bay",
+      contentSections: {
+        introduction: "Sometimes you just need a good burger, right? Hello Burger's got you covered. Their portions are huge, and they've got this awesome sauce that goes with everything. Perfect for when you're starving after a surf session.",
+        bestTimeToVisit: "Late afternoon or early evening for dinner.",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5461453465386!2d81.83439087507825!3d6.8341616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5bd6755555555%3A0x1234567890abcdef!2sHello%20Burger!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Best burgers in Arugam Bay",
+          "Large portions",
+          "House-made special sauce",
+          "Great value for money"
+        ]
+      }
+    }
+  ],
+  callToAction: {
+    position: 2,
+    text: "Ready to explore Arugam Bay's food scene?",
+    buttonText: "Save These Locations",
+    link: "https://locator.ltd"
+  }
 };
