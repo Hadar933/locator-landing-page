@@ -1,112 +1,63 @@
 export const post = {
-  title: "Mirissa Backpacking Guide: Hidden Beaches & Local Gems",
-  description: "Discover the laid-back charm of Mirissa - from secret beaches to the best local restaurants and viewpoints",
-  author: "Local Expert",
-  publishDate: "2024-01-25",
-  modifiedDate: "2024-01-25",
-  image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Mirissa-Plage_%283%29.jpg",
+  title: "Mirissa Backpacker's Guide: Surf, Food & Adventure",
+  description: "A complete guide to Mirissa for backpackers - from the best surf spots to hidden beaches and local food gems. Everything you need to know for an amazing stay in this Sri Lankan paradise.",
+  publishDate: "2024-12-29",
+  modifiedDate: "2024-12-29",
+  author: "Locator Team",
+  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Mirissa_Beach.jpg/1280px-Mirissa_Beach.jpg",
   country: "sri-lanka",
   flag: "🇱🇰",
   locations: [
     {
-      name: "Secret Beach Mirissa",
-      googleMapLink: "https://maps.google.com/maps/place/Secret+Beach+Mirissa",
-      contentSections: {
-        introduction: "Tucked away from the main tourist spots, Secret Beach Mirissa is a hidden paradise that offers a more intimate beach experience. This small, secluded cove is perfect for those seeking tranquility away from the crowds.",
-        bestTimeToVisit: "Early morning (7-9 AM) or late afternoon (4-6 PM) for the best lighting and fewer people",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-      }
-    },
-    {
       name: "Mirissa Beach",
-      googleMapLink: "https://maps.google.com/maps/place/Mirissa+Beach",
+      googleMapLink: "https://maps.google.com/maps?q=Mirissa+Beach",
       contentSections: {
-        introduction: "The main Mirissa Beach is a stunning crescent of golden sand, perfect for surfing, swimming, and watching the iconic Sri Lankan sunset. The beach is lined with restaurants and bars, creating a vibrant atmosphere especially in the evening.",
-        bestTimeToVisit: "Visit during sunset (5:30-6:30 PM) for breathtaking views and beach life",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+        introduction: "The main beach of Mirissa is a perfect crescent of golden sand, with good waves for surfing and plenty of beachside cafes. The western end is quieter and perfect for swimming, while the eastern end is where you'll find the surf spots.",
+        bestTimeToVisit: "Early morning for surfing, sunset for beach vibes",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5461453465386!2d80.45439087507825!3d5.9441616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b0d41d7a9%3A0x7d4c8b3f3e0f3b1f!2sMirissa%20Beach!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Great for beginner surfers",
+          "Beachfront restaurants",
+          "Surf board rentals available",
+          "Beautiful sunset spot"
+        ]
       }
     },
     {
-      name: "Parrot Rock Mirissa",
-      googleMapLink: "https://maps.google.com/maps/place/Parrot+Rock+Mirissa",
+      name: "No. 1 Dewmini Roti Shop",
+      googleMapLink: "https://maps.google.com/maps?q=No.1+Dewmini+Roti+Shop+Mirissa",
       contentSections: {
-        introduction: "Parrot Rock is an iconic landmark offering panoramic views of the coastline. The short climb up the rock formation rewards you with stunning vistas of the ocean and surrounding beaches.",
-        bestTimeToVisit: "Sunrise (6-7 AM) for photographers, or sunset (5:30-6:30 PM) for evening colors",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+        introduction: "This family-run spot serves the best rotis in Mirissa. Their banana and chocolate roti is legendary among backpackers, and their curry plates are a great way to try multiple Sri Lankan dishes at once.",
+        bestTimeToVisit: "Lunch time for the full menu selection",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.6018557174886!2d80.46601097507773!3d5.950000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b0d41d7a9%3A0x7d4c8b3f3e0f3b1f!2sNo.1%20Dewmini%20Roti%20Shop!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Famous for sweet and savory rotis",
+          "Budget-friendly prices",
+          "Vegetarian options available",
+          "Cooking classes offered"
+        ]
       }
     },
     {
-      name: "Turtle Bar & Restaurant Mirissa",
-      googleMapLink: "https://maps.google.com/maps/place/Turtle+Bar+%26+Restaurant+Mirissa",
+      name: "Secret Beach",
+      googleMapLink: "https://maps.google.com/maps?q=Secret+Beach+Mirissa",
       contentSections: {
-        introduction: "A beachfront restaurant known for its fresh seafood and relaxed atmosphere. The Turtle Bar offers a perfect spot to enjoy local cuisine while watching the waves crash on the shore.",
-        bestTimeToVisit: "Dinner time (6-9 PM) for the best atmosphere and fresh seafood selection",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-      }
-    },
-    {
-      name: "Coconut Tree Hill Mirissa",
-      googleMapLink: "https://maps.google.com/maps/place/Coconut+Tree+Hill+Mirissa",
-      contentSections: {
-        introduction: "One of the most photographed spots in Mirissa, Coconut Tree Hill offers a picturesque setting with palm trees dotting the hillside overlooking the ocean. It's become an Instagram favorite for its unique landscape.",
-        bestTimeToVisit: "Early morning (6-8 AM) for the best photos and fewer crowds",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-      }
-    },
-    {
-      name: "DelTano's Wood Fired Pizza & Pasta",
-      googleMapLink: "https://maps.google.com/maps/place/DelTano's+Wood+Fired+Pizza+%26+Pasta+Mirissa",
-      contentSections: {
-        introduction: "When you need a break from Sri Lankan cuisine, DelTano's offers authentic Italian dishes in a cozy setting. Their wood-fired pizzas are a local favorite among both travelers and residents.",
-        bestTimeToVisit: "Dinner time (7-10 PM) for the best atmosphere",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
-      }
-    },
-    {
-      name: "Panorama Guest House Mirissa",
-      googleMapLink: "https://maps.google.com/maps/place/Panorama+Guest+House+Mirissa",
-      contentSections: {
-        introduction: "A comfortable accommodation option offering stunning views of the coastline. The guest house provides a peaceful retreat with easy access to all of Mirissa's attractions.",
-        bestTimeToVisit: "Book in advance during peak season (December-March)",
-        mapEmbed: '<iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8675234567891!2d80.45678901234567!3d5.9876543210987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDAnMDAuMCJOIDgwwrAyNycwMC4wIkU!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+        introduction: "A small, secluded beach that lives up to its name. It's a bit of a walk to get here, but that's what keeps it peaceful. The small beach bar serves fresh coconuts and basic snacks.",
+        bestTimeToVisit: "Morning or late afternoon to avoid the heat",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.7018557174886!2d80.47601097507773!3d5.960000093690371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b0d41d7a9%3A0x7d4c8b3f3e0f3b1f!2sSecret%20Beach!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        customInfo: [
+          "Secluded location",
+          "Small beach bar",
+          "Good for snorkeling",
+          "Less crowded than main beach"
+        ]
       }
     }
   ],
-  content: `
-    <p>Mirissa, a coastal paradise in southern Sri Lanka, offers the perfect blend of relaxation and adventure for backpackers. This guide will take you through the must-visit spots and hidden gems that make Mirissa special.</p>
-    
-    <h2>Why Mirissa?</h2>
-    <p>Mirissa has evolved from a quiet fishing village into a backpacker's haven while maintaining its authentic charm. With its perfect waves for surfing, pristine beaches for relaxation, and vibrant nightlife, it caters to all types of travelers without feeling overcrowded.</p>
-    
-    <div class="my-8 p-6 bg-blue-50 rounded-lg text-center">
-      <h3 class="text-xl font-bold mb-4">📍 Add these recommendations to your map!</h3>
-      <p class="mb-4">Save all these local favorites in Mirissa with Locator - your personal travel companion for discovering and organizing the best spots.</p>
-      <a href="https://locator.ltd" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-        Map Your Mirissa Adventure
-      </a>
-    </div>
-    
-    <h2>Getting Around</h2>
-    <p>Most locations in Mirissa are within walking distance, but tuk-tuks are readily available for longer journeys. Expect to pay around 200-300 LKR for short rides within Mirissa. Always negotiate the price before getting in.</p>
-    
-    <h2>Budget Tips</h2>
-    <ul>
-      <li>Local restaurants away from the beach offer meals for 300-600 LKR</li>
-      <li>Stay in hostels or guesthouses inland rather than beachfront for better rates</li>
-      <li>Buy fresh fruit from local vendors instead of restaurants</li>
-      <li>Use local buses for transportation to nearby towns (very affordable)</li>
-    </ul>
-    
-    <h2>Best Time to Visit</h2>
-    <p>The best time to visit Mirissa is from November to April when the weather is dry and sunny. December to March is peak season, so book accommodation in advance and expect higher prices.</p>
-  `,
-  readingTime: "5 min read",
-  tags: ["Backpacking", "Budget Travel", "Beaches", "Food", "Sri Lanka"],
-  category: "Travel Guide",
   callToAction: {
-    position: 3,
-    text: "Add these recommendations to your map! Save all these local favorites in Mirissa with Locator - your personal travel companion.",
-    buttonText: "Map Your Mirissa Adventure",
+    position: 2,
+    text: "Ready to explore Mirissa?",
+    buttonText: "Save These Locations",
     link: "https://locator.ltd"
   }
 };
