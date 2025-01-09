@@ -164,6 +164,20 @@ export const blogCategories = [
         date: "2024-03-01"
       }
     ]
+  },
+  {
+    title: "Vietnam",
+    flag: "🇻🇳",
+    description: "Discover the stunning landscapes and rich culture of Vietnam",
+    slug: "vietnam",
+    posts: [
+      {
+        title: "Northern Vietnam Adventure: From Hanoi to Ha Giang",
+        slug: "northern-vietnam-guide",
+        excerpt: "Explore the breathtaking landscapes of Northern Vietnam - from the limestone karsts of Ha Long Bay to the terraced rice fields of Sapa",
+        date: "2024-03-05"
+      }
+    ]
   }
 ];
 
