@@ -4,7 +4,7 @@ export const post = {
   publishDate: "2024-12-29",
   modifiedDate: "2024-12-29",
   author: "Locator Team",
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Mirissa_Beach.jpg/1280px-Mirissa_Beach.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Mirissa-Plage_%283%29.jpg",
   country: "sri-lanka",
   flag: "🇱🇰",
   locations: [
