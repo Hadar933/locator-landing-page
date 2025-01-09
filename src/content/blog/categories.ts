@@ -150,6 +150,20 @@ export const blogCategories = [
         date: "2024-02-25"
       }
     ]
+  },
+  {
+    title: "Philippines",
+    flag: "🇵🇭",
+    description: "Discover hidden beaches and island adventures in the Philippines",
+    slug: "philippines",
+    posts: [
+      {
+        title: "El Nido & Palawan Guide: Hidden Paradise of the Philippines",
+        slug: "el-nido-palawan-guide",
+        excerpt: "Explore pristine beaches, secret lagoons, and authentic Filipino culture in El Nido and Palawan",
+        date: "2024-03-01"
+      }
+    ]
   }
 ];
 

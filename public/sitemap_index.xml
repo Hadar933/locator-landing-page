@@ -71,6 +71,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://locator.ltd/blog/philippines</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://locator.ltd/blog/thailand/phuket-local-guide</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
@@ -137,6 +142,11 @@
   </url>
   <url>
     <loc>https://locator.ltd/blog/czech-republic/prague-local-guide</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://locator.ltd/blog/philippines/el-nido-palawan-guide</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
