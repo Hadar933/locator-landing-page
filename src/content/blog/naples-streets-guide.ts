@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "This is the temple of Neapolitan pizza, serving only two varieties - Marinara and Margherita - but perfecting them beyond imagination. The simplicity is the key to their century-old success.",
         bestTimeToVisit: "Early lunch (11:30 AM) to avoid the longest queues",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.7276034242387!2d14.266455776882712!3d40.85115897136839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b084f6c2ca2cf%3A0x847c77957f6e6f95!2sL&#39;Antica%20Pizzeria%20da%20Michele!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.727603424239!2d14.25793617688271!3d40.85115897136839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b084f6c2ca2cf%3A0x847c77957f6e6f95!2sL&#39;Antica%20Pizzeria%20da%20Michele!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus",
         customInfo: [
           "Only two pizza varieties",
           "Historic pizzeria since 1870",
