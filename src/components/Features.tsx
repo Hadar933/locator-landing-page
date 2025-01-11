@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
+import type { AutoplayType } from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -49,6 +50,7 @@ export const Features = () => {
   const carouselRef = React.useRef(null);
   const isInView = useInView(carouselRef, { once: false });
   
+  const [autoplay, setAutoplay] = React.useState<AutoplayType>();
   const plugin = React.useRef(
     Autoplay({ 
       delay: 0,
@@ -56,18 +58,24 @@ export const Features = () => {
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
       stopOnFocusIn: false,
-      playOnInit: false // Don't start automatically
+      playOnInit: false
     })
   );
 
   // Start autoplay when the carousel comes into view
   React.useEffect(() => {
-    if (isInView && plugin.current.autoplay) {
-      plugin.current.autoplay.play();
-    } else if (!isInView && plugin.current.autoplay) {
-      plugin.current.autoplay.stop();
+    if (!plugin.current) return;
+
+    setAutoplay(plugin.current);
+  }, []);
+
+  React.useEffect(() => {
+    if (isInView && autoplay) {
+      autoplay.play();
+    } else if (!isInView && autoplay) {
+      autoplay.stop();
     }
-  }, [isInView]);
+  }, [isInView, autoplay]);
 
   return (
     <section className="py-16 px-4">
