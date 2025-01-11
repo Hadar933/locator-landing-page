@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -35,19 +35,32 @@ export const SocialProof = () => {
     }
   ];
 
+  const carouselRef = React.useRef(null);
+  const isInView = useInView(carouselRef, { once: false });
+
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 0,  // No delay between transitions
+      delay: 0,
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
-      stopOnFocusIn: false
+      stopOnFocusIn: false,
+      playOnInit: false // Don't start automatically
     })
   );
 
+  // Start autoplay when the carousel comes into view
+  React.useEffect(() => {
+    if (isInView && plugin.current.autoplay) {
+      plugin.current.autoplay.play();
+    } else if (!isInView && plugin.current.autoplay) {
+      plugin.current.autoplay.stop();
+    }
+  }, [isInView]);
+
   return (
     <section className="py-4 bg-white">
-      <div className="container">
+      <div className="container" ref={carouselRef}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +75,7 @@ export const SocialProof = () => {
               dragFree: true,
               skipSnaps: false,
               inViewThreshold: 1,
-              duration: 8000  // Faster duration for quicker movement
+              duration: 8000
             }}
             plugins={[plugin.current]}
             className="w-full max-w-4xl mx-auto"

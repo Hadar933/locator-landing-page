@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -46,19 +46,32 @@ export const Features = () => {
     }
   ];
 
+  const carouselRef = React.useRef(null);
+  const isInView = useInView(carouselRef, { once: false });
+  
   const plugin = React.useRef(
     Autoplay({ 
-      delay: 0,  // No delay between transitions
+      delay: 0,
       stopOnInteraction: false,
       rootNode: (emblaRoot) => emblaRoot.parentElement,
       stopOnMouseEnter: false,
-      stopOnFocusIn: false
+      stopOnFocusIn: false,
+      playOnInit: false // Don't start automatically
     })
   );
 
+  // Start autoplay when the carousel comes into view
+  React.useEffect(() => {
+    if (isInView && plugin.current.autoplay) {
+      plugin.current.autoplay.play();
+    } else if (!isInView && plugin.current.autoplay) {
+      plugin.current.autoplay.stop();
+    }
+  }, [isInView]);
+
   return (
     <section className="py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" ref={carouselRef}>
         <Carousel
           opts={{
             align: "start",
@@ -66,7 +79,7 @@ export const Features = () => {
             dragFree: true,
             skipSnaps: false,
             inViewThreshold: 1,
-            duration: 12000  // Faster duration for quicker movement
+            duration: 12000
           }}
           plugins={[plugin.current]}
           className="w-full"
