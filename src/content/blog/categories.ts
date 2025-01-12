@@ -16,7 +16,7 @@ export const blogCategories = [
   {
     title: "Thailand",
     flag: "🇹🇭",
-    description: "Local insights and travel guides for exploring Thailand",
+    description: "Discover the best spots in Thailand's paradise destinations",
     slug: "thailand",
     posts: [
       {
@@ -24,6 +24,12 @@ export const blogCategories = [
         slug: "phuket-local-guide",
         excerpt: "A laid-back guide to Phuket's best spots - from serene beaches to vibrant nightlife",
         date: "2024-12-30"
+      },
+      {
+        title: "Krabi & Ao Nang Guide: Honeymoon Edition",
+        slug: "krabi-ao-nang-guide",
+        excerpt: "A personal guide to the best spots in Krabi and Ao Nang - from luxury resorts to hidden gems",
+        date: "2024-03-15"
       }
     ]
   },
