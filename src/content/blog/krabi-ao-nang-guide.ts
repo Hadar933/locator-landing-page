@@ -10,7 +10,7 @@ export const post = {
   locations: [
     {
       name: "Johnny's Pizza Ao Nang",
-      googleMapLink: "https://maps.google.com/maps?q=Johnny's+Pizza+Ao+Nang",
+      googleMapLink: "https://maps.app.goo.gl/v8f9bn7dgdVz8xU39",
       contentSections: {
         introduction: "It's a bit of a trek from the main beach, but trust me, it's worth it. Easily the best pizza in the area. 🍕✨",
         bestTimeToVisit: "Evening for dinner, avoid peak lunch hours",
