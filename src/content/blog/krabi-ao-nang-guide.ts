@@ -1,28 +1,13 @@
 export const post = {
   title: "Krabi & Ao Nang Guide: Honeymoon Edition",
-  description: "🌴✨ Join us on our mini honeymoon adventure in Thailand! From the best pizza in Ao Nang to emotional moments at Railay Beach, discover our personal guide to this stunning paradise.",
+  description: "🌴✨ Join us on our mini honeymoon adventure in Thailand! From emotional moments at Railay Beach to stunning resorts, discover our personal guide to this paradise.",
   publishDate: "2024-03-15",
   modifiedDate: "2024-03-15",
   author: "Locator Team",
-  image: "https://upload.wikimedia.org/wikipedia/commons/3/37/Railay_Beach_Sunset.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Ao_Nang_beach_panorama_1.jpg",
   country: "thailand",
   flag: "🇹🇭",
   locations: [
-    {
-      name: "Johnny's Pizza Ao Nang",
-      googleMapLink: "https://maps.app.goo.gl/v8f9bn7dgdVz8xU39",
-      contentSections: {
-        introduction: "It's a bit of a trek from the main beach, but trust me, it's worth it. Easily the best pizza in the area. 🍕✨",
-        bestTimeToVisit: "Evening for dinner, avoid peak lunch hours",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2776460563787!2d98.82340731744384!3d8.036861999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3051f6c3c0f291e1%3A0x89c24377c7b5ee9d!2sJohnny&#39;s%20Pizza!5e0!3m2!1sen!2sth!4v1647331799273",
-        customInfo: [
-          "Best pizza in Ao Nang",
-          "Casual dining atmosphere",
-          "Great for takeaway",
-          "Popular with tourists and locals"
-        ]
-      }
-    },
     {
       name: "The Irish Embassy Pub",
       googleMapLink: "https://maps.google.com/maps?q=The+Irish+Embassy+Pub+Ao+Nang",
