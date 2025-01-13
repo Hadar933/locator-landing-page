@@ -1,19 +1,19 @@
-import { post as phuketGuide } from './phuket-local-guide';
-import { post as krabiAoNangGuide } from './krabi-ao-nang-guide';
-import { post as arugamBayGuide } from './arugam-bay-food-guide';
-import { post as coronGuide } from './coron-nature-guide';
-import { post as karpathosGuide } from './karpathos-local-guide';
-import { post as telAvivCafeGuide } from './tel-aviv-cafe-guide';
-import { post as naplesStreetsGuide } from './naples-streets-guide';
-import { post as telAvivBurgerGuide } from './tel-aviv-burger-guide';
-import { post as mirissaGuide } from './mirissa-backpacking-guide';
-import { post as hongKongTemplesGuide } from './hong-kong-temples-guide';
-import { post as croatiaCitiesGuide } from './croatia-cities-guide';
-import { post as baliGuide } from './bali-local-guide';
-import { post as tokyoGuide } from './tokyo-local-guide';
-import { post as pragueGuide } from './prague-local-guide';
-import { post as elNidoGuide } from './el-nido-palawan-guide';
-import { post as northernVietnamGuide } from './northern-vietnam-guide';
+import { post as phuketGuide } from './thailand/phuket-local-guide';
+import { post as krabiAoNangGuide } from './thailand/krabi-ao-nang-guide';
+import { post as arugamBayGuide } from './sri-lanka/arugam-bay-food-guide';
+import { post as coronGuide } from './philippines/coron-nature-guide';
+import { post as karpathosGuide } from './greece/karpathos-local-guide';
+import { post as telAvivCafeGuide } from './israel/tel-aviv-cafe-guide';
+import { post as naplesStreetsGuide } from './italy/naples-streets-guide';
+import { post as telAvivBurgerGuide } from './israel/tel-aviv-burger-guide';
+import { post as mirissaGuide } from './sri-lanka/mirissa-backpacking-guide';
+import { post as hongKongTemplesGuide } from './hong-kong/hong-kong-temples-guide';
+import { post as croatiaCitiesGuide } from './croatia/croatia-cities-guide';
+import { post as baliGuide } from './indonesia/bali-local-guide';
+import { post as tokyoGuide } from './japan/tokyo-local-guide';
+import { post as pragueGuide } from './czech-republic/prague-local-guide';
+import { post as elNidoGuide } from './philippines/el-nido-palawan-guide';
+import { post as northernVietnamGuide } from './vietnam/northern-vietnam-guide';
 
 export interface BlogLocation {
   name: string;

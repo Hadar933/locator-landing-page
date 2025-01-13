@@ -1,4 +1,6 @@
-export const post = {
+import { BlogPost } from "./posts";
+
+export const post: BlogPost = {
   title: "Tel Aviv Café Culture: Best Coffee Spots Guide",
   description: "Discover Tel Aviv's most charming cafés, from hidden gems to popular spots. A local's guide to the best coffee, food, and ambiance in the city.",
   author: "Locator Team",
