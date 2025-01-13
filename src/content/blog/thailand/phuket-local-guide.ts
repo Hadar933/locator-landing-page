@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "This is probably Phuket's best-kept secret. It's a bit tricky to get to, which keeps the crowds away - and that's exactly what makes it special. You can either take a longtail boat or brave the steep path down. The effort is totally worth it for the crystal-clear water and peaceful vibe.",
         bestTimeToVisit: "Early morning or late afternoon to avoid the heat and crowds",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0461453465386!2d98.27439087507825!3d7.8741616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503a6e79d34f85%3A0xe25b4b9d1c2e01d4!2sFreedom%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0461453465386!2d98.27439087507825!3d7.8741616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503a6e79d34f85%3A0xe25b4b9d1c2e01d4!2sFreedom%20Beach!5e0!3m2!1sen!2sth!4v1710901234567!5m2!1sen!2sth" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Accessible by longtail boat or hiking",
           "Crystal clear waters perfect for swimming",

@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "The main beach of Mirissa is a perfect crescent of golden sand, with good waves for surfing and plenty of beachside cafes. The western end is quieter and perfect for swimming, while the eastern end is where you'll find the surf spots.",
         bestTimeToVisit: "Early morning for surfing, sunset for beach vibes",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5461453465386!2d80.45439087507825!3d5.9441616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b0d41d7a9%3A0x7d4c8b3f3e0f3b1f!2sMirissa%20Beach!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5461453465386!2d80.45439087507825!3d5.9441616925985385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1391b0d41d7a9%3A0x7d4c8b3f3e0f3b1f!2sMirissa%20Beach!5e0!3m2!1sen!2slk!4v1710901234567!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Great for beginner surfers",
           "Beachfront restaurants",
