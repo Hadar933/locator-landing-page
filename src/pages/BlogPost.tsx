@@ -47,19 +47,11 @@ const renderLocation = (location: BlogLocation, index: number, post: BlogPostTyp
           </a>
         </div>
 
-        <div className="mt-4 w-full">
-          <div className="aspect-video w-full">
-            <iframe 
-              src={location.contentSections.mapEmbed}
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg"
-            />
-          </div>
+        <div className="mt-4 w-full h-[450px] rounded-lg overflow-hidden">
+          <div 
+            className="w-full h-full"
+            dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }}
+          />
         </div>
       </div>
 
