@@ -1,4 +1,4 @@
-import { BlogPost } from "./posts";
+import { BlogPost } from "../posts";
 
 export const post: BlogPost = {
   title: "Tel Aviv's Ultimate Burger Guide: Local Favorites",
