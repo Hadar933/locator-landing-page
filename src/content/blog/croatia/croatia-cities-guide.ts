@@ -17,7 +17,7 @@ export const post: BlogPost = {
       contentSections: {
         introduction: "Pula, a seafront city on the tip of Croatia's Istrian Peninsula, is best known for its preserved Roman ruins, especially the remarkable Pula Arena. This 1st-century amphitheater is one of the best preserved Roman amphitheaters in the world and still functions as a venue for summer concerts and festivals.",
         bestTimeToVisit: "May to September offers the best weather for exploring Pula's outdoor attractions. Visit the amphitheater early morning or late afternoon to avoid crowds and get the best lighting for photos.",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90085.98953900703!2d13.784994699999999!3d44.8666626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477cd2de09337b6d%3A0x72324a3a7b4e580d!2sPula%2C%20Croatia!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90085.98953900703!2d13.784994699999999!3d44.8666626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477cd2de09337b6d%3A0x72324a3a7b4e580d!2sPula%2C%20Croatia!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Don't miss the Temple of Augustus in the old town",
           "Visit the local fish market for fresh seafood",
@@ -31,7 +31,7 @@ export const post: BlogPost = {
       contentSections: {
         introduction: "The Brijuni Islands, a group of fourteen small islands in the Croatian part of the Adriatic Sea, offer a unique blend of natural beauty and historical significance. The islands are famous for their well-preserved Roman and Byzantine ruins, dinosaur footprints, and the exotic animals that roam freely.",
         bestTimeToVisit: "June to September is ideal for boat tours and swimming. Book your visit in advance as access to the islands is regulated.",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45025.83868283755!2d13.728275!3d44.915556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477c97aa7677325d%3A0xf1095c40657d5c3!2sBrijuni%2C%20Croatia!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45025.83868283755!2d13.728275!3d44.915556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477c97aa7677325d%3A0xf1095c40657d5c3!2sBrijuni%2C%20Croatia!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Take the tourist train tour around the main island",
           "Visit the Safari Park with its exotic animals",
