@@ -47,7 +47,7 @@ const renderLocation = (location: BlogLocation, index: number, post: BlogPostTyp
           </a>
         </div>
 
-        <div className="mt-4 w-full h-[450px] rounded-lg overflow-hidden">
+        <div className="mt-4 -mx-4 sm:-mx-8 md:-mx-16 lg:-mx-24 h-[450px]">
           <div 
             className="w-full h-full"
             dangerouslySetInnerHTML={{ __html: location.contentSections.mapEmbed }}
