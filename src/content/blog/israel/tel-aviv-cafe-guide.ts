@@ -1,6 +1,4 @@
-import { BlogPost } from "../posts";
-
-export const post: BlogPost = {
+export const post = {
   title: "Tel Aviv Café Culture: Best Coffee Spots Guide",
   description: "Discover Tel Aviv's most charming cafés, from hidden gems to popular spots. A local's guide to the best coffee, food, and ambiance in the city.",
   author: "Locator Team",
@@ -14,7 +12,7 @@ export const post: BlogPost = {
       contentSections: {
         introduction: "Known for their exceptional sandwiches and Instagram-worthy smoothie bowls, Café Yael offers a perfect blend of healthy and delicious options. Their fresh ingredients and creative presentations make every visit memorable.",
         bestTimeToVisit: "Early morning for breakfast, or mid-afternoon for a peaceful coffee break.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b76555555%3A0x7c7b5c784b944444!2sCafe%20Yael!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.8876712539584!2d34.7689397!3d32.0731445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7b76555555%3A0x7c7b5c784b944444!2sCafe%20Yael!5e0!3m2!1sen!2sil!4v1624000000000!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Known for their fresh smoothie bowls",
           "Great outdoor seating area",

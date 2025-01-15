@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "One of Naples' most famous pizzerias, Sorbillo is known for its perfectly charred crust and high-quality ingredients. Their traditional Neapolitan pizza has earned them worldwide recognition.",
         bestTimeToVisit: "Early lunch (11:30 AM) or late afternoon (4 PM) to avoid peak hours",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.6893831244387!2d14.255752776460669!3d40.85198397136816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0853e4e6b96f%3A0x7b87941e17cc8921!2sGino%20Sorbillo!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.6893831244387!2d14.255752776460669!3d40.85198397136816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0853e4e6b96f%3A0x7b87941e17cc8921!2sGino%20Sorbillo!5e0!3m2!1sen!2sus!4v1711454433044!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Award-winning Neapolitan pizza",
           "Established in 1935",

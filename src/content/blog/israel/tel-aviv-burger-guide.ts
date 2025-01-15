@@ -1,6 +1,4 @@
-import { BlogPost } from "../posts";
-
-export const post: BlogPost = {
+export const post = {
   title: "Tel Aviv's Ultimate Burger Guide: Local Favorites",
   description: "A mouthwatering journey through Tel Aviv's best burger joints, from hidden gems to legendary establishments",
   author: "Local Food Expert",
@@ -19,7 +17,7 @@ export const post: BlogPost = {
       contentSections: {
         introduction: "Tucked away in a bustling corner of Tel Aviv, Prozdor has earned its reputation as a burger institution. This cozy spot combines traditional Israeli hospitality with modern burger craftsmanship, creating an experience that's both authentic and innovative.",
         bestTimeToVisit: "Visit during weekday lunch hours (12:00-14:00) to avoid the evening rush. The restaurant is particularly busy during weekend evenings.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sProzdor!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sProzdor!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "A really famous one in tel aviv. everybody knows it"
         ]
@@ -93,5 +91,3 @@ export const post: BlogPost = {
     link: "https://locator.ltd"
   }
 };
-
-export default post;
