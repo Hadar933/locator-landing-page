@@ -29,7 +29,7 @@ export const post = {
       contentSections: {
         introduction: "The Little Burger Shop might be small in size, but it's huge in flavor and character. This intimate spot has revolutionized Tel Aviv's burger scene with its creative combinations and attention to detail.",
         bestTimeToVisit: "Early evening (17:00-19:00) tends to be less crowded, and you'll catch the beautiful Tel Aviv sunset while dining.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sLittle%20Burger%20Shop!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sLittle%20Burger%20Shop!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Intimate atmosphere",
           "Creative burger combinations",
@@ -44,7 +44,7 @@ export const post = {
       contentSections: {
         introduction: "Vitrina has become synonymous with gourmet street food in Tel Aviv. Their burgers represent the perfect fusion of high-end cuisine and casual dining, making it a must-visit destination for burger enthusiasts.",
         bestTimeToVisit: "Late afternoon (15:00-17:00) offers the most relaxed dining experience, especially on weekdays.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sVitrina!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sVitrina!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Gourmet street food style",
           "High-quality ingredients",
@@ -59,7 +59,7 @@ export const post = {
       contentSections: {
         introduction: "Benz Brothers brings American-style burgers to the heart of Tel Aviv, but with a distinctly Israeli twist. Their commitment to quality and consistency has earned them a loyal following among locals and tourists alike.",
         bestTimeToVisit: "Lunch hours (12:00-14:00) during weekdays offer the best combination of fresh food and minimal wait times.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sBenz%20Brothers!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sBenz%20Brothers!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "American-style burgers",
           "Israeli twist on classics",
@@ -74,7 +74,7 @@ export const post = {
       contentSections: {
         introduction: "Silly Kid brings a playful approach to serious burger-making. This whimsical spot combines creative presentation with top-notch ingredients, creating an experience that's as fun as it is delicious.",
         bestTimeToVisit: "Early dinner (18:00-20:00) offers the full experience with the most energetic atmosphere.",
-        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sSilly%20Kid!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0876183977847!2d34.7689317!3d32.0731799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7c76b25555%3A0x1234567890abcdef!2sSilly%20Kid!5e0!3m2!1sen!2sil!4v1710901234567!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Playful atmosphere",
           "Creative presentations",
