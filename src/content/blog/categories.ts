@@ -184,6 +184,20 @@ export const blogCategories = [
         date: "2024-03-05"
       }
     ]
+  },
+  {
+    title: "Cambodia",
+    flag: "🇰🇭",
+    description: "Discover the rich history and vibrant culture of Cambodia's cities",
+    slug: "cambodia",
+    posts: [
+      {
+        title: "Phnom Penh Guide: A Mix of History and Modern Life",
+        slug: "phnom-penh-guide",
+        excerpt: "Explore Cambodia's capital city, from ancient temples to modern skyscrapers, with local recommendations for authentic experiences",
+        date: "2024-03-20"
+      }
+    ]
   }
 ];
 
