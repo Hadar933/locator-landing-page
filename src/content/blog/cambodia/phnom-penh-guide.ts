@@ -9,6 +9,12 @@ export const post = {
   country: "cambodia",
   flag: "🇰🇭",
   readingTime: "8 min read",
+  callToAction: {
+    position: 4,
+    text: "Save These Phnom Penh Locations!",
+    buttonText: "Download Locator App",
+    link: "https://locator.ltd"
+  },
   locations: [
     {
       name: "Wat Phnom Daun Penh",
@@ -146,12 +152,6 @@ export const post = {
       }
     }
   ],
-  callToAction: {
-    position: 4,
-    text: "Save These Phnom Penh Locations!",
-    buttonText: "Download Locator App",
-    link: "https://locator.ltd"
-  },
   content: `
 # Phnom Penh Guide: A Mix of History and Modern Life
 
