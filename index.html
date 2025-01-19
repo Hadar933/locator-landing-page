@@ -1,90 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H0XF23BE0P"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-H0XF23BE0P');
-    </script>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "pv0e8wefn2");
-    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/lovable-uploads/47fe2b25-d83e-46e5-bb42-043d91389daf.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locator - AI-Powered Location Saving App | Save Places from Social Media</title>
-    <meta name="description" content="Save and organize location recommendations from social media, blogs, and websites with AI-powered extraction. Perfect for travelers, foodies, and city explorers." />
-    <meta name="keywords" content="location saver app, save places app, travel planning tool, restaurant recommendations, AI location extractor, food spot collector, travel app, place bookmarking" />
-    <meta name="author" content="Locator" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://locator.ltd" />
-    <meta property="og:title" content="Locator - Save Places with AI" />
-    <meta property="og:description" content="AI-powered app to save and organize location recommendations from social media, blogs, and websites." />
-    <meta property="og:image" content="/lovable-uploads/1f703c53-be60-414d-8a02-156fac744295.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Locator" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter / X -->
+    <title>Locator</title>
+    <meta name="description" content="Save places you love from social media and websites" />
+    <meta property="og:title" content="Locator" />
+    <meta property="og:description" content="Save places you love from social media and websites" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://locator.love" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@locator_app" />
-    <meta name="twitter:site" content="@locator_app" />
-    <meta name="twitter:title" content="Locator - Save Places with AI" />
-    <meta name="twitter:description" content="Save places from social media and organize your travel recommendations with AI." />
-    <meta name="twitter:image" content="/lovable-uploads/1f703c53-be60-414d-8a02-156fac744295.png" />
-    <meta name="twitter:image:alt" content="Locator App Preview" />
-    <meta name="twitter:domain" content="locator.ltd" />
-
-    <!-- Additional Social Media -->
-    <meta property="article:publisher" content="https://facebook.com/locatorapp" />
-    <meta property="fb:app_id" content="your_fb_app_id" />
-
-    <link rel="canonical" href="https://locator.ltd" />
-    <link rel="alternate" href="https://locator.ltd" hreflang="x-default" />
-    <link rel="alternate" href="https://locator.ltd" hreflang="en" />
-    
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "MobileApplication",
-        "name": "Locator",
-        "description": "AI-powered location saving app that helps users organize place recommendations from social media and websites",
-        "operatingSystem": "Android",
-        "applicationCategory": "TravelApplication, LocalApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "Locator",
-          "url": "https://locator.ltd"
-        }
-      }
-    </script>
+    <meta name="twitter:title" content="Locator" />
+    <meta name="twitter:description" content="Save places you love from social media and websites" />
+    <meta name="twitter:image" content="/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <script>
-      // Initialize global window object before any module scripts
+      // Initialize window.global before any module scripts
       window.global = window;
+      // Add basic process.env object
       window.process = {
         env: {
-          NODE_ENV: 'production'
+          NODE_ENV: 'development'
         }
       };
+    </script>
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
     </script>
   </head>
 
