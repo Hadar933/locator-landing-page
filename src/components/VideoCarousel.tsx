@@ -3,8 +3,11 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import { Share2 } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useToast } from "@/components/ui/use-toast";
 
 export const VideoCarousel = () => {
   const plugin = useRef(
@@ -13,6 +16,22 @@ export const VideoCarousel = () => {
       stopOnInteraction: true,
     })
   );
+
+  const [sharedUrl, setSharedUrl] = useState<string | null>(null);
+  const { toast } = useToast();
+  
+  const handleShare = (url: string) => {
+    setSharedUrl(url);
+    toast({
+      title: "URL copied to clipboard!",
+      description: "Scroll down to see the shared URL",
+    });
+    // Scroll to bottom
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
 
   const videos = [
     {
@@ -74,18 +93,48 @@ export const VideoCarousel = () => {
           <CarouselContent>
             {videos.map((video, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="aspect-[9/16] rounded-xl overflow-hidden border shadow-lg">
-                  <iframe
-                    src={video.embedUrl}
-                    className="w-full h-full"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  />
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] rounded-xl overflow-hidden border shadow-lg">
+                    <iframe
+                      src={video.embedUrl}
+                      className="w-full h-full"
+                      allowFullScreen
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    />
+                  </div>
+                  <Button 
+                    onClick={() => handleShare(video.embedUrl)}
+                    variant="outline"
+                    className="w-full"
+                  >
+                    <Share2 className="mr-2" />
+                    Share to Locator
+                  </Button>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
+
+        {sharedUrl && (
+          <div className="mt-16 p-6 border rounded-lg bg-gray-50">
+            <h3 className="text-xl font-semibold mb-4">Shared URL</h3>
+            <div className="p-4 bg-white border rounded mb-4 break-all">
+              {sharedUrl}
+            </div>
+            <Button 
+              onClick={() => {
+                navigator.clipboard.writeText(sharedUrl);
+                toast({
+                  title: "Copied!",
+                  description: "URL has been copied to your clipboard",
+                });
+              }}
+            >
+              Copy URL
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
