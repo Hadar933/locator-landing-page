@@ -17,15 +17,23 @@ export const VideoCarousel = () => {
   const videos = [
     {
       platform: "TikTok",
-      embedUrl: "https://www.tiktok.com/embed/v2/7166771195133068549",
-    },
-    {
-      platform: "Instagram",
-      embedUrl: "https://www.instagram.com/p/C3QQ_8fL5O4/embed",
+      embedUrl: "https://www.tiktok.com/embed/v2/7271327697891183918",
     },
     {
       platform: "TikTok",
-      embedUrl: "https://www.tiktok.com/embed/v2/7166771195133068549",
+      embedUrl: "https://www.tiktok.com/embed/v2/7433701151872257313",
+    },
+    {
+      platform: "TikTok",
+      embedUrl: "https://www.tiktok.com/embed/v2/7227835204541353243",
+    },
+    {
+      platform: "TikTok",
+      embedUrl: "https://www.tiktok.com/embed/v2/7337880069601348910",
+    },
+    {
+      platform: "TikTok",
+      embedUrl: "https://www.tiktok.com/embed/v2/7302068588939054369",
     },
   ];
 
