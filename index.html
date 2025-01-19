@@ -77,13 +77,19 @@
         }
       }
     </script>
+    <script>
+      // Initialize global window object before any module scripts
+      window.global = window;
+      window.process = {
+        env: {
+          NODE_ENV: 'production'
+        }
+      };
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
-    <script type="module">
-      window.global = window;
-    </script>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
