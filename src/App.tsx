@@ -9,6 +9,7 @@ import BlogCategory from "./pages/BlogCategory";
 import ComingSoon from "./pages/ComingSoon";
 import Newsletter from "./pages/Newsletter";
 import Sitemap from "./pages/Sitemap";
+import Test from "./pages/Test";
 import { NavigationBar } from "./components/NavigationBar";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
