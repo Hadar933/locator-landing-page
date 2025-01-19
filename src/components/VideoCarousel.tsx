@@ -20,20 +20,40 @@ export const VideoCarousel = () => {
       embedUrl: "https://www.tiktok.com/embed/v2/7271327697891183918",
     },
     {
+      platform: "Instagram",
+      embedUrl: "https://www.instagram.com/p/DD2uCMyzCKU/embed",
+    },
+    {
       platform: "TikTok",
       embedUrl: "https://www.tiktok.com/embed/v2/7433701151872257313",
+    },
+    {
+      platform: "Instagram",
+      embedUrl: "https://www.instagram.com/p/DEyUt3VyNlx/embed",
     },
     {
       platform: "TikTok",
       embedUrl: "https://www.tiktok.com/embed/v2/7227835204541353243",
     },
     {
+      platform: "Instagram",
+      embedUrl: "https://www.instagram.com/p/DEfUhcrOwm2/embed",
+    },
+    {
       platform: "TikTok",
       embedUrl: "https://www.tiktok.com/embed/v2/7337880069601348910",
     },
     {
+      platform: "Instagram",
+      embedUrl: "https://www.instagram.com/p/C-A_CLKtZGB/embed",
+    },
+    {
       platform: "TikTok",
       embedUrl: "https://www.tiktok.com/embed/v2/7302068588939054369",
+    },
+    {
+      platform: "Instagram",
+      embedUrl: "https://www.instagram.com/p/DCD9FwtPlLh/embed",
     },
   ];
 
