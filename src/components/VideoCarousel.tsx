@@ -8,7 +8,6 @@ import { Share2 } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import LocationMap from "./LocationMap";
 
 export const VideoCarousel = () => {
   const plugin = useRef(
@@ -19,7 +18,6 @@ export const VideoCarousel = () => {
   );
 
   const [sharedUrl, setSharedUrl] = useState<string | null>(null);
-  const [showMap, setShowMap] = useState(false);
   const { toast } = useToast();
   
   const handleShare = (url: string) => {
@@ -33,12 +31,6 @@ export const VideoCarousel = () => {
       top: document.documentElement.scrollHeight,
       behavior: 'smooth'
     });
-  };
-
-  const handleSubmit = () => {
-    if (sharedUrl) {
-      setShowMap(true);
-    }
   };
 
   const videos = [
@@ -130,17 +122,18 @@ export const VideoCarousel = () => {
             <div className="p-4 bg-white border rounded mb-4 break-all">
               {sharedUrl}
             </div>
-            <Button onClick={handleSubmit}>
-              Submit
+            <Button 
+              onClick={() => {
+                navigator.clipboard.writeText(sharedUrl);
+                toast({
+                  title: "Copied!",
+                  description: "URL has been copied to your clipboard",
+                });
+              }}
+            >
+              Copy URL
             </Button>
           </div>
-        )}
-
-        {showMap && sharedUrl && (
-          <LocationMap 
-            url={sharedUrl} 
-            onClose={() => setShowMap(false)} 
-          />
         )}
       </div>
     </section>
