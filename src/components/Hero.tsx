@@ -15,7 +15,7 @@ export const Hero = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent leading-[1.2] md:leading-[1.2]">
-              Save & Organize Places with AI
+              Save Places you Love
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Never lose track of amazing places again! Save restaurants, travel spots, and local gems from social media and websites. Our AI automatically extracts and organizes locations for your next adventure.
