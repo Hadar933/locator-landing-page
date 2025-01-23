@@ -198,6 +198,20 @@ export const blogCategories = [
         date: "2024-03-20"
       }
     ]
+  },
+  {
+    title: "China",
+    flag: "🇨🇳",
+    description: "Explore ancient wonders and modern cities across China",
+    slug: "china",
+    posts: [
+      {
+        title: "China in 18 Days: From Beijing to Hong Kong",
+        slug: "china-18-day-guide",
+        excerpt: "An epic journey through China's most iconic destinations - from the Great Wall to the karst mountains of Yangshuo",
+        date: "2024-03-25"
+      }
+    ]
   }
 ];
 
