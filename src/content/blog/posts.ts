@@ -15,6 +15,7 @@ import { post as pragueGuide } from './czech-republic/prague-local-guide';
 import { post as elNidoGuide } from './philippines/el-nido-palawan-guide';
 import { post as northernVietnamGuide } from './vietnam/northern-vietnam-guide';
 import { post as phnomPenhGuide } from './cambodia/phnom-penh-guide';
+import { post as china18DayGuide } from './china/china-18-day-guide';
 
 export interface BlogLocation {
   name: string;
@@ -67,5 +68,6 @@ export const posts: Record<string, BlogPost> = {
   "prague-local-guide": pragueGuide,
   "el-nido-palawan-guide": elNidoGuide,
   "northern-vietnam-guide": northernVietnamGuide,
-  "phnom-penh-guide": phnomPenhGuide
+  "phnom-penh-guide": phnomPenhGuide,
+  "china-18-day-guide": china18DayGuide
 };
