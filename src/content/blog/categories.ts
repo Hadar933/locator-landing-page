@@ -168,6 +168,12 @@ export const blogCategories = [
         slug: "el-nido-palawan-guide",
         excerpt: "Explore pristine beaches, secret lagoons, and authentic Filipino culture in El Nido and Palawan",
         date: "2024-03-01"
+      },
+      {
+        title: "Coron Nature Guide: Island Hopping Paradise",
+        slug: "coron-nature-guide",
+        excerpt: "Discover the pristine lagoons and hidden beaches of Coron - from Twin Lagoon to Kayangan Lake",
+        date: "2024-01-15"
       }
     ]
   },
