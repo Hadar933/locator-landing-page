@@ -5,94 +5,85 @@ export const post = {
   modifiedDate: "2024-12-29",
   author: "Locator Team",
   image: "https://upload.wikimedia.org/wikipedia/commons/1/16/Straight_out_of_a_dream.jpg",
-  content: `
-    <article class="prose lg:prose-xl max-w-none">
-      <p class="lead">Welcome to Coron, a slice of paradise in the Philippines! This guide will take you through some of the most breathtaking natural wonders this island has to offer. From therapeutic hot springs to crystal-clear lakes and vibrant marine life, here's your guide to experiencing Coron's natural beauty.</p>
+  country: "philippines",
+  flag: "🇵🇭",
+  content: `Welcome to Coron, a slice of paradise in the Philippines! This guide will take you through some of the most breathtaking natural wonders this island has to offer. From therapeutic hot springs to crystal-clear lakes and vibrant marine life, here's your guide to experiencing Coron's natural beauty.
 
-      <h2>Therapeutic Waters</h2>
-      
-      <h3>Maquinit Hot Spring</h3>
-      <p>One of the few saltwater hot springs in the world, Maquinit offers a unique therapeutic experience. The water maintains a constant temperature of about 39-40°C (102-104°F), perfect for soothing tired muscles after a day of island hopping. The spring is surrounded by mangroves, creating a serene natural setting.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8018557174886!2d120.2043895!3d11.9940695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sMaquinit%20Hot%20Spring!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+## Therapeutic Waters
 
-      <div class="my-12 text-center">
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your Coron nature spots with Locator
-        </a>
-      </div>
+### Maquinit Hot Spring
+One of the few saltwater hot springs in the world, Maquinit offers a unique therapeutic experience. The water maintains a constant temperature of about 39-40°C (102-104°F), perfect for soothing tired muscles after a day of island hopping. The spring is surrounded by mangroves, creating a serene natural setting.
 
-      <h2>Marine Wonders</h2>
+## Marine Wonders
 
-      <h3>Siete Pecados Marine Park</h3>
-      <p>A cluster of seven small limestone islands, Siete Pecados is a snorkeler's paradise. The area is teeming with diverse marine life, including colorful coral formations, tropical fish, and sometimes even sea turtles. The shallow waters make it perfect for beginners while still offering plenty to explore for experienced snorkelers.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.5018557174886!2d120.2143895!3d11.9840695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sSiete%20Pecados%20Marine%20Park!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+### Siete Pecados Marine Park
+A cluster of seven small limestone islands, Siete Pecados is a snorkeler's paradise. The area is teeming with diverse marine life, including colorful coral formations, tropical fish, and sometimes even sea turtles. The shallow waters make it perfect for beginners while still offering plenty to explore for experienced snorkelers.
 
-      <h3>Twin Peaks Coral Garden</h3>
-      <p>This underwater garden is a testament to the Philippines' rich marine biodiversity. The site features two coral-covered limestone peaks descending into crystal-clear waters. Snorkelers and divers can spot various species of fish, giant clams, and beautiful coral formations.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.3018557174886!2d120.2243895!3d11.9740695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sTwin%20Peaks%20Coral%20Garden!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+### Twin Peaks Coral Garden
+This underwater garden is a testament to the Philippines' rich marine biodiversity. The site features two coral-covered limestone peaks descending into crystal-clear waters. Snorkelers and divers can spot various species of fish, giant clams, and beautiful coral formations.
 
-      <h2>Pristine Lakes</h2>
+## Pristine Lakes
 
-      <h3>Kayangan Lake View Deck</h3>
-      <p>Often called the cleanest lake in Asia, Kayangan Lake is surrounded by towering limestone cliffs. The view deck offers one of the most photographed views in Coron. The lake itself is a mix of fresh and saltwater, creating a unique ecosystem. Don't miss the underwater rock formations visible through the crystal-clear water.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.4018557174886!2d120.2343895!3d11.9640695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sKayangan%20Lake%20View%20Deck!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+### Kayangan Lake
+Often called the cleanest lake in Asia, Kayangan Lake is surrounded by towering limestone cliffs. The view deck offers one of the most photographed views in Coron. The lake itself is a mix of fresh and saltwater, creating a unique ecosystem. Don't miss the underwater rock formations visible through the crystal-clear water.
 
-      <h3>Barracuda Lake</h3>
-      <p>Named after a giant barracuda that once lived in its waters, this lake is famous for its thermocline - a dramatic temperature change between layers of water. Divers can experience warm surface water suddenly giving way to cooler depths. The limestone walls extending underwater create an otherworldly atmosphere.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.2018557174886!2d120.2443895!3d11.9540695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sBarracuda%20Lake!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+### Barracuda Lake
+Named after a giant barracuda that once lived in its waters, this lake is famous for its thermocline - a dramatic temperature change between layers of water. Divers can experience warm surface water suddenly giving way to cooler depths. The limestone walls extending underwater create an otherworldly atmosphere.
 
-      <h2>Beach Paradise</h2>
+## Beach Paradise
 
-      <h3>CYC Beach</h3>
-      <p>CYC (Coron Youth Club) Beach is one of the few public beaches in the area. This pristine stretch of white sand is perfect for swimming and sunbathing. The shallow waters and gentle waves make it ideal for families. The beach is surrounded by native trees providing natural shade.</p>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.1018557174886!2d120.2543895!3d11.9440695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sCYC%20Beach!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+### CYC Beach
+CYC (Coron Youth Club) Beach is one of the few public beaches in the area. This pristine stretch of white sand is perfect for swimming and sunbathing. The shallow waters and gentle waves make it ideal for families. The beach is surrounded by native trees providing natural shade.
 
-      <h2>Travel Tips</h2>
-      <ul>
-        <li>Best time to visit: December to March (dry season)</li>
-        <li>Bring reef-safe sunscreen to protect the marine environment</li>
-        <li>Book island hopping tours in advance during peak season</li>
-        <li>Stay hydrated - the tropical climate can be intense</li>
-        <li>Respect local customs and environmental regulations</li>
-      </ul>
+## Travel Tips
 
-      <h2>Using Locator in Coron</h2>
-      <p>Planning to visit these spots? Save them all in Locator for easy access during your trip. You can organize them by categories (beaches, lakes, diving spots) and even add your own notes and photos. It's particularly useful for planning island hopping routes since you can see all locations on a single map.</p>
+* Best time to visit: December to March (dry season)
+* Bring reef-safe sunscreen to protect the marine environment
+* Book island hopping tours in advance during peak season
+* Stay hydrated - the tropical climate can be intense
+* Respect local customs and environmental regulations
 
-      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
-        <h3>Additional Resources</h3>
-        <ul>
-          <li><a href="https://tourism.gov.ph" target="_blank" rel="noopener noreferrer">Philippines Department of Tourism <ExternalLink className="inline h-4 w-4" /></a></li>
-          <li><a href="https://divephilippines.com.ph" target="_blank" rel="noopener noreferrer">Diving Philippines <ExternalLink className="inline h-4 w-4" /></a></li>
-        </ul>
-      </div>
+## Using Locator in Coron
+Planning to visit these spots? Save them all in Locator for easy access during your trip. You can organize them by categories (beaches, lakes, diving spots) and even add your own notes and photos. It's particularly useful for planning island hopping routes since you can see all locations on a single map.
 
-      <div class="mt-12 p-6 bg-blue-50 rounded-lg">
-        <h3 class="text-xl font-semibold mb-4">Plan Your Perfect Coron Adventure</h3>
-        <p class="mb-6">Ready to explore these natural wonders? Save all these locations in one place with Locator - your personal island-hopping companion.</p>
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Download Locator App
-        </a>
-      </div>
+## Additional Resources
+* [Philippines Department of Tourism](https://tourism.gov.ph)
+* [Diving Philippines](https://divephilippines.com.ph)
 
-      <div class="mt-12 text-center">
-        <a href="/" class="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-          Map your Coron nature spots with Locator
-        </a>
-      </div>
-    </article>
-  `
+## Plan Your Perfect Coron Adventure
+Ready to explore these natural wonders? Save all these locations in one place with Locator - your personal island-hopping companion.`,
+  locations: [
+    {
+      name: "Maquinit Hot Spring",
+      googleMapLink: "https://maps.google.com/?q=Maquinit+Hot+Spring+Coron",
+      coordinates: {
+        lat: 12.0000,
+        lng: 120.2000
+      },
+      contentSections: {
+        introduction: "Experience one of the world's rare saltwater hot springs, perfect for relaxation after island hopping.",
+        bestTimeToVisit: "Late afternoon or early evening, when temperatures are cooler",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8018557174886!2d120.2043895!3d11.9940695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sMaquinit%20Hot%20Spring!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+      }
+    },
+    {
+      name: "Kayangan Lake",
+      googleMapLink: "https://maps.google.com/?q=Kayangan+Lake+Coron",
+      coordinates: {
+        lat: 11.9724,
+        lng: 120.2339
+      },
+      contentSections: {
+        introduction: "Known as the cleanest lake in Asia, Kayangan Lake offers crystal clear waters and stunning limestone formations.",
+        bestTimeToVisit: "Early morning to avoid crowds and get the best lighting for photos",
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.4018557174886!2d120.2343895!3d11.9640695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sKayangan%20Lake!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+      }
+    }
+  ],
+  callToAction: {
+    position: 1,
+    text: "Ready to explore Coron?",
+    buttonText: "Start Planning with Locator",
+    link: "/"
+  }
 };
-
