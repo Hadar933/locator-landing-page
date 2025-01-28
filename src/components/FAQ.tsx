@@ -14,19 +14,15 @@ export const FAQ = () => {
     },
     {
       question: "Is Locator available for iOS?",
-      answer: "Currently, Locator is available on Android through the Google Play Store. We're working on bringing the app to iOS users soon!"
+      answer: <span>Currently, Locator is available on Android through the Google Play Store. You can <a href="https://locator.ltd/coming-soon" className="text-primary hover:underline">sign up for updates</a> (no spam!) about our upcoming iOS release.</span>
     },
     {
       question: "Can I share my saved places with others?",
-      answer: "Yes! You can easily share individual places or entire collections with other users. They can view and save these locations to their own collections."
-    },
-    {
-      question: "How do I organize my saved places?",
-      answer: "You can create custom collections, add tags, and categorize your saved places however you like. Our flexible organization system lets you arrange places in a way that makes sense to you."
+      answer: "We're working on social features, but in the meantime, you can share your saved locations after opening them in Apple Maps or Google Maps."
     },
     {
       question: "I have another question",
-      answer: <span>Cool, contact us by <a href="mailto:contact@locator.com" className="text-primary hover:underline">email</a></span>
+      answer: <span>Cool, contact us by <a href="mailto:locatorapp.ai@gmail.com" className="text-primary hover:underline">email</a></span>
     }
   ];
 
