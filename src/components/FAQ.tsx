@@ -23,6 +23,10 @@ export const FAQ = () => {
     {
       question: "How do I organize my saved places?",
       answer: "You can create custom collections, add tags, and categorize your saved places however you like. Our flexible organization system lets you arrange places in a way that makes sense to you."
+    },
+    {
+      question: "I have another question",
+      answer: <span>Cool, contact us by <a href="mailto:contact@locator.com" className="text-primary hover:underline">email</a></span>
     }
   ];
 
