@@ -4,7 +4,7 @@ export const post = {
   author: "Local Expert",
   publishDate: "2024-02-25",
   modifiedDate: "2024-02-25",
-  image: "/lovable-uploads/prague-castle.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Prague_%286365119737%29.jpg",
   country: "Czech Republic",
   flag: "🇨🇿",
   locations: [
