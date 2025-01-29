@@ -50,6 +50,12 @@ export const blogCategories = [
         slug: "colombo-city-guide",
         excerpt: "Discover why Colombo deserves more than just a transit stop - from historic shopping precincts to modern urban parks",
         date: "2024-03-28"
+      },
+      {
+        title: "Arugam Bay Food Guide: Local Gems & Hidden Spots",
+        slug: "arugam-bay-food-guide",
+        excerpt: "A casual food lover's guide to the best restaurants in Sri Lanka's surf paradise",
+        date: "2024-12-31"
       }
     ]
   },
