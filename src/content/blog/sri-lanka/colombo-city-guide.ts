@@ -4,7 +4,7 @@ export const post = {
   publishDate: "2024-03-28",
   modifiedDate: "2024-03-28",
   author: "Locator Team",
-  image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Dutch_Hospital_Shopping_Precinct.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/commons/4/43/Sunset_from_Kingsbury_Hotel%2C_Colombo.jpg",
   country: "sri-lanka",
   flag: "🇱🇰",
   locations: [
@@ -25,11 +25,11 @@ export const post = {
     },
     {
       name: "Thambili Island @ Stubbs",
-      googleMapLink: "https://maps.google.com/maps?q=Thambili+Island+Colombo",
+      googleMapLink: "https://maps.app.goo.gl/br9mNF1JtexAC8uZ8",
       contentSections: {
         introduction: "A hidden oasis in the heart of Colombo, Thambili Island offers a unique blend of luxury and local charm. This boutique property provides an intimate experience of the city while maintaining the tranquility of a private retreat.",
         bestTimeToVisit: "Book well in advance, especially during peak season (December-March)",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8!1d79.86!2d6.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259eb7c71cf1d%3A0x5c46!2sThambili%20Island!5e0!3m2!1sen!2sus!4v1680901234567!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8!1d79.86!2d6.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a1c5c0d5c5d%3A0x5c46!2sThambili%20Island%20%40%20Stubbs!5e0!3m2!1sen!2sus!4v1680901234567!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Boutique luxury accommodation",
           "Central location near key attractions",
