@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { StoreButtons } from "./StoreButtons";
 import { NavigationBar } from "./NavigationBar";
 import { useEffect, useRef, useState } from "react";
-import { Pin, Share2, MapPin, Map } from "lucide-react";
+import { Pin, Share2, MapPin, Map, Coffee, Utensils, Camera, Star } from "lucide-react";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -10,12 +10,12 @@ export const Hero = () => {
   const y = useTransform(scrollY, [0, 300], [0, -50]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
   
-  // Floating cards state
+  // Expanded floating cards with more variety
   const [cards] = useState([
     {
       type: "instagram",
       content: "Best coffee spots in town! ☕️ #CafeHopping",
-      icon: Share2,
+      icon: Coffee,
       color: "bg-gradient-to-r from-purple-500 to-pink-500"
     },
     {
@@ -27,8 +27,20 @@ export const Hero = () => {
     {
       type: "blog",
       content: "Top 10 Street Food Markets in Bangkok 🍜",
-      icon: Pin,
+      icon: Utensils,
       color: "bg-gradient-to-r from-emerald-500 to-teal-500"
+    },
+    {
+      type: "facebook",
+      content: "Must-visit photo spots in Santorini 📸",
+      icon: Camera,
+      color: "bg-gradient-to-r from-blue-500 to-indigo-500"
+    },
+    {
+      type: "twitter",
+      content: "Secret rooftop bars in NYC 🌃",
+      icon: Star,
+      color: "bg-gradient-to-r from-orange-500 to-red-500"
     }
   ]);
 
@@ -38,11 +50,11 @@ export const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const newMarker = {
-        x: Math.random() * 80 + 10, // 10-90% of container width
-        y: Math.random() * 80 + 10, // 10-90% of container height
+        x: Math.random() * 80 + 10,
+        y: Math.random() * 80 + 10,
         scale: 0
       };
-      setMarkers(prev => [...prev.slice(-5), newMarker]); // Keep last 6 markers
+      setMarkers(prev => [...prev.slice(-5), newMarker]);
     }, 2000);
 
     return () => clearInterval(interval);
@@ -72,53 +84,58 @@ export const Hero = () => {
               Just toss those to Locator and boom - they're on a map. It's perfect for trip planning 
               when recommendations pile up, or just when you want to save findings in a useful way.
             </p>
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-6 mb-24">
               <StoreButtons />
               <p className="text-sm text-muted-foreground">
                 Join thousands of travelers, foodies, and explorers using Locator to save their favorite places
               </p>
             </div>
-          </motion.div>
 
-          {/* Interactive Visualization */}
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Floating Social Cards */}
-            {cards.map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ 
-                  x: -100, 
-                  y: 100 + index * 60, 
-                  opacity: 0,
-                  rotate: -10 + Math.random() * 20
-                }}
-                animate={{ 
-                  x: [-100, 20 + index * 30, -100],
-                  y: [100 + index * 60, 50 + index * 40, 100 + index * 60],
-                  opacity: [0, 1, 0],
-                  rotate: [-10 + Math.random() * 20, 5 + Math.random() * 10, -10 + Math.random() * 20]
-                }}
-                transition={{
-                  duration: 15,
-                  delay: index * 2,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                className={`absolute ${card.color} p-4 rounded-xl shadow-lg max-w-xs`}
-              >
-                <div className="flex items-center gap-2 text-white">
-                  <card.icon className="w-5 h-5" />
-                  <p className="text-sm font-medium">{card.content}</p>
-                </div>
-              </motion.div>
-            ))}
+            {/* Floating Cards Section */}
+            <div className="relative h-[400px] mb-24">
+              {cards.map((card, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ 
+                    x: index % 2 === 0 ? -100 : 100,
+                    y: 100 + (index * 30),
+                    opacity: 0,
+                    rotate: -5 + Math.random() * 10
+                  }}
+                  animate={{ 
+                    x: [
+                      index % 2 === 0 ? -100 : 100,
+                      0,
+                      index % 2 === 0 ? 100 : -100
+                    ],
+                    y: [
+                      100 + (index * 30),
+                      50 + (index * 20),
+                      100 + (index * 30)
+                    ],
+                    opacity: [0, 1, 0],
+                    rotate: [-5 + Math.random() * 10, 5 + Math.random() * 10, -5 + Math.random() * 10]
+                  }}
+                  transition={{
+                    duration: 15,
+                    delay: index * 2,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className={`absolute left-1/2 transform -translate-x-1/2 ${card.color} p-4 rounded-xl shadow-lg max-w-xs backdrop-blur-sm`}
+                >
+                  <div className="flex items-center gap-2 text-white">
+                    <card.icon className="w-5 h-5" />
+                    <p className="text-sm font-medium">{card.content}</p>
+                  </div>
+                </motion.div>
+              ))}
 
-            {/* Map Visualization */}
-            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Central Map Icon */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 0.1 }}
-                className="w-[600px] h-[600px] rounded-full border-2 border-blue-500/20 flex items-center justify-center"
+                className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px]"
               >
                 <Map className="w-full h-full text-blue-500/20" />
                 
@@ -158,7 +175,7 @@ export const Hero = () => {
                 ))}
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
     </>
