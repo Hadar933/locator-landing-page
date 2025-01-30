@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "A hidden gem serving traditional Greek dishes with a modern twist. The garden setting creates a magical atmosphere for dinner, and their moussaka is legendary among locals.",
         bestTimeToVisit: "Evening time for the best atmosphere and full menu selection",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.9876543210987!2d27.2012345!3d35.5087654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sBlue%20Garden%20Restaurant!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.9876543210987!2d27.2012345!3d35.5087654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sBlue%20Garden%20Restaurant!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Famous for traditional moussaka",
           "Beautiful garden setting",
@@ -29,7 +29,7 @@ export const post = {
       contentSections: {
         introduction: "Often ranked among Greece's finest beaches, Apella remains surprisingly uncrowded. The crystal-clear waters are perfect for snorkeling, and the dramatic cliffs provide a stunning backdrop for photos.",
         bestTimeToVisit: "Early morning or late afternoon to avoid peak sun hours",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.7654321098765!2d27.2234567!3d35.5309876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sApella%20Beach!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.7654321098765!2d27.2234567!3d35.5309876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sApella%20Beach!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Crystal clear waters",
           "Great for snorkeling",
@@ -40,11 +40,11 @@ export const post = {
     },
     {
       name: "Alimounda Mare Hotel",
-      googleMapLink: "https://maps.google.com/maps?q=Alimounda+Mare+Hotel+Karpathos",
+      googleMapLink: "https://maps.app.goo.gl/L1ShdX9TibooNHuL8",
       contentSections: {
         introduction: "Luxury accommodation without the luxury price tag. This 5-star hotel offers stunning sea views, a private beach, and exceptional service at rates that would be unheard of in Santorini or Mykonos.",
         bestTimeToVisit: "Any time - the hotel offers year-round comfort",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5432109876543!2d27.2456789!3d35.5532098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sAlimounda%20Mare%20Hotel!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.8876543210987!2d27.2089!3d35.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sAlimounda%20Mare%20Hotel!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "5-star amenities",
           "Private beach access",
