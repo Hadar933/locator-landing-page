@@ -18,7 +18,7 @@ export const Hero = () => {
               Save Places you Love
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Never lose track of amazing places again! Save restaurants, travel spots, and local gems from social media and websites. Our AI automatically extracts and organizes locations for your next adventure.
+              Found a blog with food recommendations? a social media post with a must-visit cafe? Just toss those to Locator and boom - they're on a map. It's perfect for trip planning when recommendations pile up, or just when you want to save findings in a useful way.
             </p>
             <div className="flex flex-col items-center gap-6">
               <StoreButtons />
