@@ -44,7 +44,7 @@ export const post = {
       contentSections: {
         introduction: "Luxury accommodation without the luxury price tag. This 5-star hotel offers stunning sea views, a private beach, and exceptional service at rates that would be unheard of in Santorini or Mykonos.",
         bestTimeToVisit: "Any time - the hotel offers year-round comfort",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.8876543210987!2d27.2089!3d35.5089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sAlimounda%20Mare%20Hotel!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12899.076923076923!2d27.2089!3d35.5089!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14947c7e7e7e7e7d%3A0x1234567890abcdef!2sAlimounda%20Mare%20Hotel!5e0!3m2!1sen!2sgr!4v1234567890123!5m2!1sen!2sgr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "5-star amenities",
           "Private beach access",

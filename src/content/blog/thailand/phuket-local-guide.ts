@@ -14,7 +14,7 @@ export const post = {
       contentSections: {
         introduction: "Known for its crystal-clear waters and white sand, Surin Beach offers a perfect blend of luxury and natural beauty. Popular among both locals and tourists, this beach maintains its charm without being overcrowded.",
         bestTimeToVisit: "Early morning or late afternoon for the best light and fewer crowds",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0401637333735!2d98.27637631540234!3d7.975502094267432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503046c8c8c4e7%3A0x40223bc2c382480!2sSurin%20Beach!5e0!3m2!1sen!2sth!4v1628000000000!5m2!1sen!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.0401637333735!2d98.2763763!3d7.9755020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503046c8c8c4e7%3A0x40223bc2c382480!2sSurin%20Beach!5e0!3m2!1sen!2sth!4v1628000000000!5m2!1sen!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Perfect for swimming and sunbathing",
           "Luxury resorts and beach clubs nearby",
@@ -29,7 +29,7 @@ export const post = {
       contentSections: {
         introduction: "The historic heart of Phuket, featuring Sino-Portuguese architecture, vibrant street art, and local markets. This area offers a glimpse into Phuket's rich cultural heritage.",
         bestTimeToVisit: "Early evening for the best atmosphere and cooler temperatures",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7401637333735!2d98.38637631540234!3d7.885502094267432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503046c8c8c4e7%3A0x40223bc2c382480!2sOld%20Phuket%20Town!5e0!3m2!1sen!2sth!4v1628000000000!5m2!1sen!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7401637333735!2d98.3863763!3d7.8855020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502f3c8185d899%3A0x40223bc2c382480!2sOld%20Phuket%20Town!5e0!3m2!1sen!2sth!4v1628000000000!5m2!1sen!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Historic Sino-Portuguese buildings",
           "Local markets and street food",
