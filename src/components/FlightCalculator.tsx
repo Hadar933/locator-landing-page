@@ -274,6 +274,13 @@ export const FlightCalculator: React.FC = () => {
               </div>
             </div>
 
+            <div className="h-[200px] lg:h-[300px]">
+              <AirportMap 
+                fromAirport={fromAirport} 
+                toAirport={toAirport} 
+              />
+            </div>
+
             {fromAirport && toAirport && (
               <div className="space-y-4">
                 <Button 
@@ -286,9 +293,7 @@ export const FlightCalculator: React.FC = () => {
                     Find {toAirport.country} recommendations on our blog ✈️
                   </span>
                 </Button>
-                <div className="h-[200px] lg:h-[300px]">
-                  <AirportMap fromAirport={fromAirport} toAirport={toAirport} />
-                </div>
+
                 {distance && (
                   <div className="space-y-2 p-4 bg-muted/50 rounded-lg">
                     {/* Main flight time display */}

@@ -66,15 +66,19 @@ export const AirportMap: React.FC<AirportMapProps> = ({ fromAirport, toAirport }
         return undefined;
     }, [fromAirport, toAirport]);
 
-    const defaultCenter: LatLngTuple = [20, 0];
+    const center = fromAirport 
+        ? [fromAirport.latitude, fromAirport.longitude]
+        : [20, 0]; // Default center of the map
+
+    const zoom = (!fromAirport && !toAirport) ? 2 : 4;
 
     return (
         <div className="rounded-lg overflow-hidden border h-full min-h-[200px]">
             <MapContainer
                 style={{ height: '100%', width: '100%' }}
                 bounds={bounds}
-                center={defaultCenter}
-                zoom={2}
+                center={center as [number, number]}
+                zoom={zoom}
                 className="z-10"
             >
                 <TileLayer
