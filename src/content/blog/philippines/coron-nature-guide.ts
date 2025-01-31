@@ -52,7 +52,7 @@ Planning to visit these spots? Save them all in Locator for easy access during y
 
 ## Plan Your Perfect Coron Adventure
 Ready to explore these natural wonders? Save all these locations in one place with Locator - your personal island-hopping companion.`,
-  locations: [
+locations: [
     {
       name: "Maquinit Hot Spring",
       googleMapLink: "https://maps.google.com/?q=Maquinit+Hot+Spring+Coron",
@@ -63,7 +63,7 @@ Ready to explore these natural wonders? Save all these locations in one place wi
       contentSections: {
         introduction: "Experience one of the world's rare saltwater hot springs, perfect for relaxation after island hopping.",
         bestTimeToVisit: "Late afternoon or early evening, when temperatures are cooler",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8018557174886!2d120.2043895!3d11.9940695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sMaquinit%20Hot%20Spring!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.8018557174886!2d120.2043895!3d11.9940695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sMaquinit%20Hot%20Spring!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
       }
     },
     {
@@ -76,7 +76,7 @@ Ready to explore these natural wonders? Save all these locations in one place wi
       contentSections: {
         introduction: "Known as the cleanest lake in Asia, Kayangan Lake offers crystal clear waters and stunning limestone formations.",
         bestTimeToVisit: "Early morning to avoid crowds and get the best lighting for photos",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.4018557174886!2d120.2343895!3d11.9640695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sKayangan%20Lake!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.4018557174886!2d120.2343895!3d11.9640695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a5f51f1a640d85%3A0x88c2b64e14517522!2sKayangan%20Lake!5e0!3m2!1sen!2sph!4v1710901234567!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
       }
     }
   ],

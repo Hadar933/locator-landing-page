@@ -7,14 +7,18 @@ export const post = {
   image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Kayangan_Lake%2C_Coron_-_Palawan.jpg",
   country: "philippines",
   flag: "🇵🇭",
-  locations: [
+locations: [
     {
       name: "Duli Beach - El Nido's Hidden Surf Spot",
       googleMapLink: "https://maps.google.com/maps?q=Duli+Beach+El+Nido",
+      coordinates: {
+        lat: 11.3147,
+        lng: 119.3892
+      },
       contentSections: {
         introduction: "Tucked away in the northern part of El Nido, Duli Beach is a surfer's paradise with consistent waves and pristine shoreline. This secluded spot offers both beginner and intermediate waves, making it perfect for surf enthusiasts of all levels.",
         bestTimeToVisit: "Visit between November to April for the best surfing conditions. Early morning sessions are recommended for optimal waves and fewer crowds.",
-        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.7!2d119.3892!3d11.3147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b64b6a0000:0x0!2sDuli+Beach!5e0!3m2!1sen!2sus!4v1624452079012!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.7!2d119.3892!3d11.3147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b64b6a0000:0x0!2sDuli+Beach!5e0!3m2!1sen!2sus!4v1624452079012!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
         customInfo: [
           "Surf board rentals available from local shops",
           "Basic surf lessons offered by local instructors",

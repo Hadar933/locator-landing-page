@@ -11,7 +11,6 @@ export const post = {
 China is a land of contrasts where ancient traditions meet rapid modernization. This 18-day itinerary takes you through the country's most iconic destinations, from the ancient walls of Beijing to the stunning karst landscapes of Yangshuo, ending in the vibrant metropolis of Hong Kong.
 
 ## Beijing (Days 1-3)
-### Imperial Capital & Great Wall
 
 The journey begins in Beijing, China's political and cultural heart. The first two days are dedicated to exploring the city's imperial heritage:
 
@@ -27,7 +26,6 @@ Day 3 is dedicated to the Great Wall at Mutianyu section:
 - Toboggan ride down (optional but fun!)
 
 ## Xi'an (Days 4-5)
-### Terra Cotta Warriors & Muslim Quarter
 
 The ancient capital of Xi'an offers:
 - **Terracotta Warriors**: Plan a full morning here
@@ -36,7 +34,6 @@ The ancient capital of Xi'an offers:
 - **Big Wild Goose Pagoda**: Beautiful at sunset
 
 ## Chengdu (Days 6-7)
-### Pandas & Spicy Food
 
 Chengdu, capital of Sichuan province, famous for:
 - **Giant Panda Breeding Research Base**: Visit early morning
@@ -45,7 +42,6 @@ Chengdu, capital of Sichuan province, famous for:
 - **Sichuan Opera**: Evening face-changing performance
 
 ## Leshan & Emei Shan (Days 8-10)
-### Buddhist Mountain Retreat
 
 - **Leshan Giant Buddha**: World's largest stone Buddha
 - **Mount Emei**: Sacred Buddhist mountain
@@ -54,7 +50,6 @@ Chengdu, capital of Sichuan province, famous for:
   - Take the cable car for spectacular views
 
 ## Yangtze River Cruise (Days 11-14)
-### Three Gorges Journey
 
 Three days cruising through:
 - **Qutang Gorge**: Most dramatic scenery
@@ -66,7 +61,6 @@ Three days cruising through:
   - Lesser Three Gorges
 
 ## Yangshuo (Days 15-17)
-### Karst Mountains & River Life
 
 The highlight of Guangxi province:
 - **Li River cruise**: Stunning karst landscape
@@ -76,7 +70,6 @@ The highlight of Guangxi province:
 - **Light show**: Impression Liu Sanjie performance
 
 ## Hong Kong (Day 18)
-### Modern City Finale
 
 End your journey in vibrant Hong Kong:
 - **Victoria Peak**: City views
@@ -118,7 +111,7 @@ Remember to respect local customs, dress modestly at religious sites, and always
       contentSections: {
         introduction: "The Forbidden City was the Chinese imperial palace from the Ming Dynasty to the end of the Qing Dynasty. It is located in the center of Beijing and now houses the Palace Museum.",
         bestTimeToVisit: "Early morning (8:30-10:00) to avoid crowds. Closed on Mondays.",
-        mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.8874264848656!2d116.39020661744384!3d39.916345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f052967800f319%3A0x5a29c2158e9c5bb7!2sForbidden%20City!5e0!3m2!1sen!2sus!4v1647850455252!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`,
+        mapEmbed: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.8874264848656!2d116.39020661744384!3d39.916345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f052967800f319%3A0x5a29c2158e9c5bb7!2sForbidden%20City!5e0!3m2!1sen!2sus!4v1647850455252!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>',
         customInfo: [
           "Purchase tickets in advance during peak season",
           "Audio guides available in multiple languages",
