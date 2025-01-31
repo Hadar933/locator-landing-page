@@ -11,6 +11,8 @@ import Newsletter from "./pages/Newsletter";
 import Sitemap from "./pages/Sitemap";
 import Test from "./pages/Test";
 import { NavigationBar } from "./components/NavigationBar";
+import { Tools } from "./pages/Tools";
+import { FlightCalculator } from "./components/FlightCalculator";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/tools/flight-calculator" element={<FlightCalculator />} />
       </Routes>
     </Router>
   );

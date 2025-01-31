@@ -98,4 +98,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Leaflet map styles */
+  .leaflet-container {
+    z-index: 1;
+  }
 }
