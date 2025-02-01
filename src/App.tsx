@@ -13,6 +13,7 @@ import Test from "./pages/Test";
 import { NavigationBar } from "./components/NavigationBar";
 import { Tools } from "./pages/Tools";
 import { FlightCalculator } from "./components/FlightCalculator";
+import AIRecommendations from './pages/free-tools/ai-recommendations';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/free-tools" element={<Tools />} />
         <Route path="/free-tools/flight-calculator" element={<FlightCalculator />} />
+        <Route path="/free-tools/ai-recommendations" element={<AIRecommendations />} />
       </Routes>
     </Router>
   );
