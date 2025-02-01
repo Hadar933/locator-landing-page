@@ -27,6 +27,22 @@ export const BurgerMenu = () => {
           </div>
           
           <div>
+            <h3 className="font-semibold mb-2">Free Tools</h3>
+            <div className="flex flex-col gap-1">
+              <SheetClose asChild>
+                <Link to="/free-tools/ai-recommendations" className="text-muted-foreground hover:text-primary transition-colors py-1">
+                  AI Travel Recommendations
+                </Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link to="/free-tools/flight-calculator" className="text-muted-foreground hover:text-primary transition-colors py-1">
+                  Flights Calculator
+                </Link>
+              </SheetClose>
+            </div>
+          </div>
+
+          <div>
             <h3 className="font-semibold mb-2">Legal</h3>
             <div className="flex flex-col gap-1">
               <SheetClose asChild>
