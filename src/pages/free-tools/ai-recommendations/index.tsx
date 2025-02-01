@@ -1,13 +1,14 @@
 import { useState, useRef } from 'react';
 import { MdSend, MdTravelExplore, MdBeachAccess, MdRestaurant, MdMuseum, 
          MdNaturePeople, MdNightlife, MdHiking, MdLocalActivity, MdShoppingBag, 
-         MdHistory, MdDirectionsBoat, MdLocationCity, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+         MdHistory, MdDirectionsBoat, MdLocationCity, MdChevronLeft, MdChevronRight, MdLocationOn } from 'react-icons/md';
 import { getAIRecommendations } from '../../../services/aiService';
-import { getDestinationImage } from '../../../services/imageService';
+import { getDestinationImage, imageStatus } from '../../../services/imageService';
 import './styles.css';
 
 interface Recommendation {
   destination: string;
+  country: string;
   description: string;
   tags: string[];
   tagIcons: Record<string, JSX.Element>;
@@ -16,9 +17,10 @@ interface Recommendation {
   reasoning: string;
 }
 
-export interface AIRecommendationResponse {  // Add 'export' here
+export interface AIRecommendationResponse { 
   recommendations: {
     destination: string;
+    country: string;
     description: string;
     relevant_categories: string[];
     highlights: string[];
@@ -48,7 +50,8 @@ const buildAIPrompt = (userInput: string, categories: string[]): string => {
 
 Based on these inputs, generate a list of travel recommendations. For each recommendation, include the following details:
 
-- **Destination Name:** The name of the destination.
+- **Destination Name:** Provide a specific destination name (city, region, or specific location).
+- **Country:** ALWAYS include the full country name where the destination is located.
 - **Description:** A brief summary of the destination and why it fits the user's interests.
 - **Relevant Categories:** The categories from the user's input that this destination aligns with.
 - **Highlights:** Key attractions or experiences the destination offers (e.g., museums, natural landscapes, local cuisine, adventure activities).
@@ -60,9 +63,10 @@ Return your answer in the following structured JSON format:
   "recommendations": [
     {
       "destination": "Destination Name",
+      "country": "Country Name",
       "description": "Brief summary of the destination",
       "relevant_categories": ["category1", "category2"],
-      "highlights": ["highlight1", "highlight2", "highlight3"],
+      "highlights": ["highlight1", "highlight2"],
       "reasoning": "Brief explanation of why this destination fits the user's interests"
     }
   ]
@@ -80,8 +84,8 @@ export default function AIRecommendations() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [imageLoadError, setImageLoadError] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [testResults, setTestResults] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,14 +97,21 @@ export default function AIRecommendations() {
 
     try {
       const aiResponse = await getAIRecommendations(prompt);
+      
+      if (!aiResponse?.parsed?.recommendations?.length) {
+        throw new Error('No recommendations received');
+      }
+
       const recommendationsWithImages = await Promise.all(
         aiResponse.parsed.recommendations.map(async rec => {
-          const imageUrl = await getDestinationImage(rec.relevant_categories);
+          // Pass the relevant categories to getDestinationImage
+          const imageUrl = await getDestinationImage(rec.relevant_categories || selectedCategories);
           return {
             destination: rec.destination,
+            country: rec.country,
             description: rec.description,
-            tags: rec.relevant_categories,
-            highlights: rec.highlights,
+            tags: rec.relevant_categories || [],
+            highlights: rec.highlights || [],
             reasoning: rec.reasoning,
             tagIcons: Object.fromEntries(
               Object.entries(CATEGORIES).map(([key, value]) => [key, value.icon])
@@ -112,8 +123,7 @@ export default function AIRecommendations() {
       
       setRecommendations(recommendationsWithImages);
     } catch (err) {
-      const errorDetails = JSON.stringify(recommendations, null, 2);
-      setError(`Failed to get recommendations. Please try again. Error details: ${errorDetails}`);
+      setError(`Failed to get recommendations. Please try again. ${err instanceof Error ? err.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }
@@ -240,19 +250,33 @@ export default function AIRecommendations() {
                       backgroundColor: '#f3f4f6' // Placeholder color while loading
                     }}
                   >
-                    {/* Add loading fallback */}
-                    <div 
-                      className="absolute inset-0 bg-gray-200 animate-pulse"
-                      style={{ 
-                        opacity: rec.imageUrl ? 0 : 1,
-                        transition: 'opacity 0.3s ease-in-out'
-                      }}
-                    />
+                    {/* Simple static placeholder instead of animated one */}
+                    {!rec.imageUrl && (
+                      <div 
+                        className="absolute inset-0 bg-gray-200"
+                      />
+                    )}
+                    {imageStatus.isLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-75">
+                        <div className="animate-spin rounded-full h-8 w-8 border-2 border-blue-500"></div>
+                      </div>
+                    )}
+                    {imageStatus.message && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-xs p-2">
+                        {imageStatus.message}
+                      </div>
+                    )}
                   </div>
                   <div className="p-4"> {/* Reduced padding */}
                     <h3 className="text-lg font-semibold text-gray-800 mb-2"> {/* Reduced text size */}
                       {rec.destination}
                     </h3>
+                    <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 mb-3">
+                      <MdLocationOn className="w-4 h-4 mr-1" />
+                      <span className="text-sm font-medium">
+                        {rec.country}
+                      </span>
+                    </div>
                     <p className="text-gray-600 mb-3 text-sm"> {/* Reduced margin */}
                       {rec.description}
                     </p>
@@ -279,18 +303,9 @@ export default function AIRecommendations() {
                       </div>
                     </div>
 
-                    {/* Image URL Section */}
-                    <div className="mb-3">
-                      <div className="p-2 bg-gray-50 rounded">
-                        <p className="text-xs text-gray-500 break-all">
-                          {rec.imageUrl}
-                        </p>
-                      </div>
-                    </div>
-
                     {/* Categories/Tags */}
                     <div className="flex flex-wrap gap-1">
-                      {rec.tags.slice(0, 3).map((tag, i) => ( // Limit to 3 tags
+                      {rec.tags.slice(0, 3).map((tag, i) => (
                         <span
                           key={i}
                           className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700"
@@ -313,26 +328,6 @@ export default function AIRecommendations() {
             </button>
           </div>
         )}
-
-        <div className="mt-8 border-t pt-8">
-          <div className="flex flex-col items-center gap-4">
-            <button
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full text-sm transition-colors"
-            >
-              Test Image Service
-            </button>
-            {testResults.length > 0 && (
-              <div className="w-full max-w-2xl bg-gray-50 rounded-lg p-4">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Recent Test Results:</h4>
-                {testResults.map((result, index) => (
-                  <div key={index} className="text-xs text-gray-600 break-all mb-1">
-                    {result}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
       </div>
     </div>
   );
