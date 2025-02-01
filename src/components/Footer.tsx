@@ -53,6 +53,11 @@ export const Footer = () => {
                   Newsletter
                 </Link>
               </li>
+              <li>
+                <Link to="/free-tools" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Free Tools
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

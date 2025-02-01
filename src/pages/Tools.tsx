@@ -6,7 +6,7 @@ export const Tools = () => {
       <h1 className="text-3xl font-bold mb-8">Tools</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Link 
-          to="/tools/flight-calculator"
+          to="/free-tools/flight-calculator"
           className="p-6 border rounded-lg hover:shadow-lg transition-shadow"
         >
           <h2 className="text-xl font-semibold mb-2">Flight Time Calculator</h2>

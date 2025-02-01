@@ -30,8 +30,8 @@ function App() {
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
         <Route path="/test" element={<Test />} />
-        <Route path="/tools" element={<Tools />} />
-        <Route path="/tools/flight-calculator" element={<FlightCalculator />} />
+        <Route path="/free-tools" element={<Tools />} />
+        <Route path="/free-tools/flight-calculator" element={<FlightCalculator />} />
       </Routes>
     </Router>
   );
