@@ -199,16 +199,6 @@ export default function AIRecommendations() {
             </div>
           </form>
 
-          {selectedCategories.length > 0 && (
-            <div className="flex flex-wrap gap-2 justify-center">
-              {selectedCategories.map(category => (
-                <span key={category} className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
-                  {CATEGORIES[category].icon}
-                  {category}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
         {isLoading && (
@@ -271,11 +261,25 @@ export default function AIRecommendations() {
                     <h3 className="text-lg font-semibold text-gray-800 mb-2"> {/* Reduced text size */}
                       {rec.destination}
                     </h3>
-                    <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 mb-3">
-                      <MdLocationOn className="w-4 h-4 mr-1" />
-                      <span className="text-sm font-medium">
-                        {rec.country}
-                      </span>
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600">
+                        <MdLocationOn className="w-4 h-4 mr-1" />
+                        <span className="text-sm font-medium">
+                          {rec.country}
+                        </span>
+                      </div>
+                      {/* Moved categories here */}
+                      <div className="flex flex-wrap gap-1">
+                        {rec.tags.slice(0, 3).map((tag, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700"
+                          >
+                            {rec.tagIcons[tag]}
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     <p className="text-gray-600 mb-3 text-sm"> {/* Reduced margin */}
                       {rec.description}
@@ -303,18 +307,7 @@ export default function AIRecommendations() {
                       </div>
                     </div>
 
-                    {/* Categories/Tags */}
-                    <div className="flex flex-wrap gap-1">
-                      {rec.tags.slice(0, 3).map((tag, i) => (
-                        <span
-                          key={i}
-                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs bg-gray-100 text-gray-700"
-                        >
-                          {rec.tagIcons[tag]}
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    {/* Remove the old categories section at the bottom */}
                   </div>
                 </div>
               ))}
