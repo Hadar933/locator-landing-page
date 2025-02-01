@@ -13,8 +13,7 @@ import Test from "./pages/Test";
 import { NavigationBar } from "./components/NavigationBar";
 import { Tools } from "./pages/Tools";
 import { FlightTime } from "./components/FlightTime";
-import AIRecommendations from './pages/free-tools/ai-recommendations';
-
+import AIRecommendations from "./pages/free-tools/ai-recommendations/index";
 function App() {
   return (
     <Router>
