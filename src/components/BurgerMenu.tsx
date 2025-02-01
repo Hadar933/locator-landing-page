@@ -27,7 +27,11 @@ export const BurgerMenu = () => {
           </div>
           
           <div>
-            <h3 className="font-semibold mb-2">Free Tools</h3>
+            <SheetClose asChild>
+              <Link to="/free-tools" className="block">
+                <h3 className="font-semibold mb-2 hover:text-primary transition-colors">Free Tools</h3>
+              </Link>
+            </SheetClose>
             <div className="flex flex-col gap-1">
               <SheetClose asChild>
                 <Link to="/free-tools/ai-recommendations" className="text-muted-foreground hover:text-primary transition-colors py-1">
