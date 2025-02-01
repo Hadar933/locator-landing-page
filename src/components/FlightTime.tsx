@@ -4,11 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Plane, PlaneTakeoff, PlaneLanding, MapPin, Shuffle, Book } from "lucide-react";
-import type { Airport } from './flight-calculator/airportSearch';
-import { AirportMap } from './flight-calculator/AirportMap';
-import { searchAirports, findNearestAirport, getRandomAirport } from './flight-calculator/airportSearch';
-import { PopularRoutes } from './flight-calculator/PopularRoutes';
-import { calculateFlightDistance, type FlightDistance } from './flight-calculator/distanceCalculator';
+import type { Airport } from './flight-time/airportSearch';
+import { AirportMap } from './flight-time/AirportMap';
+import { searchAirports, findNearestAirport, getRandomAirport } from './flight-time/airportSearch';
+import { PopularRoutes } from './flight-time/PopularRoutes';
+import { calculateFlightDistance, type FlightDistance } from './flight-time/distanceCalculator';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Info } from "lucide-react";
 
@@ -20,7 +20,7 @@ interface SavedState {
   userLocation: { lat: number; lon: number } | null;
 }
 
-export const FlightCalculator: React.FC = () => {
+export const FlightTime: React.FC = () => {
   const navigate = useNavigate();
   const [fromOptions, setFromOptions] = useState<Airport[]>([]);
   const [toOptions, setToOptions] = useState<Airport[]>([]);
@@ -36,7 +36,7 @@ export const FlightCalculator: React.FC = () => {
 
   // Load saved state on mount
   useEffect(() => {
-    const savedState = localStorage.getItem('flightCalculatorState');
+    const savedState = localStorage.getItem('flighttimeState');
     if (savedState) {
       const parsed = JSON.parse(savedState) as SavedState;
       setFromAirport(parsed.fromAirport);
@@ -56,7 +56,7 @@ export const FlightCalculator: React.FC = () => {
       toValue,
       userLocation
     };
-    localStorage.setItem('flightCalculatorState', JSON.stringify(stateToSave));
+    localStorage.setItem('flighttimeState', JSON.stringify(stateToSave));
   }, [fromAirport, toAirport, fromValue, toValue, userLocation]);
 
   // Clear state when component unmounts
@@ -64,7 +64,7 @@ export const FlightCalculator: React.FC = () => {
     return () => {
       // Only clear if we're not navigating to the blog
       if (!window.location.pathname.startsWith('/blog')) {
-        localStorage.removeItem('flightCalculatorState');
+        localStorage.removeItem('flighttimeState');
       }
     };
   }, []);
@@ -173,7 +173,7 @@ export const FlightCalculator: React.FC = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Plane className="h-6 w-6" />
-              Flight Distance Calculator
+              Flight Time Calculator
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">

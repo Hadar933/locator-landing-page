@@ -39,8 +39,8 @@ export const BurgerMenu = () => {
                 </Link>
               </SheetClose>
               <SheetClose asChild>
-                <Link to="/free-tools/flight-calculator" className="text-muted-foreground hover:text-primary transition-colors py-1">
-                  Flights Calculator
+                <Link to="/free-tools/flight-time" className="text-muted-foreground hover:text-primary transition-colors py-1">
+                  Flight Time Calculator
                 </Link>
               </SheetClose>
             </div>

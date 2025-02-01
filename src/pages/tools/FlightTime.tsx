@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { searchAirports, Location } from '@/utils/flightCalculator';
+import { searchAirports, Location } from '@/utils/flighttime';
 
 const FlightTime: React.FC = () => {
   const { src, dst } = useParams();

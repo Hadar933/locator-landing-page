@@ -6,7 +6,7 @@ export const Tools = () => {
     {
       title: "Flight Time Calculator",
       description: "Calculate flight duration between airports considering factors like route, aircraft type, and weather.",
-      link: "/free-tools/flight-calculator",
+      link: "/free-tools/flight-time",
       isAvailable: true,
       icon: <MdFlightTakeoff className="w-8 h-8 text-blue-500 mb-4" />,
     },

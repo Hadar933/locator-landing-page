@@ -12,7 +12,7 @@ import Sitemap from "./pages/Sitemap";
 import Test from "./pages/Test";
 import { NavigationBar } from "./components/NavigationBar";
 import { Tools } from "./pages/Tools";
-import { FlightCalculator } from "./components/FlightCalculator";
+import { FlightTime } from "./components/FlightTime";
 import AIRecommendations from './pages/free-tools/ai-recommendations';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
         <Route path="/test" element={<Test />} />
         <Route path="/free-tools" element={<Tools />} />
-        <Route path="/free-tools/flight-calculator" element={<FlightCalculator />} />
+        <Route path="/free-tools/flight-time" element={<FlightTime />} />
         <Route path="/free-tools/ai-recommendations" element={<AIRecommendations />} />
       </Routes>
     </Router>
