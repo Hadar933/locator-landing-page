@@ -1,11 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo, useEffect } from 'react';
 import { MdSend, MdTravelExplore, MdBeachAccess, MdRestaurant, MdMuseum, 
          MdNaturePeople, MdNightlife, MdHiking, MdLocalActivity, MdShoppingBag, 
-         MdHistory, MdDirectionsBoat, MdLocationCity, MdChevronLeft, MdChevronRight, MdLocationOn } from 'react-icons/md';
+         MdHistory, MdDirectionsBoat, MdLocationCity, MdChevronLeft, MdChevronRight, MdLocationOn, MdSearch } from 'react-icons/md';
 import { getAIRecommendations } from '../../../services/aiService';
 import { getDestinationImage, imageStatus } from '../../../services/imageService';
+import { buildAIPrompt } from './prompt';
 import './styles.css';
-
+import { COUNTRIES_WITH_FLAGS } from './countries';
 interface Recommendation {
   destination: string;
   country: string;
@@ -25,73 +26,67 @@ export interface AIRecommendationResponse {
     relevant_categories: string[];
     highlights: string[];
     reasoning: string;
-  }[];
-}
-
+    }[];
+  }
+const CATEGORY_COLOR = 'bg-gray-100 text-gray-700 hover:bg-gray-200';
 const CATEGORIES = {
-  'Beaches': { icon: <MdBeachAccess />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Cuisine': { icon: <MdRestaurant />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Culture': { icon: <MdMuseum />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Nature': { icon: <MdNaturePeople />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Nightlife': { icon: <MdNightlife />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Hiking': { icon: <MdHiking />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Activities': { icon: <MdLocalActivity />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Shopping': { icon: <MdShoppingBag />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'History': { icon: <MdHistory />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Islands': { icon: <MdDirectionsBoat />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' },
-  'Cities': { icon: <MdLocationCity />, colorClass: 'bg-gray-100 text-gray-700 hover:bg-gray-200' }
+  'Beaches': { icon: <MdBeachAccess />, colorClass: CATEGORY_COLOR },
+  'Cuisine': { icon: <MdRestaurant />, colorClass: CATEGORY_COLOR },
+  'Culture': { icon: <MdMuseum />, colorClass: CATEGORY_COLOR },
+  'Nature': { icon: <MdNaturePeople />, colorClass: CATEGORY_COLOR },
+  'Nightlife': { icon: <MdNightlife />, colorClass: CATEGORY_COLOR },
+  'Hiking': { icon: <MdHiking />, colorClass: CATEGORY_COLOR },
+  'Activities': { icon: <MdLocalActivity />, colorClass: CATEGORY_COLOR },
+  'Shopping': { icon: <MdShoppingBag />, colorClass: CATEGORY_COLOR },
+  'History': { icon: <MdHistory />, colorClass: CATEGORY_COLOR },
+  'Islands': { icon: <MdDirectionsBoat />, colorClass: CATEGORY_COLOR },
+  'Cities': { icon: <MdLocationCity />, colorClass: CATEGORY_COLOR }
 };
 
-const buildAIPrompt = (userInput: string, categories: string[]): string => {
-  return `You are an AI travel recommendation assistant. Your task is to provide 3-4 travel recommendations based on the user's input. The inputs you will receive are:
-
-1. **Categories of Interest:** A list of travel-related categories, one of: ${categories.join(', ')}.
-2. **User Description:** A free text input where the user explains what they liked about previous travels and what they are looking for in future trips.
-
-Based on these inputs, generate a list of travel recommendations. For each recommendation, include the following details:
-
-- **Destination Name:** Provide a specific destination name (city, region, or specific location).
-- **Country:** ALWAYS include the full country name where the destination is located.
-- **Description:** A brief summary of the destination and why it fits the user's interests.
-- **Relevant Categories:** The categories from the user's input that this destination aligns with.
-- **Highlights:** Key attractions or experiences the destination offers (e.g., museums, natural landscapes, local cuisine, adventure activities).
-- **Recommendation Reasoning:** A short explanation of why this destination is a good match based on the user's description.
-
-Return your answer in the following structured JSON format:
-
-{
-  "recommendations": [
-    {
-      "destination": "Destination Name",
-      "country": "Country Name",
-      "description": "Brief summary of the destination",
-      "relevant_categories": ["category1", "category2"],
-      "highlights": ["highlight1", "highlight2"],
-      "reasoning": "Brief explanation of why this destination fits the user's interests"
-    }
-  ]
-}
-Return NOTHING ELSE.
-Ensure that your recommendations are specific, and align closely with both the provided categories and the nuanced details mentioned in the user's free text description. do not respond with generic recommendations like a city or a country
-OK, lets start:
-categories: ${categories.join(', ')}
-user wrote: ${userInput}`;
-};
+const MONTHS = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
 
 export default function AIRecommendations() {
   const [input, setInput] = useState('');
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [imageLoadError, setImageLoadError] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [monthIndex, setMonthIndex] = useState<number>(new Date().getMonth()); // Initialize with current month
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [countrySearch, setCountrySearch] = useState('');
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
+  const countryDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (countryDropdownRef.current && !countryDropdownRef.current.contains(event.target as Node)) {
+        setIsCountryDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const filteredCountries = useMemo(() => {
+    return Object.entries(COUNTRIES_WITH_FLAGS).filter(([country]) => 
+      country.toLowerCase().includes(countrySearch.toLowerCase())
+    );
+  }, [countrySearch]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() && selectedCategories.length === 0) return;
     
-    const prompt = buildAIPrompt(input, selectedCategories);
+    const prompt = buildAIPrompt(input, selectedCategories, selectedMonth, selectedCountry, Object.keys(CATEGORIES));
     setIsLoading(true);
     setError(null);
 
@@ -104,7 +99,6 @@ export default function AIRecommendations() {
 
       const recommendationsWithImages = await Promise.all(
         aiResponse.parsed.recommendations.map(async rec => {
-          // Pass the relevant categories to getDestinationImage
           const imageUrl = await getDestinationImage(rec.relevant_categories || selectedCategories);
           return {
             destination: rec.destination,
@@ -148,6 +142,13 @@ export default function AIRecommendations() {
     }
   };
 
+  // Update month selection handler
+  const handleMonthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const index = parseInt(event.target.value);
+    setMonthIndex(index);
+    setSelectedMonth(MONTHS[index]);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16"> {/* Reduced top padding */}
       <div className="max-w-4xl mx-auto px-4"> {/* Reduced max width */}
@@ -162,22 +163,135 @@ export default function AIRecommendations() {
         </div>
 
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="flex flex-wrap gap-2 justify-center mb-6">
-            {Object.entries(CATEGORIES).map(([category, { icon, colorClass }]) => (
-              <button
-                key={category}
-                onClick={() => toggleCategory(category)}
-                className={`
-                  flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 text-sm
-                  ${selectedCategories.includes(category)
-                    ? 'bg-blue-500 text-white'
-                    : colorClass}
-                `}
+          {/* Add Country Selection before Categories */}
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-gray-700 mb-4">Where would you like to go?</h3>
+            <div className="relative" ref={countryDropdownRef}>
+              <div 
+                className="w-full p-2 border rounded-lg bg-white shadow-sm cursor-pointer"
+                onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
               >
-                <span className="w-4 h-4">{icon}</span>
-                {category}
-              </button>
-            ))}
+                <div className="flex items-center gap-2">
+                  <MdSearch className="text-gray-400" />
+                  <input
+                    type="text"
+                    value={selectedCountry ? `${COUNTRIES_WITH_FLAGS[selectedCountry]} ${selectedCountry}` : countrySearch}
+                    onChange={(e) => {
+                      setCountrySearch(e.target.value.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '')); // Remove emoji from search
+                      setSelectedCountry(null);
+                      setIsCountryDropdownOpen(true);
+                    }}
+                    placeholder="Search countries..."
+                    className="w-full outline-none"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </div>
+              </div>
+
+              {/* Updated Country Dropdown */}
+              {isCountryDropdownOpen && (
+                <div className="absolute z-10 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-auto">
+                  {filteredCountries.map(([country, flag]) => (
+                    <div
+                      key={country}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2"
+                      onClick={() => {
+                        setSelectedCountry(country);
+                        setCountrySearch('');
+                        setIsCountryDropdownOpen(false);
+                      }}
+                    >
+                      <span className="text-xl">{flag}</span>
+                      <span>{country}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Categories Section with Title */}
+          <div className="mb-6">
+            <h3 className="text-sm font-semibold text-gray-700 mb-4">What interests you?</h3>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {Object.entries(CATEGORIES).map(([category, { icon, colorClass }]) => (
+                <button
+                  key={category}
+                  onClick={() => toggleCategory(category)}
+                  className={`
+                    flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 text-sm
+                    ${selectedCategories.includes(category)
+                      ? 'bg-blue-500 text-white'
+                      : colorClass}
+                  `}
+                >
+                  <span className="w-4 h-4">{icon}</span>
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Month Selection Section */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-gray-700 mb-4">When are you planning to travel?</h3>
+            <div className="relative px-4">
+              {/* Current month display */}
+              <div className="text-center mb-2">
+                <span className="text-lg font-medium text-purple-600">
+                  {MONTHS[monthIndex]}
+                </span>
+              </div>
+              
+              {/* Slider */}
+              <div className="relative">
+                <input
+                  type="range"
+                  min="0"
+                  max="11"
+                  value={monthIndex}
+                  onChange={handleMonthChange}
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer 
+                          accent-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+                
+                {/* Month labels */}
+                <div className="flex justify-between text-xs text-gray-500 mt-2 px-1">
+                  <span>Jan</span>
+                  <span className="hidden sm:block">Mar</span>
+                  <span className="hidden md:block">May</span>
+                  <span className="hidden sm:block">Jul</span>
+                  <span className="hidden md:block">Sep</span>
+                  <span className="hidden sm:block">Nov</span>
+                  <span>Dec</span>
+                </div>
+              </div>
+
+              {/* Custom slider styling */}
+              <style>{`
+                input[type='range']::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  appearance: none;
+                  width: 20px;
+                  height: 20px;
+                  background: #8B5CF6;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  border: 2px solid white;
+                  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+                }
+
+                input[type='range']::-moz-range-thumb {
+                  width: 20px;
+                  height: 20px;
+                  background: #8B5CF6;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  border: 2px solid white;
+                  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+                }
+              `}</style>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="relative group mb-6">

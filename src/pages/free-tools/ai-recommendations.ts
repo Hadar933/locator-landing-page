@@ -1,4 +1,3 @@
-
 const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 export async function getAIRecommendations(prompt: string): Promise<{ parsed: AIRecommendationResponse, raw: string }> {
@@ -52,6 +51,6 @@ export async function getAIRecommendations(prompt: string): Promise<{ parsed: AI
 }
 
 export interface AIRecommendationResponse {
-    // ...existing code...
+    recommendations: any[]; // Add this field to match the usage
     disclaimer: string;
 }
