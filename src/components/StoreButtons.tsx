@@ -1,16 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
 export const StoreButtons = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
       {/* App Store Button */}
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          navigate("/coming-soon");
-        }}
+      <a
+        href="https://apps.apple.com/il/app/locatorai/id6740416327"
+        target="_blank"
+        rel="noopener noreferrer"
         className="flex w-48 h-14 bg-black text-white rounded-xl items-center justify-center hover:opacity-90 transition-opacity"
       >
         <div className="mr-3">
@@ -25,7 +22,7 @@ export const StoreButtons = () => {
           <div className="text-xs">Download on the</div>
           <div className="text-2xl font-semibold font-sans -mt-1">App Store</div>
         </div>
-      </button>
+      </a>
 
       {/* Google Play Button */}
       <a
