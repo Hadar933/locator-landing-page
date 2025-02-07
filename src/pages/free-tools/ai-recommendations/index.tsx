@@ -117,7 +117,7 @@ export default function AIRecommendations() {
       
       setRecommendations(recommendationsWithImages);
     } catch (err) {
-      setError(`Failed to get recommendations. Please try again. ${err instanceof Error ? err.message : 'Unknown error'}`);
+      setError(`'We didnt quite get that. Can you rephrase?'. ${err instanceof Error ? err.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }
@@ -150,10 +150,12 @@ export default function AIRecommendations() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16"> {/* Reduced top padding */}
-      <div className="max-w-4xl mx-auto px-4"> {/* Reduced max width */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <MdTravelExplore className="w-16 h-16 text-blue-500 mx-auto mb-6" />
+          <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg mb-6">
+            <MdTravelExplore className="w-8 h-8 text-white" />
+          </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             AI Travel Recommendations
           </h1>

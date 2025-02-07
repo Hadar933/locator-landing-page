@@ -42,7 +42,7 @@ export async function getAIRecommendations(prompt: string): Promise<{ parsed: AI
       };
     } catch (e) {
       console.error('Failed to parse AI response:', e);
-      throw new Error('Invalid response format from AI');
+      throw new Error('We didnt quite get that. Can you rephrase?');
     }
   } catch (error) {
     console.error('AI service error:', error);
