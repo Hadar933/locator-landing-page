@@ -1,14 +1,16 @@
 // ProductHuntBadge.tsx
 export const ProductHuntBadge = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center mt-8 mb-12">
-      <div className="relative group w-full max-w-3xl"> {/* Added w-full and max-w-3xl */}
+    // Outer container without margins
+    <div className="flex flex-col items-center">
+      {/* Main wrapper with full width */}
+      <div className="relative group w-full">
         {/* Glow effect */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-orange-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+        <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-orange-600 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
         
-        {/* Content container */}
-        <div className="relative flex flex-col items-center p-6 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-200/50 shadow-xl">
-          <p className="text-base md:text-lg text-gray-600 mb-4 font-medium">
+        {/* Content container - reduced padding and made it inline-flex */}
+        <div className="relative inline-flex flex-col items-center px-8 py-4 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-200/50 shadow-xl mx-auto">
+          <p className="text-base md:text-lg text-gray-500 mb-3 font-medium">
             🎉 <span className="animate-pulse">Coming Soon</span> on Product Hunt! 
           </p>
           
@@ -22,15 +24,15 @@ export const ProductHuntBadge = () => {
               <img 
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=833424&theme=light&t=1739517992730" 
                 alt="Locator - Turn blogs, TikToks and more into a map of places to visit" 
-                style={{ width: '250px', height: '54px' }}
-                width="250" 
-                height="54" 
+                style={{ width: '400px', height: '50px' }}
+                width="400" 
+                height="50" 
                 className="shadow-sm rounded"
               />
             </a>
           </div>
           
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-3 text-sm text-gray-500">
             Be among the first to support us !🚀
           </p>
         </div>

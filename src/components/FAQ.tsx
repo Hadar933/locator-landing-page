@@ -13,10 +13,6 @@ export const FAQ = () => {
       answer: "Our AI technology automatically scans text content and identifies location references. It can extract addresses, place names, and coordinates from various sources like blog posts, articles, and social media."
     },
     {
-      question: "Is Locator available for iOS?",
-      answer: <span>Currently, Locator is available on Android through the Google Play Store. You can <a href="https://locator.ltd/coming-soon" className="text-primary hover:underline">sign up for updates</a> (no spam!) about our upcoming iOS release.</span>
-    },
-    {
       question: "Can I share my saved places with others?",
       answer: "We're working on social features, but in the meantime, you can share your saved locations after opening them in Apple Maps or Google Maps."
     },
