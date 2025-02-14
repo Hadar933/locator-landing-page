@@ -8,11 +8,13 @@ import { FAQ } from "@/components/FAQ";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";
 import { EmailSignup } from "@/components/EmailSignup";
+import { ProductHuntBadge } from "@/components/ProductHuntBadge";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <ProductHuntBadge />
       <Features />
       <SocialProof />
       <Benefits />
