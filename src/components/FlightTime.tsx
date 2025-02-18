@@ -11,6 +11,7 @@ import { PopularRoutes } from './flight-time/PopularRoutes';
 import { calculateFlightDistance, type FlightDistance } from './flight-time/distanceCalculator';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Info } from "lucide-react";
+import { SEO } from './SEO';
 
 interface SavedState {
   fromAirport: Airport | null;
@@ -251,196 +252,262 @@ export const FlightTime: React.FC = () => {
     setToValue(tempValue);
   };
 
-  return (
-    <div className="container max-w-6xl mx-auto p-4 pt-20">
-      <div className="flex flex-col lg:flex-row gap-4">
-        <Card className="flex-1 min-w-0"> {/* added min-w-0 to prevent overflow */}
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Plane className="h-6 w-6" />
-              {getHeaderText()}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid gap-4">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <PlaneTakeoff className="h-4 w-4" />
-                  <span>From Airport</span>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={handleLocationClick}
-                    disabled={locationLoading}
-                  >
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {locationLoading ? "Finding..." : "Use my location"}
-                  </Button>
-                </div>
-                <Input 
-                  placeholder="Search airports..."
-                  value={fromValue}
-                  onChange={(e) => {
-                    setFromValue(e.target.value);
-                    handleSearch(e.target.value, setFromOptions);
-                  }}
-                />
-                {fromOptions.length > 0 && (
-                  <div className="border rounded-md max-h-60 overflow-y-auto">
-                    {fromOptions.map((airport) => (
-                      <button
-                        key={airport.id}
-                        className="w-full px-3 py-2 text-left hover:bg-accent text-sm flex items-center gap-2"
-                        onClick={() => {
-                          setFromAirport(airport);
-                          setFromValue(formatAirportName(airport));
-                          setFromOptions([]);
-                        }}
-                      >
-                        {formatAirportName(airport)}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+  // Generate SEO data
+  const generateSEOData = () => {
+    if (!fromAirport || !toAirport) {
+      return {
+        title: 'Flight Time Calculator - Calculate Travel Time Between Airports',
+        description: 'Calculate flight times between any airports worldwide. Get accurate estimates of travel duration, distance, and route information for your journey.',
+        canonical: '/flight-time'
+      };
+    }
 
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 justify-between">
-                  <div className="flex items-center gap-2">
-                    <PlaneLanding className="h-4 w-4" />
-                    <span>To Airport</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {fromAirport && toAirport && (
-                      <Button 
-                        variant="outline"
-                        size="sm"
-                        onClick={handleFlip}
-                      >
-                        <ArrowUpDown className="h-4 w-4 mr-1" />
-                        Switch
-                      </Button>
-                    )}
+    const fromCity = fromAirport.city;
+    const toCity = toAirport.city;
+    const distanceKm = distance?.actual.km || 0;
+    const flightHours = distance?.duration.hours || 0;
+    const flightMinutes = distance?.duration.minutes || 0;
+
+    return {
+      title: `Flight Time from ${fromCity} to ${toCity} - Duration & Distance Calculator`,
+      description: `Flight time from ${fromCity} to ${toCity} is ${flightHours}h ${flightMinutes}m. The flight distance is ${distanceKm} kilometers. Get detailed route information and travel times.`,
+      canonical: `/flight-time/${fromCity.toLowerCase().replace(/\s+/g, '-')}/to/${toCity.toLowerCase().replace(/\s+/g, '-')}`,
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "Trip",
+        "name": `${fromCity} to ${toCity} Flight`,
+        "itinerary": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "TravelAction",
+              "fromLocation": {
+                "@type": "Airport",
+                "name": fromAirport.name,
+                "iataCode": fromAirport.iata,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": fromAirport.country,
+                  "addressLocality": fromAirport.city
+                }
+              },
+              "toLocation": {
+                "@type": "Airport",
+                "name": toAirport.name,
+                "iataCode": toAirport.iata,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": toAirport.country,
+                  "addressLocality": toAirport.city
+                }
+              },
+              "distance": {
+                "@type": "Distance",
+                "value": distanceKm,
+                "unitCode": "KMT"
+              }
+            }
+          ]
+        }
+      }
+    };
+  };
+
+  const seoData = generateSEOData();
+
+  return (
+    <>
+      <SEO {...seoData} />
+      <div className="container max-w-6xl mx-auto p-4 pt-20">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <Card className="flex-1 min-w-0"> {/* added min-w-0 to prevent overflow */}
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Plane className="h-6 w-6" />
+                {getHeaderText()}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid gap-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <PlaneTakeoff className="h-4 w-4" />
+                    <span>From Airport</span>
                     <Button 
                       variant="outline" 
                       size="sm"
-                      onClick={handleSurpriseMe}
-                      disabled={surpriseLoading}
+                      onClick={handleLocationClick}
+                      disabled={locationLoading}
                     >
-                      <Shuffle className="h-4 w-4 mr-1" />
-                      {surpriseLoading ? "Selecting..." : "Surprise Me"}
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {locationLoading ? "Finding..." : "Use my location"}
                     </Button>
                   </div>
+                  <Input 
+                    placeholder="Search airports..."
+                    value={fromValue}
+                    onChange={(e) => {
+                      setFromValue(e.target.value);
+                      handleSearch(e.target.value, setFromOptions);
+                    }}
+                  />
+                  {fromOptions.length > 0 && (
+                    <div className="border rounded-md max-h-60 overflow-y-auto">
+                      {fromOptions.map((airport) => (
+                        <button
+                          key={airport.id}
+                          className="w-full px-3 py-2 text-left hover:bg-accent text-sm flex items-center gap-2"
+                          onClick={() => {
+                            setFromAirport(airport);
+                            setFromValue(formatAirportName(airport));
+                            setFromOptions([]);
+                          }}
+                        >
+                          {formatAirportName(airport)}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <Input 
-                  placeholder="Search airports..."
-                  value={toValue}
-                  onChange={(e) => {
-                    setToValue(e.target.value);
-                    handleSearch(e.target.value, setToOptions);
-                  }}
-                />
-                {toOptions.length > 0 && (
-                  <div className="border rounded-md max-h-60 overflow-y-auto">
-                    {toOptions.map((airport) => (
-                      <button
-                        key={airport.id}
-                        className="w-full px-3 py-2 text-left hover:bg-accent text-sm flex items-center gap-2"
-                        onClick={() => {
-                          setToAirport(airport);
-                          setToValue(formatAirportName(airport));
-                          setToOptions([]);
-                        }}
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 justify-between">
+                    <div className="flex items-center gap-2">
+                      <PlaneLanding className="h-4 w-4" />
+                      <span>To Airport</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {fromAirport && toAirport && (
+                        <Button 
+                          variant="outline"
+                          size="sm"
+                          onClick={handleFlip}
+                        >
+                          <ArrowUpDown className="h-4 w-4 mr-1" />
+                          Switch
+                        </Button>
+                      )}
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={handleSurpriseMe}
+                        disabled={surpriseLoading}
                       >
-                        {formatAirportName(airport)}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div className="h-[200px] lg:h-[300px]">
-              <AirportMap 
-                fromAirport={fromAirport} 
-                toAirport={toAirport} 
-              />
-            </div>
-
-            {fromAirport && toAirport && (
-              <div className="space-y-4">
-                <Button 
-                  variant="outline"
-                  className="w-full"
-                  onClick={handleRecommendations}
-                >
-                  <Book className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <span className="truncate">
-                    Find {toAirport.country} recommendations on our blog ✈️
-                  </span>
-                </Button>
-
-                {distance && (
-                  <div className="space-y-2 p-4 bg-muted/50 rounded-lg">
-                    {/* Main flight time display */}
-                    <div className="text-center pb-4 mb-4 border-b">
-                      <div className="text-sm text-muted-foreground mb-1">Estimated Flight Time</div>
-                      <div className="text-4xl font-bold">
-                        {distance.duration.hours}h {distance.duration.minutes.toString().padStart(2, '0')}min
-                      </div>
-                    </div>
-
-                    {/* Secondary details in a grid */}
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="font-medium">Direct Distance</div>
-                        <div className="text-muted-foreground">
-                          {distance.direct.km} km / {distance.direct.miles} miles
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-medium flex items-center gap-2">
-                          Actual Flight Distance
-                          <HoverCard>
-                            <HoverCardTrigger>
-                              <Info className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
-                            </HoverCardTrigger>
-                            <HoverCardContent className="w-80 bg-white dark:bg-gray-950 shadow-lg">
-                              <div className="space-y-3">
-                                <p>The actual flight distance includes additional factors beyond the direct route:</p>
-                                <ul className="list-disc ml-4 text-sm text-muted-foreground space-y-2">
-                                  <li>Short flights (&lt;1500km): +18% to account for more takeoff/landing procedures</li>
-                                  <li>Medium flights (1500-3000km): +15% for standard routing</li>
-                                  <li>Long flights (&gt;3000km): +12% as routes become more direct</li>
-                                </ul>
-                                <p className="text-sm text-muted-foreground mt-2">
-                                  These approximations are based on typical flight paths and air traffic patterns.
-                                </p>
-                              </div>
-                            </HoverCardContent>
-                          </HoverCard>
-                        </div>
-                        <div className="text-muted-foreground">
-                          {distance.actual.km} km / {distance.actual.miles} miles
-                        </div>
-                      </div>
-                      <div className="col-span-2 pt-2">
-                        <div className="grid grid-cols-2 gap-2 text-muted-foreground text-sm">
-                          <div>Cruising Speed: {distance.details.cruisingSpeed} km/h</div>
-                          <div>Timezone Change: {distance.details.timezoneDifference} hours</div>
-                        </div>
-                      </div>
+                        <Shuffle className="h-4 w-4 mr-1" />
+                        {surpriseLoading ? "Selecting..." : "Surprise Me"}
+                      </Button>
                     </div>
                   </div>
-                )}
+                  <Input 
+                    placeholder="Search airports..."
+                    value={toValue}
+                    onChange={(e) => {
+                      setToValue(e.target.value);
+                      handleSearch(e.target.value, setToOptions);
+                    }}
+                  />
+                  {toOptions.length > 0 && (
+                    <div className="border rounded-md max-h-60 overflow-y-auto">
+                      {toOptions.map((airport) => (
+                        <button
+                          key={airport.id}
+                          className="w-full px-3 py-2 text-left hover:bg-accent text-sm flex items-center gap-2"
+                          onClick={() => {
+                            setToAirport(airport);
+                            setToValue(formatAirportName(airport));
+                            setToOptions([]);
+                          }}
+                        >
+                          {formatAirportName(airport)}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
-          </CardContent>
-        </Card>
-        <div className="lg:block">
-          <PopularRoutes onSelectRoute={handleSelectPopularRoute} />
+
+              <div className="h-[200px] lg:h-[300px]">
+                <AirportMap 
+                  fromAirport={fromAirport} 
+                  toAirport={toAirport} 
+                />
+              </div>
+
+              {fromAirport && toAirport && (
+                <div className="space-y-4">
+                  <Button 
+                    variant="outline"
+                    className="w-full"
+                    onClick={handleRecommendations}
+                  >
+                    <Book className="h-4 w-4 mr-2 flex-shrink-0" />
+                    <span className="truncate">
+                      Find {toAirport.country} recommendations on our blog ✈️
+                    </span>
+                  </Button>
+
+                  {distance && (
+                    <div className="space-y-2 p-4 bg-muted/50 rounded-lg">
+                      {/* Main flight time display */}
+                      <div className="text-center pb-4 mb-4 border-b">
+                        <div className="text-sm text-muted-foreground mb-1">Estimated Flight Time</div>
+                        <div className="text-4xl font-bold">
+                          {distance.duration.hours}h {distance.duration.minutes.toString().padStart(2, '0')}min
+                        </div>
+                      </div>
+
+                      {/* Secondary details in a grid */}
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <div className="font-medium">Direct Distance</div>
+                          <div className="text-muted-foreground">
+                            {distance.direct.km} km / {distance.direct.miles} miles
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-medium flex items-center gap-2">
+                            Actual Flight Distance
+                            <HoverCard>
+                              <HoverCardTrigger>
+                                <Info className="h-4 w-4 text-muted-foreground hover:text-foreground transition-colors" />
+                              </HoverCardTrigger>
+                              <HoverCardContent className="w-80 bg-white dark:bg-gray-950 shadow-lg">
+                                <div className="space-y-3">
+                                  <p>The actual flight distance includes additional factors beyond the direct route:</p>
+                                  <ul className="list-disc ml-4 text-sm text-muted-foreground space-y-2">
+                                    <li>Short flights (&lt;1500km): +18% to account for more takeoff/landing procedures</li>
+                                    <li>Medium flights (1500-3000km): +15% for standard routing</li>
+                                    <li>Long flights (&gt;3000km): +12% as routes become more direct</li>
+                                  </ul>
+                                  <p className="text-sm text-muted-foreground mt-2">
+                                    These approximations are based on typical flight paths and air traffic patterns.
+                                  </p>
+                                </div>
+                              </HoverCardContent>
+                            </HoverCard>
+                          </div>
+                          <div className="text-muted-foreground">
+                            {distance.actual.km} km / {distance.actual.miles} miles
+                          </div>
+                        </div>
+                        <div className="col-span-2 pt-2">
+                          <div className="grid grid-cols-2 gap-2 text-muted-foreground text-sm">
+                            <div>Cruising Speed: {distance.details.cruisingSpeed} km/h</div>
+                            <div>Timezone Change: {distance.details.timezoneDifference} hours</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+          <div className="lg:block">
+            <PopularRoutes onSelectRoute={handleSelectPopularRoute} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
