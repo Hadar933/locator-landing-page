@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogCategory from "./pages/BlogCategory";
-import ComingSoon from "./pages/ComingSoon";
 import Newsletter from "./pages/Newsletter";
 import Sitemap from "./pages/Sitemap";
 import Test from "./pages/Test";
@@ -26,7 +25,6 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:country" element={<BlogCategory />} />
         <Route path="/blog/:country/:slug" element={<BlogPost />} />
-        <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/sitemap_index_template.xml" element={<Sitemap />} />
         <Route path="/test" element={<Test />} />
