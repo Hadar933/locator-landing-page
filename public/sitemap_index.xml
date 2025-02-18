@@ -28,11 +28,21 @@
   <url>
     <loc>https://locator.ltd/newsletter</loc>
     <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://locator.ltd/free-tools</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://locator.ltd/free-tools/flight-time</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://locator.ltd/blog/thailand/krabi-ao-nang-guide</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://locator.ltd/free-tools/ai-recommendations</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
