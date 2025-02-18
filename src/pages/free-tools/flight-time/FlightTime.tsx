@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { searchAirports, Location } from '@/utils/flighttime';
 
 const FlightTime: React.FC = () => {
   const { src, dst } = useParams();
@@ -9,10 +8,7 @@ const FlightTime: React.FC = () => {
   const [fromOptions, setFromOptions] = useState<Array<{ code: string; airport: { city: string; country: string } }>>([]);
   const [toOptions, setToOptions] = useState<Array<{ code: string; airport: { city: string; country: string } }>>([]);
   
-  const handleSearch = (query: string, setOptions: React.Dispatch<React.SetStateAction<any[]>>) => {
-    const results = searchAirports(query);
-    setOptions(results);
-  };
+
 
   return (
     <div className="container mx-auto px-4 py-8 pt-24">
@@ -27,7 +23,6 @@ const FlightTime: React.FC = () => {
                 value={fromQuery}
                 onChange={(e) => {
                   setFromQuery(e.target.value);
-                  handleSearch(e.target.value, setFromOptions);
                 }}
                 className="w-full p-2 border rounded"
                 placeholder="Search for a city or airport"
@@ -56,7 +51,6 @@ const FlightTime: React.FC = () => {
                 value={toQuery}
                 onChange={(e) => {
                   setToQuery(e.target.value);
-                  handleSearch(e.target.value, setToOptions);
                 }}
                 className="w-full p-2 border rounded"
                 placeholder="Search for a city or airport"
