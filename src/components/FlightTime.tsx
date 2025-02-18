@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,6 +22,7 @@ interface SavedState {
 
 export const FlightTime: React.FC = () => {
   const navigate = useNavigate();
+  const { source, destination } = useParams<{ source?: string; destination?: string }>();
   const [fromOptions, setFromOptions] = useState<Airport[]>([]);
   const [toOptions, setToOptions] = useState<Airport[]>([]);
   const [fromAirport, setFromAirport] = useState<Airport | null>(null);
@@ -33,6 +34,9 @@ export const FlightTime: React.FC = () => {
   const [surpriseLoading, setSurpriseLoading] = useState(false);
   const [userLocation, setUserLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [distance, setDistance] = useState<FlightDistance | null>(null);
+
+  // Add a ref to track if airports were loaded from URL
+  const loadedFromUrl = useRef(false);
 
   // Load saved state on mount
   useEffect(() => {
@@ -68,6 +72,67 @@ export const FlightTime: React.FC = () => {
       }
     };
   }, []);
+
+  // Modify the URL update effect to prevent overriding URL parameters
+  useEffect(() => {
+    if (fromAirport && toAirport && !loadedFromUrl.current) {
+      const fromCity = fromAirport.city.toLowerCase().replace(/\s+/g, '-');
+      const toCity = toAirport.city.toLowerCase().replace(/\s+/g, '-');
+      navigate(`/flight-time/${fromCity}/to/${toCity}`, { replace: true });
+    }
+  }, [fromAirport, toAirport]);
+
+  // Load airports from URL params on mount
+  useEffect(() => {
+    const loadAirportsFromUrl = async () => {
+      if (source && destination) {
+        setLoading(true);
+        loadedFromUrl.current = true;  // Set the flag before loading
+        try {
+          // Format the city names from URL
+          const sourceCity = decodeURIComponent(source).replace(/-/g, ' ');
+          const destCity = decodeURIComponent(destination).replace(/-/g, ' ');
+
+          // Enhanced search to find best matching airports
+          const fromResults = await searchAirports(sourceCity);
+          const toResults = await searchAirports(destCity);
+
+          // Find best matching airport by city name (case insensitive)
+          const bestFromMatch = fromResults.find(
+            airport => airport.city.toLowerCase() === sourceCity.toLowerCase()
+          ) || fromResults[0];
+
+          const bestToMatch = toResults.find(
+            airport => airport.city.toLowerCase() === destCity.toLowerCase()
+          ) || toResults[0];
+
+          if (bestFromMatch) {
+            setFromAirport(bestFromMatch);
+            setFromValue(formatAirportName(bestFromMatch));
+          }
+
+          if (bestToMatch) {
+            setToAirport(bestToMatch);
+            setToValue(formatAirportName(bestToMatch));
+          }
+
+          // Calculate distance if both airports are found
+          if (bestFromMatch && bestToMatch) {
+            const result = calculateFlightDistance(bestFromMatch, bestToMatch);
+            setDistance(result);
+          }
+        } finally {
+          setLoading(false);
+          // Reset the flag after a short delay to allow future manual updates
+          setTimeout(() => {
+            loadedFromUrl.current = false;
+          }, 100);
+        }
+      }
+    };
+
+    loadAirportsFromUrl();
+  }, [source, destination]);
 
   const handleSearch = async (query: string, setOptions: (airports: Airport[]) => void) => {
     if (query.length < 2) {
@@ -160,11 +225,13 @@ export const FlightTime: React.FC = () => {
     }
   };
 
-  const handleCalculateDistance = () => {
-    if (!fromAirport || !toAirport) return;
-    const result = calculateFlightDistance(fromAirport, toAirport);
-    setDistance(result);
-  };
+  // Add effect to automatically calculate distance when airports change
+  useEffect(() => {
+    if (fromAirport && toAirport) {
+      const result = calculateFlightDistance(fromAirport, toAirport);
+      setDistance(result);
+    }
+  }, [fromAirport, toAirport]);
 
   return (
     <div className="container max-w-6xl mx-auto p-4 pt-20">
@@ -238,22 +305,14 @@ export const FlightTime: React.FC = () => {
                     {surpriseLoading ? "Selecting..." : "Surprise Me"}
                   </Button>
                 </div>
-                <div className="flex gap-2">
-                  <Input 
-                    placeholder="Search airports..."
-                    value={toValue}
-                    onChange={(e) => {
-                      setToValue(e.target.value);
-                      handleSearch(e.target.value, setToOptions);
-                    }}
-                  />
-                  <Button 
-                    disabled={!fromAirport || !toAirport}
-                    onClick={handleCalculateDistance}
-                  >
-                    Calculate Distance
-                  </Button>
-                </div>
+                <Input 
+                  placeholder="Search airports..."
+                  value={toValue}
+                  onChange={(e) => {
+                    setToValue(e.target.value);
+                    handleSearch(e.target.value, setToOptions);
+                  }}
+                />
                 {toOptions.length > 0 && (
                   <div className="border rounded-md max-h-60 overflow-y-auto">
                     {toOptions.map((airport) => (

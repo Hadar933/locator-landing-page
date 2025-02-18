@@ -31,6 +31,8 @@ function App() {
         <Route path="/free-tools" element={<Tools />} />
         <Route path="/free-tools/flight-time" element={<FlightTime />} />
         <Route path="/free-tools/ai-recommendations" element={<AIRecommendations />} />
+        <Route path="/flight-time" element={<FlightTime />} />
+        <Route path="/flight-time/:source/to/:destination" element={<FlightTime />} />
       </Routes>
     </Router>
   );
