@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Polyline, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon, LatLngBoundsExpression, LatLngTuple } from 'leaflet';
@@ -50,41 +50,62 @@ const LocationButton = () => {
     );
 };
 
+// Add a new component to handle bounds
+function ChangeView({ fromAirport, toAirport }: { fromAirport: Airport | null; toAirport: Airport | null }) {
+  const map = useMap();
+
+  useEffect(() => {
+    if (fromAirport && toAirport) {
+      const bounds = [
+        [fromAirport.latitude, fromAirport.longitude],
+        [toAirport.latitude, toAirport.longitude]
+      ];
+      map.fitBounds(bounds, {
+        padding: [50, 50], // Add padding around bounds
+        maxZoom: 12,      // Prevent too much zoom
+        animate: true      // Smooth animation
+      });
+    } else if (fromAirport) {
+      map.setView([fromAirport.latitude, fromAirport.longitude], 8);
+    } else if (toAirport) {
+      map.setView([toAirport.latitude, toAirport.longitude], 8);
+    }
+  }, [map, fromAirport, toAirport]);
+
+  return null;
+}
+
 interface AirportMapProps {
     fromAirport: Airport | null;
     toAirport: Airport | null;
 }
 
 export const AirportMap: React.FC<AirportMapProps> = ({ fromAirport, toAirport }) => {
-    const bounds = React.useMemo(() => {
+    const center = useMemo(() => {
         if (fromAirport && toAirport) {
-            return [
-                [fromAirport.latitude, fromAirport.longitude],
-                [toAirport.latitude, toAirport.longitude]
-            ] as LatLngBoundsExpression;
+            // Center between both airports
+            return [(fromAirport.latitude + toAirport.latitude) / 2, (fromAirport.longitude + toAirport.longitude) / 2];
+        } else if (fromAirport) {
+            return [fromAirport.latitude, fromAirport.longitude];
+        } else if (toAirport) {
+            return [toAirport.latitude, toAirport.longitude];
         }
-        return undefined;
+        return [0, 0]; // Default center if no airports selected
     }, [fromAirport, toAirport]);
-
-    const center = fromAirport 
-        ? [fromAirport.latitude, fromAirport.longitude]
-        : [20, 0]; // Default center of the map
-
-    const zoom = (!fromAirport && !toAirport) ? 2 : 4;
 
     return (
         <div className="rounded-lg overflow-hidden border h-full min-h-[200px]">
             <MapContainer
                 style={{ height: '100%', width: '100%' }}
-                bounds={bounds}
                 center={center as [number, number]}
-                zoom={zoom}
+                zoom={2}
                 className="z-10"
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+                <ChangeView fromAirport={fromAirport} toAirport={toAirport} />
                 
                 {fromAirport && (
                     <Marker 

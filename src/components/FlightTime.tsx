@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Plane, PlaneTakeoff, PlaneLanding, MapPin, Shuffle, Book } from "lucide-react";
+import { Plane, PlaneTakeoff, PlaneLanding, MapPin, Shuffle, Book, FlipVertical, ArrowUpDown } from "lucide-react";
 import type { Airport } from './flight-time/airportSearch';
 import { AirportMap } from './flight-time/AirportMap';
 import { searchAirports, findNearestAirport, getRandomAirport } from './flight-time/airportSearch';
@@ -233,6 +233,24 @@ export const FlightTime: React.FC = () => {
     }
   }, [fromAirport, toAirport]);
 
+  const getHeaderText = () => {
+    if (fromAirport && toAirport) {
+      return `${fromAirport.city} to ${toAirport.city} Flight Time`;
+    }
+    return 'Flight Time Calculator';
+  };
+
+  const handleFlip = () => {
+    // Swap airports
+    const tempAirport = fromAirport;
+    const tempValue = fromValue;
+    
+    setFromAirport(toAirport);
+    setFromValue(toValue);
+    setToAirport(tempAirport);
+    setToValue(tempValue);
+  };
+
   return (
     <div className="container max-w-6xl mx-auto p-4 pt-20">
       <div className="flex flex-col lg:flex-row gap-4">
@@ -240,7 +258,7 @@ export const FlightTime: React.FC = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Plane className="h-6 w-6" />
-              Flight Time Calculator
+              {getHeaderText()}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -255,14 +273,9 @@ export const FlightTime: React.FC = () => {
                     onClick={handleLocationClick}
                     disabled={locationLoading}
                   >
-                    <MapPin className="h-4 w-4 mr" />
+                    <MapPin className="h-4 w-4 mr-1" />
                     {locationLoading ? "Finding..." : "Use my location"}
                   </Button>
-                  {userLocation && (
-                    <span className="text-xs text-muted-foreground">
-                      ({userLocation.lat.toFixed(6)}°, {userLocation.lon.toFixed(6)}°)
-                    </span>
-                  )}
                 </div>
                 <Input 
                   placeholder="Search airports..."
@@ -292,18 +305,32 @@ export const FlightTime: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <PlaneLanding className="h-4 w-4" />
-                  <span>To Airport</span>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={handleSurpriseMe}
-                    disabled={surpriseLoading}
-                  >
-                    <Shuffle className="h-4 w-4 mr-1" />
-                    {surpriseLoading ? "Selecting..." : "Surprise Me"}
-                  </Button>
+                <div className="flex items-center gap-2 justify-between">
+                  <div className="flex items-center gap-2">
+                    <PlaneLanding className="h-4 w-4" />
+                    <span>To Airport</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {fromAirport && toAirport && (
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        onClick={handleFlip}
+                      >
+                        <ArrowUpDown className="h-4 w-4 mr-1" />
+                        Switch
+                      </Button>
+                    )}
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={handleSurpriseMe}
+                      disabled={surpriseLoading}
+                    >
+                      <Shuffle className="h-4 w-4 mr-1" />
+                      {surpriseLoading ? "Selecting..." : "Surprise Me"}
+                    </Button>
+                  </div>
                 </div>
                 <Input 
                   placeholder="Search airports..."
