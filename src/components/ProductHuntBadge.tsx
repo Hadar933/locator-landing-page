@@ -11,7 +11,7 @@ export const ProductHuntBadge = () => {
         {/* Content container - reduced padding and made it inline-flex */}
         <div className="relative inline-flex flex-col items-center px-8 py-4 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-200/50 shadow-xl mx-auto">
           <p className="text-base md:text-lg text-gray-500 mb-3 font-medium">
-            🎉 <span className="animate-pulse">Coming Soon</span> on Product Hunt! 
+            🎉 <span className="animate-pulse">As seen</span> on Product Hunt! 
           </p>
           
           <div className="transform transition-transform duration-300 hover:scale-105">
